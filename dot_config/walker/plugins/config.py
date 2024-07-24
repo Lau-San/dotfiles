@@ -16,9 +16,9 @@ configs = {
     'Xresources': f'{home}/.Xresources',
 
     'Rofi': f'{confdir}/rofi',
-    'walker': f'{confdir}/walker',
-    'anyrun': f'{confdir}/anyrun',
-    'sysmenu': f'{confdir}/sys64/menu',
+    'Walker': f'{confdir}/walker',
+    'Anyrun': f'{confdir}/anyrun',
+    'Sysmenu': f'{confdir}/sys64/menu',
 
     'Alacritty': f'{confdir}/alacritty/alacritty.toml',
     'Kitty': f'{confdir}/kitty/kitty.conf',
