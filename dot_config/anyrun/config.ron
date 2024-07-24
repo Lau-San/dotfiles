@@ -13,7 +13,7 @@ Config(
   width: Absolute(800),
 
   // The minimum height of the runner, the runner will expand to fit all the entries
-  height: Absolute(0),
+  height: Fraction(1),
   
   // Hide match and plugin info icons  
   hide_icons: false, 
