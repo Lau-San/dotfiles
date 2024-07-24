@@ -43,7 +43,8 @@ for k, v in configs.items():
     options.append({
         'label': k,
         'searchable': k.lower(),
-        'exec': f'chezmoi edit --apply {v}'
+        'exec': f'''chezmoi edit --apply {v} &&
+                        notify-send "Configuration applied"'''
     })
 
 print(json.dumps(options))
