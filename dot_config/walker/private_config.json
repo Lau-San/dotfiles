@@ -11,7 +11,7 @@
             "top": 100
         },
         "anchors": {
-            "top": true
+            "top": false
         }
     },
     "list": {
@@ -54,5 +54,11 @@
         "ssh": { "switcher_only": true, "history": true },
         "switcher": { "prefix": "/" },
         "websearch": { "engines": ["google"] }
-    }
+    },
+    "plugins": [
+        {
+            "name": "config",
+            "src": "python /home/laura/.config/walker/plugins/config.py"
+        }
+    ]
 }
