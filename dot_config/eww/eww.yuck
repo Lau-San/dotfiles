@@ -23,7 +23,7 @@
               :tooltip "Launcher"
               :halign "center"
               :valign: "center"
-              :onclick "walker"
+              :onclick "toggle-sysmenu"
         "")))
 
 ;; Workspaces
