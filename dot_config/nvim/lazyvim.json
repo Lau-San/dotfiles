@@ -1,0 +1,11 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.leap",
+    "lazyvim.plugins.extras.lang.java",
+    "lazyvim.plugins.extras.util.dot"
+  ],
+  "news": {
+    "NEWS.md": "6296"
+  },
+  "version": 6
+}
