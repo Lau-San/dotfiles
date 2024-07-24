@@ -1,0 +1,140 @@
+* {
+    // Color Palette
+    black-d      : #181a26;
+    black        : #282a36;
+    black-l      : #484a56;
+
+    gray-d       : #24273a;
+    gray         : #44475a;
+    gray-l       : #646776;
+
+    white        : #f8f8f2;
+
+    blue-xd      : #223264;
+    blue-d       : #425284;
+    blue         : #6272a4;
+    blue-l       : #8292c4;
+    blue-xl      : #a2b2e4;
+
+    cyan-xd      : #4ba9bd;
+    cyan-d       : #6bc9dd;
+    cyan         : #8be9fd;
+    cyan-l       : #abffff;
+    cyan-xl      : #bbffff;
+
+    green-xd     : #109a3b;
+    green-d      : #30da5b;
+    green        : #50fa7b;
+    green-l      : #70ff9b;
+    green-xl     : #90ffbb;
+
+    orange-xd    : #bf782c;
+    orange-d     : #df984c;
+    orange       : #ffb86c;
+    orange-l     : #ffd88c;
+    orange-xl    : #fff8ac;
+
+    pink-xd      : #bf3986;
+    pink-d       : #df59a6;
+    pink         : #ff79c6;
+    pink-l       : #ff99e6;
+    pink-xl      : #ffb9ff;
+
+    purple-xd    : #7d53b9;
+    purple-d     : #9d73d9;
+    purple       : #bd93f9;
+    purple-l     : #ddb3ff;
+    purple-xl    : #fdd3ff;
+
+    red-xd       : #bf1515;
+    red-d        : #df3535;
+    red          : #ff5555;
+    red-l        : #ff7575;
+    red-xl       : #ff9595;
+
+    yellow-xd    : #a1aa4c;
+    yellow-d     : #d1da6c;
+    yellow       : #f1fa8c;
+    yellow-l     : #ffffac;
+    yellow-xl    : #ffffcc;
+}
+* {
+    enabled: true;
+    background-color: transparent;
+    color: @white;
+}
+
+window {
+    background-color: #181a26f5;
+    border: 2;
+    border-radius: 10 10 10 10;
+    border-color: @blue-d;
+    transparency: "real";
+    fullscreen: false;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    background-color: #44475a33;
+    border: 0 solid 0 solid 1 dash 0 solid;
+    border-color: #6272a4bb;
+    padding: 0.5em;
+    spacing: 0.75em;
+    children: [prompt, entry];
+}
+
+prompt {
+    color: @cyan;
+    font: "Iosevka 32";
+    padding: 0 0.5em 0 0.5em;
+    border: 0 0 0 0;
+    border-color: #6272a4bb;
+}
+
+entry {
+    placeholder: "Start typing...";
+    placeholder-color: #6272a477;
+    font: "Ubuntu 16";
+    vertical-align: 0.5;
+}
+
+listview {
+    margin: 0.4em;
+    columns: 3;
+    scrollbar: true;
+    scrollbar-width: 10px;
+}
+
+scrollbar {
+    margin: 10px;
+    background-color: #22326488;
+    handle-width: 5px;
+    handle-color: @blue-l;
+}
+
+element {
+    padding: 0.25em 0.75em;
+    spacing: 8px;
+    border-radius: 0.75em;
+    cursor: pointer;
+}
+element selected {
+    background-color: #6272a477;
+}
+
+element-text urgent {
+    color: @red;
+}
+
+element-text {
+    highlight: bold #ff79c6;
+    cursor: inherit;
+}
+
+element-icon {
+    size: 1.2em;
+    cursor: inherit;
+}
