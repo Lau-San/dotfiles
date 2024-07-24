@@ -4,10 +4,10 @@ Config(
   // Fraction(n): A fraction of the width or height of the full screen (depends on exclusive zones and the settings related to them) window respectively
   
   // The horizontal position, adjusted so that Relative(0.5) always centers the runner
-  x: Absolute(10),
+  x: Absolute(300),
 
   // The vertical position, works the same as `x`
-  y: Absolute(300),
+  y: Absolute(0),
 
   // The width of the runner
   width: Absolute(600),
