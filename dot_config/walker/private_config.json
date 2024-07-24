@@ -1,0 +1,44 @@
+{
+    "placeholder": "Search...",
+    "show_initial_entries": true,
+    "orientation": "vertical",
+    "modules": [
+        { "name": "applications" },
+        { "prefix": "!", "name": "runner" },
+        { "prefix": ">", "name": "switcher" },
+        { "name": "commands", "switcher_exclusive": true }
+    ],
+    "external": [
+        {
+            "name": "calculator",
+            "prefix": "=",
+            "src": "python /home/laura/.config/walker/scripts/calculator.py \"%TERM%\""
+        },
+        {
+            "name": "colorpicker",
+            "src": "python /home/laura/.config/walker/scripts/color_picker.py \"%TERM%\"",
+            "switcher_exclusive": true
+        }
+    ],
+    "icons": { "size": 28 },
+    "align": {
+        "horizontal": "center",
+        "vertical": "start",
+        "width": 400,
+        "margins": { "top": 10, "bottom": 10, "start": 10, "end": 10 },
+        "anchors": {
+            "top": true,
+            "left": true
+        }
+    },
+    "list": { "margin_top": 10, "height": 500, "always_show": true },
+    "search": { "margin_spinner": 10 },
+    "clipboard": { "image_height": 300, "max_entries": 10 },
+    "runner": { "Excludes": ["rm"], "Includes": null },
+    "activation_mode": {
+        "disabled": true
+    },
+    "scrollbar_policy": "automatic",
+    "hyprland": {},
+    "applications": {}
+}
