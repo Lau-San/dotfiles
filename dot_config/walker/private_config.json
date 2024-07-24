@@ -31,7 +31,9 @@
         "placeholder": "Search...",
         "delay": 0
     },
-    "activation_mode": {},
+    "activation_mode": {
+        "disabled": true
+    },
     "builtins": {
         "applications": { "actions": true, "prioritize_new": true },
         "clipboard": {
