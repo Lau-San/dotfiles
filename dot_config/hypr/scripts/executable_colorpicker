@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+declare -A options
+
+options['Copy as HEX']='hex'
+options['Copy as RGB']='rgb'
+options['Copy as HSL']='hsl'
+
+choice=$(printf '%s\n' "${!options[@]}" | wofi --dmenu --prompt "CP")
+
+if [[ "$choice" ]]; then
+    fmt="${options[$choice]}"
+    sleep 1
+    clr=$(hyprpicker --autocopy --format="${fmt}")
+    notify-send "HyperPicker" "Copied color '${clr}' to clipboard"
+fi
