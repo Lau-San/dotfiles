@@ -1,0 +1,33 @@
+#!/bin/env sh
+
+calendar() {
+	LOCK_FILE="$HOME/.cache/eww-calendar.lock"
+	EWW_BIN="$HOME/.local/bin/eww"
+
+	# Run eww daemon if not running
+	if [ ! $(pidof eww) ]; then
+		${EWW_BIN} daemon
+		sleep 1
+	fi
+
+	# Open widgets
+	if [ ! -f "$LOCK_FILE" ]; then
+		sleep 0.1
+		touch "$LOCK_FILE"
+		${EWW_BIN} open calendar --arg monitor=$1
+	else
+		sleep 0.1
+		${EWW_BIN} close calendar
+		rm -rf "$LOCK_FILE"
+	fi
+}
+
+if [ "$1" = "launcher" ]; then
+	$HOME/.local/bin/launcher
+elif [ "$1" = "wifi" ]; then
+	alacritty -e nmtui
+elif [ "$1" = "audio" ]; then
+	pavucontrol-qt
+elif [ "$1" = "calendar" ]; then
+	calendar "$2"
+fi

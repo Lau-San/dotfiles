@@ -1,0 +1,226 @@
+* {
+    all: unset;
+}
+
+$background: #1a1b26;
+$foreground: #a9b1d6;
+
+$black: #24283b;
+$gray: #565f89;
+$red: #f7768e;
+$green: #9ece6a;
+$yellow: #ff9e64;
+$blue: #7aa2f7;
+$magenta: #bb9af7;
+$cyan: #89ddff;
+$white: $foreground;
+
+$clr-disabled: $black;
+
+$border-radius: 5px;
+
+.eww_bar {
+    all: unset;
+    background: $black;
+    // background: rgba($black, 0.5);
+    padding: 5px 10px;
+}
+
+menu {
+    background-color: rgba($background, 0.9);
+    padding: 5px;
+    border-radius: $border-radius;
+    border: 2px solid $black;
+
+    & > menuitem {
+        padding: 5px 10px;
+        border-radius: $border-radius;
+
+        &:hover {
+            background: $black;
+        }
+
+        arrow {
+            min-height: 16px;
+            min-width: 16px;
+            &:dir(ltr) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+                margin-left: 10px;
+            }
+            &:dir(rtl) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+tooltip {
+    background: $background;
+    border-radius: $border-radius;
+    opacity: 0.9;
+}
+
+.section {
+    background: $background;
+    padding: 5px 10px;
+    border-radius: $border-radius;
+    font-size: 16px;
+}
+
+// ===========
+// == ICONS ==
+// ===========
+
+.launcher,
+.ws_btn,
+.gamemode_icon_enabled,
+.gamemode_icon_disabled,
+.capslock_icon_disabled,
+.capslock_icon_enabled,
+.music_icon,
+.music_play,
+.music_prev,
+.music_next,
+.vol_icon,
+.pow_off,
+.pow_reload_hypr,
+.pow_reboot,
+.pow_logout {
+    font-family: 'Font Awesome 6 Free';
+    color: $foreground;
+}
+
+// ==============
+// == LAUNCHER ==
+// ==============
+
+.launcher {
+    color: $cyan;
+}
+
+// ================
+// == WORKSPACES ==
+// ================
+
+.ws_btn {
+    color: rgba($blue, 0.1);
+}
+
+.ws_btn.ws_occupied {
+    color: $blue;
+}
+
+.ws_btn.focused {
+    font-weight: 600;
+    color: $blue;
+}
+
+// ===========
+// == MUSIC ==
+// ===========
+
+.music_icon,
+.music_prev,
+.music_play,
+.music_next {
+    color: $blue;
+}
+.music_icon {
+    padding-right: 2px;
+}
+.music_playing {
+    font-family: Dosis;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $foreground;
+    padding: 0 10px;
+}
+
+// =============
+// == CONTROL ==
+// =============
+
+.gamemode_icon_enabled,
+.gamemode_icon_disabled {
+    margin-right: 5px;
+}
+
+// Gamemode
+.gamemode_icon_enabled {
+    color: $magenta;
+}
+.gamemode_icon_disabled {
+    color: $clr-disabled;
+}
+
+// Capslock
+.capslock_icon_enabled {
+    color: $yellow;
+}
+.capslock_icon_disabled {
+    color: $clr-disabled;
+}
+
+// Volume
+$clr-vol: $cyan;
+.vol_icon {
+    color: $clr-vol;
+    margin-left: 5px;
+}
+scale trough {
+    all: unset;
+    background: $black;
+    border-radius: $border-radius;
+    min-width: 80px;
+    min-height: 10px;
+    margin-left: 5px;
+}
+.volbar trough highlight {
+    background: $clr-vol;
+    border-radius: $border-radius;
+}
+
+// Clock
+.date,
+.time {
+    font-family: JetBrainsMono Nerd Font;
+    font-weight: 600;
+    font-size: 16px;
+    color: $foreground;
+}
+
+// Calendar
+.cal_box {
+    background-color: $black;
+    border-radius: $border-radius;
+
+    .cal_inner_box {
+        padding: 1rem 1rem 0.2rem;
+    }
+}
+
+// Power Menu
+.pow_off {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: $red;
+}
+
+.pow_reload_hypr,
+.pow_reboot,
+.pow_logout {
+    padding: 0 5px;
+    margin-right: 5px;
+}
+
+.pow_reboot {
+    color: $yellow;
+}
+.pow_logout {
+    color: $magenta;
+}
+.pow_reload_hypr {
+    color: $cyan;
+}
