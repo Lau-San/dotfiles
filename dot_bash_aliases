@@ -1,0 +1,13 @@
+#BASH ALIASES
+# ===========
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+alias h='history'
+
+alias ls='exa -al --color=auto --icons --group-directories-first'
+
+alias pacs='pacman -Ss'
+alias paci='sudo pacman -S'
+alias pacu='sudo pacman -Syu'

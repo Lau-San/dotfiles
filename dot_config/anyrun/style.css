@@ -1,0 +1,59 @@
+/*
+COLORS
+
+background: #1a1b26;
+foreground: #a9b1d6;
+
+black: #24283b;
+gray: #565f89;
+red: #f7768e;
+green: #9ece6a;
+yellow: #ff9e64;
+blue: #7aa2f7;
+magenta: #bb9af7;
+cyan: #89ddff;
+
+*/
+
+* {
+    font-family: 'JetBrainsMono Nerd Font', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #a9b1d6;
+}
+
+#window {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+box#main {
+    padding: 10px;
+    background-color: #24283b;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+#entry {
+    padding: 10px;
+    background-color: #1a1b26;
+}
+
+list#main {
+    background-color: #24283b;
+    margin-top: 5px;
+}
+
+list#plugin {
+    background-color: #1a1b26;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#match {
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#match:selected {
+    background-color: #24283b;
+}
