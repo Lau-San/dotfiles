@@ -23,7 +23,7 @@
               :tooltip "Launcher"
               :halign "center"
               :valign: "center"
-              :onclick "hyprctl dispatch anyrun"
+              :onclick "anyrun"
         "")))
 
 ;; Workspaces
