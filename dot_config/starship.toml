@@ -54,7 +54,7 @@ untracked = " [](bg:black fg:purple)"
 [python]
 # format = "([ $symbol]($style bold) [$version]($style)( [🞚](blue bold) [$virtualenv](blue))[ ]($style bold) )"
 format = "([]($style)[$symbol $version( $virtualenv)]($style inverted)[]($style) )"
-style = "blue dimmed"
+style = "blue"
 symbol = " "
 python_binary = ["python3", "python"]
 
