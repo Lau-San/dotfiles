@@ -38,7 +38,11 @@
         "disabled": true
     },
     "builtins": {
-        "applications": { "actions": false, "prioritize_new": true },
+        "applications": {
+            "placeholder": "Run an application",
+            "actions": false,
+            "prioritize_new": true
+        },
         "clipboard": {
             "image_height": 300,
             "max_entries": 10,
