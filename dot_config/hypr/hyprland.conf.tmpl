@@ -9,7 +9,8 @@
 # Create your files separately and then link them to this file like this:
 # source = ~/.config/hypr/myColors.conf
 
-$hypr = {{ .chezmoi.homeDir }}/.config/hypr
+$home = {{ .chezmoi.homeDir }}
+$hypr = $home/.config/hypr
 
 source = $hypr/monitors.conf
 source = $hypr/programs.conf
