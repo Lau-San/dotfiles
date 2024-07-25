@@ -19,7 +19,7 @@
     },
     "list": {
         "always_show": true,
-        "fixed_height": false,
+        "fixed_height": true,
         "height": 1000,
         "margin_top": 10,
         "max_entries": 0,
