@@ -3,7 +3,7 @@
     "ui": {
         "icons": { "size": 38, "image_size": 150 },
         "orientation": "vertical",
-        "ignore_exclusive": true,
+        "ignore_exclusive": false,
         "fullscreen": false,
         "horizontal": "start",
         "vertical": "fill",
