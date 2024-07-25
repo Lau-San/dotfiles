@@ -14,5 +14,8 @@ opt.shiftwidth = 4
 opt.background = 'dark'
 
 vim.filetype.add({
-    pattern = { ['.*/hypr/.*%.conf'] = "hyprlang" }
+    pattern = {
+        ['.*/hypr/.*%.conf'] = "hyprlang",
+        ['.*/hypr/.*%.conf%.templ'] = 'hyprlang'
+    },
 })
