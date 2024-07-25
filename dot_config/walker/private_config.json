@@ -1,4 +1,5 @@
 {
+    "ignore_mouse": true,
     "ui": {
         "icons": { "size": 38, "image_size": 150 },
         "orientation": "vertical",
