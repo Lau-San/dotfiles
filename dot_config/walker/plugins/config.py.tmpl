@@ -1,7 +1,6 @@
 import json
 
-home = '/home/laura'
-confdir = f'{home}/.config'
+confdir = '{{ .chezmoi.homeDir }}/.config'
 
 configs = {
     'AwesomeWM': f'{confdir}/awesome',
