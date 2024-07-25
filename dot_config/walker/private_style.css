@@ -16,7 +16,8 @@
     --clr-white: $foreground;
 
     font-family: Dosis;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 1px;
     color: #a9b1d6;
 }
 
