@@ -8,7 +8,9 @@
         "horizontal": "start",
         "vertical": "fill",
         "width": 700,
-        "margins": {},
+        "margins": {
+            "top": 0
+        },
         "anchors": {
             "top": true,
             "left": true,
