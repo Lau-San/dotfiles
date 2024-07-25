@@ -16,6 +16,6 @@ opt.background = 'dark'
 vim.filetype.add({
     pattern = {
         ['.*/hypr/.*%.conf'] = "hyprlang",
-        ['.*/hypr/.*%.conf%.templ'] = 'hyprlang'
+        ['.*/hypr/.*%.conf%.tmpl'] = 'hyprlang'
     },
 })
