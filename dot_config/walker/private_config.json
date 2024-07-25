@@ -52,7 +52,7 @@
         "custom_commands": {},
         "emojis": { "switcher_only": true, "history": true, "typeahead": true },
         "finder": { "switcher_only": true },
-        "hyprland": { "context_aware_history": false },
+        "hyprland": { "context_aware_history": true },
         "runner": {
             "typeahead": true,
             "history": true,
