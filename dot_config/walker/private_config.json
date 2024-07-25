@@ -7,7 +7,7 @@
         "fullscreen": false,
         "horizontal": "start",
         "vertical": "fill",
-        "width": 700,
+        "width": 600,
         "margins": {
             "top": 0
         },
