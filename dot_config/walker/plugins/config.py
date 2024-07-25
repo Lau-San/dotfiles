@@ -12,6 +12,7 @@ configs = {
 
     'Picom': f'{confdir}/picom.conf',
     'Dunst': f'{confdir}/dunst',
+    'Fnott': f'{confdir}/fnott',
 
     'Xresources': f'{home}/.Xresources',
 
