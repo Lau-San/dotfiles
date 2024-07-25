@@ -38,7 +38,7 @@
         "disabled": true
     },
     "builtins": {
-        "applications": { "actions": true, "prioritize_new": true },
+        "applications": { "actions": false, "prioritize_new": true },
         "clipboard": {
             "image_height": 300,
             "max_entries": 10,
@@ -62,8 +62,7 @@
         {
             "name": "config",
             "src": "python /home/laura/.config/walker/plugins/config.py",
-            "placeholder": "Search configuration",
-            "special_label": "WHAT"
+            "placeholder": "Search configuration"
         }
     ]
 }

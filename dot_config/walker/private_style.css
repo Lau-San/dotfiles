@@ -32,10 +32,6 @@
 #searchwrapper {
 }
 
-#search {
-    font-size: 20px;
-}
-
 #search,
 #typeahead {
     outline: none;
