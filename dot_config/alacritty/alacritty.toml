@@ -45,7 +45,7 @@ builtin_box_drawing = true
 size = 10
 
 [font.bold]
-family = "Mononoki Nerd Font"
+family = "Cascadia Code NF"
 style = "Bold"
 
 [font.bold_italic]
