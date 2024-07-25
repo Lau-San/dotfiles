@@ -5,7 +5,7 @@
         "orientation": "vertical",
         "ignore_exclusive": true,
         "fullscreen": true,
-        "horizontal": "center",
+        "horizontal": "start",
         "vertical": "start",
         "width": 700,
         "margins": {},
