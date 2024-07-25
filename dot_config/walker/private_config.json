@@ -12,7 +12,8 @@
             "top": 100
         },
         "anchors": {
-            "top": false
+            "top": true,
+            "left": true
         }
     },
     "list": {
