@@ -1,6 +1,7 @@
 import json
 
-confdir = '{{ .chezmoi.homeDir }}/.config'
+homeDir = '{{ .chezmoi.homeDir }}'
+confdir = f'{homeDir}/.config'
 
 configs = {
     'AwesomeWM': f'{confdir}/awesome',
@@ -13,7 +14,7 @@ configs = {
     'Dunst': f'{confdir}/dunst',
     'Fnott': f'{confdir}/fnott',
 
-    'Xresources': f'{home}/.Xresources',
+    'Xresources': f'{homeDir}/.Xresources',
 
     'Rofi': f'{confdir}/rofi',
     'Walker': f'{confdir}/walker',
@@ -23,9 +24,9 @@ configs = {
     'Alacritty': f'{confdir}/alacritty/alacritty.toml',
     'Kitty': f'{confdir}/kitty/kitty.conf',
 
-    'Bash RC': f'{home}/.bashrc',
-    'Bash Aliases': f'{home}/.bash_aliases',
-    'Bash Profile': f'{home}/.bash_profile',
+    'Bash RC': f'{homeDir}/.bashrc',
+    'Bash Aliases': f'{homeDir}/.bash_aliases',
+    'Bash Profile': f'{homeDir}/.bash_profile',
     'Fish': f'{confdir}/fish/config.fish',
     'Fish Variables': f'{confdir}/fish/fish_variables',
 
