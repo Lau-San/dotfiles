@@ -63,6 +63,11 @@
             "name": "config",
             "src": "python /home/laura/.config/walker/plugins/config.py",
             "placeholder": "Search configuration"
+        },
+        {
+            "name": "calc",
+            "src": "node ~/.config/walker/plugins/rink.cjs %TERM%",
+            "placeholder": "Write an expression"
         }
     ]
 }
