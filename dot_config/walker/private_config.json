@@ -18,9 +18,9 @@
     "list": {
         "always_show": true,
         "fixed_height": false,
-        "height": 700,
-        "margin_top": 10,
-        "max_entries": 50,
+        "height": 800,
+        "margin_top": 0,
+        "max_entries": 60,
         "scrollbar_policy": "automatic",
         "show_initial_entries": true,
         "width": 400
