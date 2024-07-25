@@ -30,11 +30,11 @@
 }
 
 #searchwrapper {
+    font-size: 20px;
 }
 
 #search,
 #typeahead {
-    font-size: 20px;
     outline: none;
     outline-width: 0px;
     box-shadow: none;
