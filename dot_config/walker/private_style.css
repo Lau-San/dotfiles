@@ -15,7 +15,6 @@
     font-family: Dosis;
     font-weight: 600;
     font-size: 18px;
-    letter-spacing: 1px;
     color: #a9b1d6;
 }
 
@@ -35,6 +34,7 @@
 
 #search,
 #typeahead {
+    font-size: 20px;
     outline: none;
     outline-width: 0px;
     box-shadow: none;
