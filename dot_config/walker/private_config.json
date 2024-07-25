@@ -4,7 +4,7 @@
         "icons": { "size": 38, "image_size": 150 },
         "orientation": "vertical",
         "ignore_exclusive": true,
-        "fullscreen": false,
+        "fullscreen": true,
         "horizontal": "center",
         "vertical": "start",
         "width": 700,
