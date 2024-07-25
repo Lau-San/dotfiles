@@ -23,7 +23,7 @@
         "height": 1000,
         "margin_top": 10,
         "max_entries": 0,
-        "scrollbar_policy": "automatic",
+        "scrollbar_policy": "never",
         "show_initial_entries": true,
         "width": 600
     },
