@@ -44,7 +44,11 @@ for k, v in configs.items():
         'label': k,
         'searchable': k.lower(),
         'exec': f'''chezmoi edit --apply {v} &&
-                        notify-send "Configuration applied"'''
+                        notify-send --app-name=Walker Config \
+                        "Configuration applied" \
+                        "Your new configuration has been applied and synced \
+                        with chezmoi"
+                '''
     })
 
 print(json.dumps(options))
