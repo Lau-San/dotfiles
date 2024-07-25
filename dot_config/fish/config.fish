@@ -24,6 +24,8 @@ alias cat='bat --theme base16'
 alias pacs='pacman -Ss'
 alias paci='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
+alias pacr='sudo pacman -R'
+alias pacq='sudo pacman -Q'
 
 # Yay
 
