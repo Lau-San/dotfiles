@@ -8,12 +8,11 @@
         "horizontal": "center",
         "vertical": "start",
         "width": 700,
-        "margins": {
-            "top": 100
-        },
+        "margins": {},
         "anchors": {
             "top": true,
-            "left": true
+            "left": true,
+            "bottom": true
         }
     },
     "list": {
