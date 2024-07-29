@@ -1,0 +1,35 @@
+{
+    "packages": {
+        "linux": {
+            "arch": {
+                "pacman": [
+                    "yay",
+                    "fish",
+                    "starship",
+                    "fastfetch",
+                    "neovim",
+                    "tmux",
+                    "bat",
+                    "btop",
+                    "github-cli",
+                    "sddm",
+                    "hyprland",
+                    "hyprcursor",
+                    "hyprlang",
+                    "hypridle",
+                    "hyprlock",
+                    "flameshot",
+                    "dolphin"
+                ],
+                "yay": [
+                    "eza",
+                    "hyprutils",
+                    "hyprpicker",
+                    "fnott-git",
+                    "walker",
+                    "brave-bin"
+                ]
+            }
+        }
+    }
+}

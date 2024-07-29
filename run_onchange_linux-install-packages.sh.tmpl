@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/env sh
+
+{{ if eq .chezmoi.osRelease.idLike "arch" -}}
+sudo pacman -Syu
+
+{{ range .packages.linux.arch.pacman -}}
+sudo pacman -S {{ . | quote }}
+{{ end -}}
+{{ range .packages.linux.arch.yay -}}
+yay -S {{ . | quote }}
+{{ end -}}
+
+{{ end -}}
+EOF
+{{ end -}}
