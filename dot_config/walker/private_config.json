@@ -9,11 +9,13 @@
         "vertical": "fill",
         "width": 600,
         "margins": {
-            "top": 0
+            "top": 0,
+            "bottom": 0
         },
         "anchors": {
             "top": true,
-            "left": true
+            "left": true,
+            "bottom": true
         }
     },
     "list": {
@@ -21,7 +23,7 @@
         "fixed_height": false,
         "height": 0,
         "margin_top": 10,
-        "max_entries": 0,
+        "max_entries": 14,
         "scrollbar_policy": "never",
         "show_initial_entries": true,
         "width": 600
