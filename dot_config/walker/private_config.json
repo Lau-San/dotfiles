@@ -13,14 +13,13 @@
         },
         "anchors": {
             "top": true,
-            "left": true,
-            "bottom": true
+            "left": true
         }
     },
     "list": {
         "always_show": true,
-        "fixed_height": true,
-        "height": 1000,
+        "fixed_height": false,
+        "height": 100,
         "margin_top": 10,
         "max_entries": 0,
         "scrollbar_policy": "never",
