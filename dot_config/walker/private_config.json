@@ -3,9 +3,9 @@
     "ui": {
         "icons": { "size": 38, "image_size": 150 },
         "orientation": "vertical",
-        "ignore_exclusive": false,
-        "fullscreen": false,
-        "horizontal": "center",
+        "ignore_exclusive": true,
+        "fullscreen": true,
+        "horizontal": "start",
         "vertical": "fill",
         "width": 600,
         "margins": {
@@ -19,7 +19,7 @@
     "list": {
         "always_show": true,
         "fixed_height": false,
-        "height": 100,
+        "height": 0,
         "margin_top": 10,
         "max_entries": 0,
         "scrollbar_policy": "never",
