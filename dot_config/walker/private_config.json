@@ -6,7 +6,7 @@
         "ignore_exclusive": false,
         "fullscreen": false,
         "horizontal": "center",
-        "vertical": "fill",
+        "vertical": "start",
         "width": 600,
         "margins": {
             "top": 0
