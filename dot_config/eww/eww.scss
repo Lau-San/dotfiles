@@ -89,6 +89,7 @@ tooltip {
 .pow_logout {
     font-family: 'Font Awesome 6 Free';
     color: $foreground;
+    font-weight: 700;
 }
 
 // ==============
@@ -105,6 +106,7 @@ tooltip {
 
 .ws_btn {
     color: rgba($blue, 0.1);
+    font-weight: 500;
 }
 
 .ws_btn.ws_occupied {
