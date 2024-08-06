@@ -233,7 +233,7 @@
     (box  :orientation "h"
           :halign {side == "left" ? "start" : side == "right" ? "end" : "center"}
           :valign "center"
-          :vexpad true
+          :vexpand true
           :spacing 10
           :space-evenly false
       (children)))
@@ -260,7 +260,6 @@
 (defwidget bar [monitor]
     (centerbox  :orientation "h"
           :halign "fill"
-          :space-evenly true
           :vexpand false
           :hexpand false
           :class "eww_bar"

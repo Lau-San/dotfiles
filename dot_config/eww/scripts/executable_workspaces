@@ -1,80 +1,80 @@
 #! /bin/env bash
 
-SCRIPTS=$HOME/
+monitor=$1
 
-workspaces() {
-    if [[ $1 -eq 0 ]]; then
-        # Primary monitor
-        w1=1
-        w2=2
-        w3=3
-        w4=4
-        w5=5
-        w6=6
-        w7=7
-        w8=8
-        w9=9
-        w10=10
-    elif [[ $1 -eq 1 ]]; then
-        # Secondary monitor
-        w1=11
-        w2=12
-        w3=13
-        w4=14
-        w5=15
-        w6=16
-        w7=17
-        w8=18
-        w9=19
-        w10=20
-    fi
+declare -A workspaces
 
-    # w1=1
-    # w2=2
-    # w3=3
-    # w4=4
-    # w5=5
-    # w6=6
-    # w7=7
-    # w8=8
-    # w9=9
-    # w10=10
+workspaces[1]=1
+workspaces[2]=2
+workspaces[3]=3
+workspaces[4]=4
+workspaces[5]=5
+workspaces[6]=6
+workspaces[7]=7
+workspaces[8]=8
+workspaces[9]=9
+workspaces[10]=10
 
-    declare -A o
+if [[ $monitor -gt 0 ]]; then
+    for key in {1..10}; do
+        echo ${workspaces[$key]}
+        workspaces[$key]=$((${workspaces[$key]} + 10))
+    done
+fi
 
-    o[$w1]=$(hyprctl workspaces -j | grep "\"id\": ${w1},")
-    o[$w2]=$(hyprctl workspaces -j | grep "\"id\": ${w2},")
-    o[$w3]=$(hyprctl workspaces -j | grep "\"id\": ${w3},")
-    o[$w4]=$(hyprctl workspaces -j | grep "\"id\": ${w4},")
-    o[$w5]=$(hyprctl workspaces -j | grep "\"id\": ${w5},")
-    o[$w6]=$(hyprctl workspaces -j | grep "\"id\": ${w6},")
-    o[$w7]=$(hyprctl workspaces -j | grep "\"id\": ${w7},")
-    o[$w8]=$(hyprctl workspaces -j | grep "\"id\": ${w8},")
-    o[$w9]=$(hyprctl workspaces -j | grep "\"id\": ${w9},")
-    o[$w10]=$(hyprctl workspaces -j | grep "\"id\": ${w10},")
-
-    fws=$(hyprctl activeworkspace | grep "workspace ID" | awk '{ print $3 }')
-
-    wsbtn() {
-        char=""
-        if [[ $1 -eq $fws ]]; then
-            f=" focused"
-            char=""
-        fi
-        if [[ -n "${o[$1]}" ]]; then
-            o=" ws_occupied"
-        fi
-        echo "(button :class \"ws_btn$f$o\" :halign \"center\" :valign \"center\" :onclick \"hyprctl dispatch workspace $1\" \"${char}\")"
-    }
-
-    echo "(box :spacing 5 :orientation \"h\" :halign \"center\" :valign \"center\" :vexpand true :space-evenly true $(wsbtn $w1) $(wsbtn $w2) $(wsbtn $w3) $(wsbtn $w4) $(wsbtn $w5) $(wsbtn $w6) $(wsbtn $w7) $(wsbtn $w8) $(wsbtn $w9) $(wsbtn $w10))"
+count_windows() {
+    ws=$1
+    cnt=$(hyprctl workspaces | grep windows | bat -r "$ws" | awk '{print $2}')
+    echo "$cnt"
 }
 
-workspaces $1
+is_occupied() {
+    ws=$1
+    cnt=$(count_windows "$ws")
+    [[ $cnt -gt 0 ]] || return 1
+}
+
+is_focused() {
+    ws=$1
+    foc=$(hyprctl activeworkspace | bat -r 1 | awk '{print $3}')
+    [[ $foc -eq $ws ]] || return 1
+}
+
+create_ws_btn_widget() {
+    ws=$1
+
+    char=""
+    class="ws_btn"
+
+    if is_occupied "$ws"; then
+        class="$class occupied"
+    fi
+
+    if is_focused "$ws"; then
+        char=""
+        class="$class focused"
+    fi
+
+    echo "(button :class \"$class\" :halign \"center\" :valign \"center\" :onclick \"hyprctl dispatch workspace $ws\" \"${char}\")"
+}
+
+create_ws_btn_list() {
+    ws_btn_list=""
+    for key in {1..10}; do
+        ws_btn_list="$ws_btn_list $(create_ws_btn_widget "${workspaces[$key]}")"
+    done
+    echo "$ws_btn_list"
+}
+
+create_workspaces_widget() {
+    echo "(box :spacing 5 :orientation \"h\" :halign \"center\" :valign \"center\" :vexpand true :space-evenly true $(create_ws_btn_list))"
+}
+
+create_workspaces_widget "$monitor"
 socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do
     case $line in
     workspacev2* | openwindow* | closewindow* | movewindow* | activemon* | activewindowv2* | createworkspacev2* | destroyworkspacev2* | focusedmon)
-        workspaces $1
+        create_workspaces_widget "$monitor"
         ;;
     esac
 done
