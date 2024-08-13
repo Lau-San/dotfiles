@@ -167,3 +167,4 @@ set -g theme_newline_prompt ' ❯ '
 
 fastfetch
 starship init fish | source
+zoxide --cmd cd init fish | source
