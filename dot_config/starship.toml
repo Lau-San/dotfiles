@@ -1,5 +1,5 @@
 scan_timeout = 50
-command_timeout = 1500
+command_timeout = 3000
 add_newline = true
 
 format = """ $shell$directory($git_branch )\
@@ -19,7 +19,7 @@ fish_indicator = ""
 [character]
 success_symbol = "[](green)"
 error_symbol = "[](red)"
-vicmd_symbol = "[](blue)"
+# vicmd_symbol = "[](blue)"
 
 [directory]
 format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
@@ -73,7 +73,7 @@ symbol = " "
 format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
 style = "blue"
 symbol = ".NET"
-version_format ="v${major}.${minor}"
+version_format = "v${major}.${minor}"
 
 [lua]
 #format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
