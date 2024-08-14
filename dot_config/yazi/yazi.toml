@@ -1,0 +1,27 @@
+# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[manager]
+show_hidden = true
+
+[opener]
+edit = [{ run = 'nvim "$@"', desc = "Edit with Neovim", block = true }]
+extract = [{ run = 'ouch d -y "$@"', desc = "Extract here with Ouch" }]
+
+[plugin]
+prepend_previewers = [
+    # Archive previewer
+    { mime = "application/*zip", run = "ouch" },
+    { mime = "application/x-tar", run = "ouch" },
+    { mime = "application/x-bzip2", run = "ouch" },
+    { mime = "application/x-7z-compressed", run = "ouch" },
+    { mime = "application/x-rar", run = "ouch" },
+    { mime = "application/x-xz", run = "ouch" },
+
+    # Markdown
+    { name = "*.md", run = "glow" },
+
+    # Torrents
+    { mime = "application/x-bittorrent", run = "torrent-preview" },
+]
