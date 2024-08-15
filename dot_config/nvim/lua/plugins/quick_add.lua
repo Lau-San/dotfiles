@@ -46,7 +46,20 @@ return {
                 ['core.defaults'] = {},
                 ['core.concealer'] = {
                     config = {
-                        icon_preset = 'diamond'
+                        icon_preset = 'diamond',
+                        icons = {
+                            todo = {
+                                uncertain = {
+                                    icon = ''
+                                },
+                                pending = {
+                                    icon = '󰔟'
+                                },
+                                urgent = {
+                                    icon = '󱈸'
+                                }
+                            }
+                        }
                     }
                 },
                 ['core.dirman'] = {
