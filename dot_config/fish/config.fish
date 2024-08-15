@@ -174,6 +174,6 @@ set -g theme_project_dir_length 4
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt ' ❯ '
 
-fastfetch
+# fastfetch
 starship init fish | source
 zoxide init --cmd cd fish | source
