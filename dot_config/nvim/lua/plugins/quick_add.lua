@@ -37,7 +37,10 @@ return {
         'nvim-neorg/neorg',
         lazy = false,
         version = "*",
-        config = true,
+        build = ':Neorg sync-parsers',
+        dependencies = {
+            {'nvim-lua/plenary.nvim'}
+        },
         opts = {
             load = {
                 ['core.defaults'] = {},
