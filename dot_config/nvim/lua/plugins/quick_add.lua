@@ -8,7 +8,6 @@ return {
         end
     },
     { 'elkowar/yuck.vim' },
-    { 'imsnif/kdl.vim' },
     { 'eraserhd/parinfer-rust', build = 'cargo build --release' },
     { 'editorconfig/editorconfig-vim' },
     { 'wakatime/vim-wakatime', lazy = false },
@@ -35,7 +34,26 @@ return {
         }
     },
     {
-        'vimwiki/vimwiki',
-        lazy = false
+        'nvim-neorg/neorg',
+        lazy = false,
+        version = "*",
+        config = true,
+        opts = {
+            load = {
+                ['core.defaults'] = {},
+                ['core.concealer'] = {
+                    config = {
+                        icon_preset = 'diamond'
+                    }
+                },
+                ['core.dirman'] = {
+                    config = {
+                        workspaces = {
+                            studies = '~/Documents/studies'
+                        }
+                    }
+                }
+            }
+        }
     }
 }
