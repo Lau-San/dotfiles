@@ -174,21 +174,29 @@ set -g theme_project_dir_length 4
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt ' ❯ '
 
-set -U fish_color_autosuggestions white --dim
-set -U fish_color_cancel normal
-set -U fish_color_command brcyan --bold
-set -U fish_color_comment blue --dim
-set -U fish_color_error red
-set -U fish_color_escape blue
-set -U fish_color_keyword brgreen
-set -U fish_color_match normal
-set -U fish_color_operator green
-set -U fish_color_option brblue
-set -U fish_color_param rmagenta
+set -U fish_color_command cyan --bold
+set -U fish_color_keyword magenta
 set -U fish_color_quote green
 set -U fish_color_redirection yellow
-set -U fish_color_selection green --reverse
-set -U fish_color_status red
+set -U fish_color_end magenta
+set -U fish_color_error red
+set -U fish_color_param normal --bold --underline
+set -U fish_color_valid_path yellow
+set -U fish_color_option blue
+set -U fish_color_comment blue --dim
+set -U fish_color_selection blue --bold --reverse
+set -U fish_color_operator green --bold
+set -U fish_color_escape blue
+set -U fish_color_autosuggestion normal --dim
+
+set -U fish_pager_color_progress yellow --bold --reverse
+set -U fish_pager_color_prefix blue --bold --underline
+set -U fish_pager_color_completion blue -dim
+set -U fish_pager_color_description magenta --italics
+set -U fish_pager_color_selected_background --background=blue
+set -U fish_pager_color_selected_prefix black --bold
+set -U fish_pager_color_selected_completion black
+set -U fish_pager_color_selected_description black --italics
 
 # fastfetch
 starship init fish | source
