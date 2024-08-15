@@ -41,7 +41,14 @@ return {
         opts = {
             load = {
                 ['core.defaults'] = {},
-                ['core.concealer'] = {}
+                ['core.concealer'] = {},
+                ['core.dirman'] = {
+                    config = {
+                        workspaces = {
+                            studies = '~/Documents/studies'
+                        }
+                    }
+                }
             }
         }
     }
