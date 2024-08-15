@@ -174,6 +174,22 @@ set -g theme_project_dir_length 4
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt ' ❯ '
 
+set -U fish_color_autosuggestions white --dim
+set -U fish_color_cancel normal
+set -U fish_color_command brcyan --bold
+set -U fish_color_comment blue --dim
+set -U fish_color_error red
+set -U fish_color_escape blue
+set -U fish_color_keyword brgreen
+set -U fish_color_match normal
+set -U fish_color_operator green
+set -U fish_color_option brblue
+set -U fish_color_param rmagenta
+set -U fish_color_quote green
+set -U fish_color_redirection yellow
+set -U fish_color_selection green --reverse
+set -U fish_color_status red
+
 # fastfetch
 starship init fish | source
 zoxide init --cmd cd fish | source
