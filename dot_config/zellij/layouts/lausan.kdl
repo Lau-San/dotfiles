@@ -1,4 +1,5 @@
 layout {
+    cwd "~/Projects/development/web/lausan"
     default_tab_template {
         pane size=2 borderless=true {
             plugin location="file:~/.config/zellij/bin/zjstatus.wasm" {
@@ -62,7 +63,7 @@ layout {
         }
     }
 
-    tab name="code" cwd="~/Projects/development/web/lausan" split_direction="vertical" focus=true {
+    tab name="code" split_direction="vertical" focus=true {
         pane command="nvim" size="60%"
         pane stacked=true {
             pane command="npm" {
