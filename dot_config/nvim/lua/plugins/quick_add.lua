@@ -32,28 +32,5 @@ return {
                 }
             }
         }
-    },
-    {
-        'nvim-neorg/neorg',
-        lazy = false,
-        version = "*",
-        config = true,
-        opts = {
-            load = {
-                ['core.defaults'] = {},
-                ['core.concealer'] = {
-                    config = {
-                        icon_preset = 'diamond'
-                    }
-                },
-                ['core.dirman'] = {
-                    config = {
-                        workspaces = {
-                            studies = '~/Documents/studies'
-                        }
-                    }
-                }
-            }
-        }
     }
 }
