@@ -2,77 +2,78 @@ binds {
     allow_workspace_cycles = false
 }
 
-# SUPER         - Window Navigation + moving floating windows + default apps and prompts
+# SUPER         - Window Navigation + moving floating windows + default apps and prompts, on the fly config changes
 # SUPER CTRL    - Window + Layout control + Hyprland
 # SUPER SHIFT   - Workspace navigation
 
 # Hyprland/Eww
-bind = SUPER CTRL, Q, exit,
-bind = SUPER CTRL, R, exec, hyprctl reload
-bind = SUPER CTRL, E, exec, killall eww; eww daemon && eww open bar1 && eww open bar2
-bind = SUPER CTRL, W, exec, killall walker; walker --gapplication-service & notify-send "Restarted Walker"
-bind = SUPER, G, exec, $hypr/scripts/gamemode
+bind = SUPER CTRL   , Q         , exit,
+bind = SUPER CTRL   , R         , exec, hyprctl reload
+bind = SUPER CTRL   , E         , exec, killall eww; eww daemon && eww open bar1 && eww open bar2
+bind = SUPER CTRL   , W         , exec, killall walker; walker --gapplication-service & notify-send "Restarted Walker"
+bind = SUPER        , G         , exec, $hypr/scripts/gamemode
 
 # Apps
-bind = SUPER, Return, exec, $terminal
-bind = SUPER, F, exec, $fileManager
-bind = SUPER, B, exec, $browser
+bind = SUPER        , Return    , exec, $terminal
+bind = SUPER        , F         , exec, $fileManager
+bind = SUPER        , B         , exec, $browser
 
 # Utilities
-bind = SUPER ALT, S, exec, flameshot gui
-bind = SUPER ALT, C, exec, $hypr/scripts/colorpicker
+bind = SUPER ALT    , S         , exec, flameshot gui
+bind = SUPER ALT    , C         , exec, $hypr/scripts/colorpicker
 
 # Prompts
-bind = SUPER, P, exec, $menu
-bind = SUPER, R, exec, walker -m runner
-bind = SUPER, C, exec, walker -m config
-bind = SUPER, E, exec, walker -m emojis
+bind = SUPER        , P         , exec, $menu
+bind = SUPER        , R         , exec, walker -m runner
+bind = SUPER        , C         , exec, walker -m config
+bind = SUPER        , E         , exec, walker -m emojis
+bind = SUPER        , Comma     , exec, walker -m projects
 
 # Windows
-bind = SUPER, J, movefocus, d
-bind = SUPER, K, movefocus, u
-bind = SUPER, H, movefocus, l
-bind = SUPER, L, movefocus, r
-bind = SUPER CTRL, J, movewindow, d
-bind = SUPER CTRL, K, movewindow, u
-bind = SUPER CTRL, H, movewindow, l
-bind = SUPER CTRL, L, movewindow, r
-bind = SUPER CTRL, F, togglefloating,
+bind = SUPER        , J         , movefocus, d
+bind = SUPER        , K         , movefocus, u
+bind = SUPER        , H         , movefocus, l
+bind = SUPER        , L         , movefocus, r
+bind = SUPER CTRL   , J         , movewindow, d
+bind = SUPER CTRL   , K         , movewindow, u
+bind = SUPER CTRL   , H         , movewindow, l
+bind = SUPER CTRL   , L         , movewindow, r
+bind = SUPER CTRL   , F         , togglefloating,
 
-bind = SUPER CTRL, C, killactive,
+bind = SUPER CTRL   , C         , killactive,
 
-bind = SUPER, U, split-workspace, r-1
-bind = SUPER, I, split-workspace, r+1
+bind = SUPER        , U         , split-workspace, r-1
+bind = SUPER        , I         , split-workspace, r+1
 
 # Switch workspaces with mainMod + [0-9]
-bind = SUPER, 1, split-workspace, 1
-bind = SUPER, 2, split-workspace, 2
-bind = SUPER, 3, split-workspace, 3
-bind = SUPER, 4, split-workspace, 4
-bind = SUPER, 5, split-workspace, 5
-bind = SUPER, 6, split-workspace, 6
-bind = SUPER, 7, split-workspace, 7
-bind = SUPER, 8, split-workspace, 8
-bind = SUPER, 9, split-workspace, 9
-bind = SUPER, 0, split-workspace, 10
+bind = SUPER        , 1         , split-workspace, 1
+bind = SUPER        , 2         , split-workspace, 2
+bind = SUPER        , 3         , split-workspace, 3
+bind = SUPER        , 4         , split-workspace, 4
+bind = SUPER        , 5         , split-workspace, 5
+bind = SUPER        , 6         , split-workspace, 6
+bind = SUPER        , 7         , split-workspace, 7
+bind = SUPER        , 8         , split-workspace, 8
+bind = SUPER        , 9         , split-workspace, 9
+bind = SUPER        , 0         , split-workspace, 10
 
 # Move active window to a workspace with mainMod + SHIFT + [0-9]
-bind = SUPER CTRL, 1, split-movetoworkspace, 1
-bind = SUPER CTRL, 2, split-movetoworkspace, 2
-bind = SUPER CTRL, 3, split-movetoworkspace, 3
-bind = SUPER CTRL, 4, split-movetoworkspace, 4
-bind = SUPER CTRL, 5, split-movetoworkspace, 5
-bind = SUPER CTRL, 6, split-movetoworkspace, 6
-bind = SUPER CTRL, 7, split-movetoworkspace, 7
-bind = SUPER CTRL, 8, split-movetoworkspace, 8
-bind = SUPER CTRL, 9, split-movetoworkspace, 9
-bind = SUPER CTRL, 0, split-movetoworkspace, 10
+bind = SUPER CTRL   , 1         , split-movetoworkspace, 1
+bind = SUPER CTRL   , 2         , split-movetoworkspace, 2
+bind = SUPER CTRL   , 3         , split-movetoworkspace, 3
+bind = SUPER CTRL   , 4         , split-movetoworkspace, 4
+bind = SUPER CTRL   , 5         , split-movetoworkspace, 5
+bind = SUPER CTRL   , 6         , split-movetoworkspace, 6
+bind = SUPER CTRL   , 7         , split-movetoworkspace, 7
+bind = SUPER CTRL   , 8         , split-movetoworkspace, 8
+bind = SUPER CTRL   , 9         , split-movetoworkspace, 9
+bind = SUPER CTRL   , 0         , split-movetoworkspace, 10
 
 # Example special workspace (scratchpad)
-bind = SUPER, code:90, togglespecialworkspace, notion
-bind = SUPER, code:91, togglespecialworkspace, calendar
+bind = SUPER        , code:90   , togglespecialworkspace, notion
+bind = SUPER        , code:91   , togglespecialworkspace, calendar
 # bind = SUPER CTRL, code:90, movetoworkspace, special:calendar
 
 # Move/resize windows with mainMod + LMB/RMB and dragging
-bindm = SUPER, mouse:272, movewindow
-bindm = SUPER, mouse:273, resizewindow
+bindm = SUPER       , mouse:272 , movewindow
+bindm = SUPER       , mouse:273 , resizewindow
