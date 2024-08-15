@@ -68,6 +68,11 @@
             "name": "config",
             "src": "python /home/laura/.config/walker/plugins/config.py",
             "placeholder": "Search configuration"
+        },
+        {
+            "name": "projects",
+            "src": "python /home/laura/.config/walker/plugins/projects.py",
+            "placeholder": "Search projects"
         }
     ]
 }
