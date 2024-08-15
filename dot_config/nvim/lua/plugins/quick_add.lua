@@ -8,6 +8,7 @@ return {
         end
     },
     { 'elkowar/yuck.vim' },
+    { 'imsnif/kdl.vim' },
     { 'eraserhd/parinfer-rust', build = 'cargo build --release' },
     { 'editorconfig/editorconfig-vim' },
     { 'wakatime/vim-wakatime', lazy = false },
