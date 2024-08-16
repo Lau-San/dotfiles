@@ -21,7 +21,7 @@ autocmd({ "FileType" }, {
 })
 
  autocmd({ 'Filetype' }, {
-     pattern = { 'norg' },
+     pattern = { 'md' },
      callback = function()
         vim.opt_local.breakindentopt = {'shift:0'}
         vim.opt_local.textwidth = 80
