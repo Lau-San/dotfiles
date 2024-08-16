@@ -1,20 +1,4 @@
 return {
-    {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            local colorizer = require 'colorizer'
-            colorizer.setup {
-                '!norg'
-            }
-        end
-    },
-    {
-        'hrsh7th/nvim-cmp',
-        dependencies = { 'jackieaskins/cmp-emmet' },
-        opts = function(_, opts)
-            table.insert(opts.sources, { name = 'emmet' })
-        end
-    },
     { 'elkowar/yuck.vim' },
     { 'eraserhd/parinfer-rust', build = 'cargo build --release' },
     { 'editorconfig/editorconfig-vim' },
