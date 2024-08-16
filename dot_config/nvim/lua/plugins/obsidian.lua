@@ -11,7 +11,8 @@ return {
                     name = 'personal',
                     path = '~/Documents/personal'
                 }
-            }
+            },
+            new_notes_location = 'current_dir'
         }
     }
 }
