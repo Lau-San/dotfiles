@@ -19,3 +19,10 @@ autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+
+autocmd({ 'Filetype' }, {
+    pattern = { 'norg' },
+    callback = function()
+        vim.l.colorcolumn = 80
+    end
+})
