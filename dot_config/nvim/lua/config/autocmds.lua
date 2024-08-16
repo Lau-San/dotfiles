@@ -19,3 +19,10 @@ autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+
+ autocmd({ 'Filetype' }, {
+     pattern = { 'norg' },
+     callback = function()
+        vim.opt_local.breakindentopt = {'shift:0'}
+     end
+ })
