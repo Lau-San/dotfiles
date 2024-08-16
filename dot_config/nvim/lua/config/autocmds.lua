@@ -25,5 +25,6 @@ autocmd({ "FileType" }, {
      callback = function()
         vim.opt_local.breakindentopt = {'shift:0'}
         vim.opt_local.textwidth = 80
+        vim.opt_local.spell = false
      end
  })
