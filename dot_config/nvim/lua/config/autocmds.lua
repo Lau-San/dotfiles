@@ -21,7 +21,7 @@ autocmd({ "FileType" }, {
 })
 
  autocmd({ 'Filetype' }, {
-     pattern = { 'md' },
+     pattern = { 'markdown' },
      callback = function()
         vim.opt_local.breakindentopt = {'shift:0'}
         vim.opt_local.textwidth = 80
