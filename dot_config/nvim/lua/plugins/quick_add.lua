@@ -1,5 +1,10 @@
 return {
-    { 'NvChad/nvim-colorizer.lua' },
+    {
+        'NvChad/nvim-colorizer.lua',
+        opts = {
+            '!norg';
+        }
+    },
     {
         'hrsh7th/nvim-cmp',
         dependencies = { 'jackieaskins/cmp-emmet' },
