@@ -180,7 +180,7 @@ set -U fish_color_quote green
 set -U fish_color_redirection yellow
 set -U fish_color_end magenta
 set -U fish_color_error red
-set -U fish_color_param normal --bold --underline
+set -U fish_color_param normal --bold
 set -U fish_color_valid_path yellow
 set -U fish_color_option blue
 set -U fish_color_comment blue --dim
