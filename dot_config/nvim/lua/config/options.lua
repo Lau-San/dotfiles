@@ -13,7 +13,6 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.background = 'dark'
 -- opt.colorcolumn = '80'
-opt.textwidth = 80
 
 vim.filetype.add({
     pattern = {
