@@ -52,6 +52,7 @@ return {
         opts = {
             load = {
                 ['core.defaults'] = {},
+                ['core.export'] = {},
                 ['core.concealer'] = {
                     config = {
                         icon_preset = 'diamond',
