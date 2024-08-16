@@ -5,7 +5,7 @@ return {
             local colorizer = require 'colorizer'
             colorizer.setup({
                 '*',
-                '!norg'
+                '!lua'
             })
         end
     },
