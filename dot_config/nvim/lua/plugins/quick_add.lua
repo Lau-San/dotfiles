@@ -1,9 +1,11 @@
 return {
     {
         'NvChad/nvim-colorizer.lua',
-        opts = {
-            '!norg';
-        }
+        opts = function()
+            require 'colorizer'.setup({
+                '!norg'
+            })
+        end
     },
     {
         'hrsh7th/nvim-cmp',
