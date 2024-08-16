@@ -25,7 +25,5 @@ autocmd({ "FileType" }, {
      callback = function()
         vim.opt_local.breakindentopt = {'shift:0'}
         vim.opt_local.textwidth = 80
-        local colorizer = require 'colorizer'
-        colorizer.detach_from_buffer()
      end
  })
