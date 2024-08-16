@@ -1,8 +1,9 @@
 return {
     {
         'NvChad/nvim-colorizer.lua',
-        opts = function()
-            require 'colorizer'.setup({
+        config = function()
+            local colorizer = require 'colorizer'
+            colorizer.setup({
                 '!norg'
             })
         end
