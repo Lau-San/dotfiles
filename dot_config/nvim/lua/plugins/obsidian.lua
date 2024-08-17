@@ -12,7 +12,17 @@ return {
                     path = '~/Documents/personal'
                 }
             },
-            new_notes_location = 'current_dir'
+            new_notes_location = 'current_dir',
+            ui = {
+                checkboxes = {
+                    [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                    ["x"] = { char = "", hl_group = "ObsidianDone" },
+                    [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+                    ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
+                    ["-"] = { char = "", hl_group = "ObsidianTilde" },
+                    ["!"] = { char = "", hl_group = "ObsidianImportant" },
+                }
+            }
         }
     }
 }
