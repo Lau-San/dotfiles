@@ -2,15 +2,15 @@ return {
     {
         'epwalsh/obsidian.nvim',
         version = '*',
-        lazy = true,
-        ft = 'markdown',
+        lazy = false,
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
+            disable_frontmatter = true,
             workspaces = {
                 {
                     name = 'personal',
                     path = '~/Documents/personal',
-                    notes_subdir = 'notes'
+                    notes_subdir = 'inbox'
                 }
             },
             ui = {
@@ -22,7 +22,21 @@ return {
                     ["-"] = { char = "", hl_group = "ObsidianTilde" },
                     ["!"] = { char = "", hl_group = "ObsidianImportant" },
                 }
+            },
+            templates = {
+                folder = 'templates',
+                date_format = '%Y-%m-%d',
+                time_format = '%H:%M'
             }
-        }
+        },
+        keys = {
+            { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
+            { '<leader>on', ':ObsidianNew<cr>', desc = 'create new note' },
+            { '<leader>ot', ':ObsidianTemplate note<cr>', desc = 'apply a template' },
+            { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
+            { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
+            { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
+            { '<leader>od', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' }
+        },
     }
 }

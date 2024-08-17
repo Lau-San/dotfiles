@@ -70,6 +70,11 @@
             "placeholder": "Search configuration"
         },
         {
+            "name": "obsidian",
+            "src": "python /home/laura/.config/walker/plugins/obsidian.py %TERM%",
+            "placeholder": "Obsidian actions"
+        },
+        {
             "name": "projects",
             "src": "python /home/laura/.config/walker/plugins/projects.py",
             "placeholder": "Search projects"
