@@ -9,10 +9,10 @@ return {
             workspaces = {
                 {
                     name = 'personal',
-                    path = '~/Documents/personal'
+                    path = '~/Documents/personal',
+                    notes_subdir = 'notes'
                 }
             },
-            new_notes_location = 'current_dir',
             ui = {
                 checkboxes = {
                     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
