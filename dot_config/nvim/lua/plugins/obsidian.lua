@@ -26,7 +26,15 @@ return {
             templates = {
                 folder = 'templates',
                 date_format = '%Y-%m-%d',
-                time_format = '%H:%M'
+                time_format = '%H:%M',
+                substitutions = {}
+            },
+            daily_notes = {
+                folder = 'journal',
+                date_format = '%Y-%m-%d',
+                alias_format = '%B %-d, %Y',
+                default_tags = {'journal'},
+                template = 'journal-entry'
             }
         },
         keys = {
