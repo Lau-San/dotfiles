@@ -4,6 +4,7 @@ keybinds clear-defaults=true {
 
     // ---- GLOABAL ---- //
     shared {
+        bind "Ctrl q" { Quit; }
         bind "Alt u" { GoToPreviousTab; }
         bind "Alt i" { GoToNextTab; }
         bind "Alt h" { MoveFocus "Left"; }
@@ -68,7 +69,6 @@ keybinds clear-defaults=true {
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
-        bind "Ctrl q" { Quit; }
         bind "Ctrl b" {
             LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
                 floating true
