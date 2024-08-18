@@ -4,4 +4,5 @@ return {
     { 'editorconfig/editorconfig-vim' },
     { 'wakatime/vim-wakatime', lazy = false },
     { 'jasonccox/vim-wayland-clipboard' },
+    { 'preservim/vim-markdown' }
 }

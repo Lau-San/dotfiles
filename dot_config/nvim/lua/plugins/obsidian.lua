@@ -27,7 +27,11 @@ return {
                 folder = 'templates',
                 date_format = '%Y-%m-%d',
                 time_format = '%H:%M',
-                substitutions = {}
+                substitutions = {
+                    date_pretty = function()
+                        return os.date('%A %B %-d, %Y')
+                    end
+                }
             },
             daily_notes = {
                 folder = 'journal',
