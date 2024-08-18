@@ -64,12 +64,14 @@ layout {
     }
 
     tab name="code" split_direction="vertical" focus=true {
-        pane command="nvim" size="60%"
+        pane command="nvim" size="60%" name="Code"
         pane stacked=true {
             pane command="npm" {
+                name "Main server"
                 args "run" "dev"
             }
             pane command="npm" expanded=true {
+                name "Storybook"
                 args "run" "storybook"
             }
             pane
