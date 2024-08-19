@@ -3,13 +3,20 @@ import json
 
 text = ' '.join(sys.argv[1:])
 
+options = []
+
+if text:
+    options.append({
+        'label': f'Create note: {text}',
+        'searchable': text.lower(),
+        'exec': f'kitty on "{text}"'
+    })
+
 actions = {
-    f'Create note: {text}': f'kitty on "{text}"',
     'Open personal vault': 'kitty oo',
     'Review notes': 'kitty oor'
 }
 
-options = []
 for k, v in actions.items():
     options.append({
         'label': k,

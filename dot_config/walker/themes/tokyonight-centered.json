@@ -13,7 +13,7 @@
             "box": {
                 "orientation": "vertical",
                 "h_align": "center",
-                "v_align": "center",
+                "v_align": "start",
                 "spacing": 10,
                 "width": 600,
                 "margins": {
@@ -32,12 +32,16 @@
                 },
                 "scroll": {
                     "overlay_scrolling": false,
-                    "v_align": "fill",
-                    "h_expand": true,
+                    "v_align": "start",
+                    "v_expand": true,
+                    "h_expand": false,
                     "h_scrollbar_policy": "external",
                     "v_scrollbar_policy": "never",
                     "list": {
                         "width": 600,
+                        "min_height": 300,
+                        "max_height": 300,
+                        "height": 300,
                         "always_show": true,
                         "item": {
                             "spacing": 18,

@@ -20,16 +20,17 @@ bind = SUPER        , B         , exec, $browser
 
 # Utilities
 bind = SUPER ALT    , S         , exec, flameshot gui
-bind = SUPER ALT    , C         , exec, $hypr/scripts/colorpicker
+bind = SUPER ALT    , P         , exec, $hypr/scripts/colorpicker
+bind = SUPER ALT    , C         , exec, walker -n --theme=tokyonight-centered -m calc
 
 # Prompts
 bind = SUPER        , P         , exec, $menu
 bind = SUPER        , R         , exec, walker -m runner
 bind = SUPER        , C         , exec, walker -m config
-bind = SUPER        , E         , exec, walker -m emojis
-bind = SUPER        , O         , exec, walker -m obsidian
-bind = SUPER        , T         , exec, walker --theme=tokyonight-centered -m tasks
-bind = SUPER        , Comma     , exec, walker -m projects
+bind = SUPER        , E         , exec, walker -n --theme=tokyonight-centered -m emojis
+bind = SUPER        , O         , exec, walker -n --theme=tokyonight-centered -m obsidian
+bind = SUPER        , T         , exec, walker -n --theme=tokyonight-centered -m tasks
+bind = SUPER        , Comma     , exec, walker -n --theme=tokyonight-centered -m projects
 
 # Windows
 bind = SUPER        , J         , movefocus, d

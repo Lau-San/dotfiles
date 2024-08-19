@@ -14,7 +14,7 @@ alias h='history'
 
 alias tree='tree --dirsfirst -F'
 alias mkdir='mkdir -p -v'
-alias rm='rm -rI'
+alias rm='rm -r'
 alias grep='grep --color=auto'
 alias ls='exa -al --color=always --icons --group-directories-first'
 alias cat='bat --theme base16'
@@ -29,10 +29,10 @@ alias ttn='taskwarrior-tui -r next'
 # Pacman
 
 alias pacs='pacman -Ss'
+alias pacq='pacman -Q'
 alias paci='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 alias pacr='sudo pacman -R'
-alias pacq='sudo pacman -Q'
 
 # Yay
 

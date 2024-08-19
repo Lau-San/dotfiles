@@ -133,7 +133,8 @@
         {
             "name": "obsidian",
             "src": "python /home/laura/.config/walker/plugins/obsidian.py %TERM%",
-            "placeholder": "Obsidian actions"
+            "placeholder": "Obsidian actions",
+            "keep_sort": true
         },
         {
             "name": "projects",
@@ -142,8 +143,9 @@
         },
         {
             "name": "tasks",
-            "src": "python /home/laura/.config/walker/plugins/tasks.py",
-            "placeholder": "Create and see your tasks"
+            "src": "python /home/laura/.config/walker/plugins/tasks.py %TERM%",
+            "placeholder": "Create and see your tasks",
+            "keep_sort": true
         }
     ]
 }
