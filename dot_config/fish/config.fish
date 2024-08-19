@@ -205,5 +205,6 @@ set -U fish_pager_color_selected_completion black
 set -U fish_pager_color_selected_description black --italics
 
 # fastfetch
-starship init fish | source
 zoxide init --cmd cd fish | source
+pyenv init - | source
+starship init fish | source
