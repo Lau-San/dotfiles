@@ -42,7 +42,7 @@ report.next.filter=status:pending -WAITING +next limit:page
 report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.ready.labels=ID,D,Project,Tag,Description,Due,P,Urg
 report.ready.filter=+READY -new
-report.ready.sort=project+/,start-,urgency-
+report.ready.sort=start-,urgency-
 
 report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
@@ -72,9 +72,8 @@ color.summary.background=on black
 color.summary.bar=on blue
 
 # Taskwarrior TUI
-# uda.taskwarrior-tui.selection.reverse=yes
-uda.taskwarrior-tui.task-report.show-info=false
-uda.taskwarrior-tui.style.report.selection=black on cyan
-uda.taskwarrior-tui.style.report.scrollbar.area=black
-uda.taskwarrior-tui.style.report.scrollbar=white
-uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=false
+# uda.taskwarrior-tui.task-report.show-info=false
+# uda.taskwarrior-tui.style.report.selection=black on cyan
+# uda.taskwarrior-tui.style.report.scrollbar.area=black
+# uda.taskwarrior-tui.style.report.scrollbar=white
+# uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=false
