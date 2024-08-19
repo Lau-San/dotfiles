@@ -38,7 +38,7 @@
                     "v_scrollbar_policy": "never",
                     "list": {
                         "width": 600,
-                        "always_show": false,
+                        "always_show": true,
                         "item": {
                             "spacing": 18,
                             "activation_label": {

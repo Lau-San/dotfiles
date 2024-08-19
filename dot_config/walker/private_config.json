@@ -141,14 +141,9 @@
             "placeholder": "Search projects"
         },
         {
-            "name": "new_task",
-            "cmd": "notify-send %RESULT%",
-            "entries": [
-                {
-                    "label": "Add new task",
-                    "exec": "notify-send %TERM%"
-                }
-            ]
+            "name": "tasks",
+            "src": "python /home/laura/.config/walker/plugins/tasks.py",
+            "placeholder": "Create and see your tasks"
         }
     ]
 }
