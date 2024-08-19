@@ -18,6 +18,7 @@ alias rm='rm -rI'
 alias grep='grep --color=auto'
 alias ls='exa -al --color=always --icons --group-directories-first'
 alias cat='bat --theme base16'
+alias tt='taskwarrior-tui'
 
 # Pacman
 
@@ -37,7 +38,6 @@ alias yayu='yay -Syu'
 
 alias py='python3'
 alias apy='python'
-
 
 # Git
 
