@@ -18,7 +18,12 @@ alias rm='rm -rI'
 alias grep='grep --color=auto'
 alias ls='exa -al --color=always --icons --group-directories-first'
 alias cat='bat --theme base16'
-alias tt='taskwarrior-tui'
+
+# Taskwarrior TUI
+
+alias tt='taskwarrior-tui -r ready'
+alias tti='taskwarrior-tui -r inbox'
+alias tta='taskwarrior-tui -r active'
 
 # Pacman
 
