@@ -24,6 +24,7 @@ alias cat='bat --theme base16'
 alias tt='taskwarrior-tui -r ready'
 alias tti='taskwarrior-tui -r inbox'
 alias tta='taskwarrior-tui -r active'
+alias ttn='taskwarrior-tui -r next'
 
 # Pacman
 

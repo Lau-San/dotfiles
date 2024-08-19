@@ -1,5 +1,5 @@
 {
-    "theme": "catppuccin",
+    "theme": "tokyonight",
     "as_window": false,
     "force_keyboard_focus": true,
     "ignore_mouse": true,
@@ -139,6 +139,16 @@
             "name": "projects",
             "src": "python /home/laura/.config/walker/plugins/projects.py",
             "placeholder": "Search projects"
+        },
+        {
+            "name": "new_task",
+            "cmd": "notify-send %RESULT%",
+            "entries": [
+                {
+                    "label": "Add new task",
+                    "exec": "notify-send %TERM%"
+                }
+            ]
         }
     ]
 }
