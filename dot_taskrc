@@ -1,0 +1,72 @@
+# [Created by task 3.1.0 8/17/2024 22:49:52]
+data.location=/home/laura/.task
+news.version=3.1.0
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+#hooks.location=~/.config/task/hooks
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+#include dark-16.theme
+#include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+#include dark-blue-256.theme
+# include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+# include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+# include ~/.task/themes/dark-blue-256.theme
+
+column.padding=2
+confirmation=0
+indent.report=1
+complete.all.tags=1
+weekstart=Monday
+default.command=ready
+
+report.active.columns=id,start.age,project,tags,description,due,priority
+report.active.labels=ID,Active,Project,Tags,Description,Due,P
+report.active.sort=due+,project+,description+
+
+report.next.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.next.labels=ID,D,Project,Tag,Description,Due,P,Urg
+report.next.filter=status:pending -WAITING +next limit:page
+
+report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.ready.labels=ID,D,Project,Tag,Description,Due,P,Urg
+report.ready.filter=+READY -new
+
+report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
+report.inbox.filter=+new
+report.inbox.description=New tasks that need to be processed
+
+include no-color.theme
+
+color.alternate=on black
+color.active=bold black on magenta
+color.blocked=yellow
+color.completed=green
+color.deleted=red
+color.due.today=bold underline cyan
+color.overdue=bold black on red
+color.label=bold underline white
+color.tag.next=bold underline magenta
+color.header=red
+color.summary.background=on black
+color.summary.bar=on blue
+
+# Taskwarrior TUI
+# uda.taskwarrior-tui.selection.reverse=yes
+uda.taskwarrior-tui.task-report.show-info=false
+uda.taskwarrior-tui.style.report.selection=black on cyan
+uda.taskwarrior-tui.style.report.scrollbar.area=black
+uda.taskwarrior-tui.style.report.scrollbar=white
+uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=false
