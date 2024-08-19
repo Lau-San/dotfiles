@@ -1,17 +1,4 @@
 * {
-    --clr-background: #1a1b26;
-    --clr-foreground: #a9b1d6;
-
-    --clr-black: #24283b;
-    --clr-gray: #565f89;
-    --clr-red: #f7768e;
-    --clr-green: #9ece6a;
-    --clr-yellow: #ff9e64;
-    --clr-blue: #7aa2f7;
-    --clr-magenta: #bb9af7;
-    --clr-cyan: #89ddff;
-    --clr-white: $foreground;
-
     font-family: Dosis;
     font-weight: 600;
     font-size: 18px;
@@ -30,8 +17,7 @@
     box-shadow: -3px 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
-#searchwrapper {
-}
+#searchwrapper {}
 
 #search,
 #typeahead {
@@ -78,6 +64,7 @@ scrollbar {
 row {
     border-radius: 5px;
 }
+
 row:selected {
     background: #24283b;
 }
@@ -91,11 +78,9 @@ row:selected {
     padding-right: 20px;
 }
 
-.textwrapper {
-}
+.textwrapper {}
 
-.label {
-}
+.label {}
 
 .sub {
     opacity: 0.5;

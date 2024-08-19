@@ -8,8 +8,8 @@
         "orientation": "vertical",
         "ignore_exclusive": true,
         "fullscreen": true,
-        "horizontal": "start",
-        "vertical": "fill",
+        "horizontal": "center",
+        "vertical": "center",
         "width": 600,
         "margins": {
             "top": 0,
@@ -18,15 +18,15 @@
         "anchors": {
             "top": true,
             "left": true,
-            "bottom": true
+            "bottom": false
         }
     },
     "list": {
-        "always_show": true,
+        "always_show": false,
         "fixed_height": false,
         "height": 0,
         "margin_top": 10,
-        "max_entries": 14,
+        "max_entries": 8,
         "scrollbar_policy": "never",
         "show_initial_entries": true,
         "width": 600
