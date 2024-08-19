@@ -42,7 +42,7 @@ report.next.filter=status:pending -WAITING +next limit:page
 report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.ready.labels=ID,D,Project,Tag,Description,Due,P,Urg
 report.ready.filter=+READY -new
-report.ready.sort=start-,urgency-
+report.ready.sort=urgency-
 
 report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
