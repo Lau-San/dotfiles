@@ -39,7 +39,7 @@ return {
                 date_format = '%Y-%m-%d',
                 alias_format = '%B %-d, %Y',
                 default_tags = {'journal'},
-                template = 'entry'
+                template = 'journal'
             }
         },
         keys = {
