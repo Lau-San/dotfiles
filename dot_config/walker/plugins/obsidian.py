@@ -7,14 +7,14 @@ options = []
 
 if text:
     options.append({
-        'label': f'Create note: {text}',
+        'label': f'  Create note: {text}',
         'searchable': text.lower(),
         'exec': f'kitty on "{text}"'
     })
 
 actions = {
-    'Open personal vault': 'kitty oo',
-    'Review notes': 'kitty oor'
+    '󱉼  Open personal vault': 'kitty oo',
+    '  Review notes': 'kitty oor'
 }
 
 for k, v in actions.items():
