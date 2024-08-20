@@ -13,7 +13,7 @@ if text:
     })
 
 actions = {
-    '󱉼  Open personal vault': 'kitty oo',
+    '󱉼  Open vault': 'kitty oo',
     '  Review notes': 'kitty oor'
 }
 
