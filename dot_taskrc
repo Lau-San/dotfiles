@@ -21,11 +21,11 @@ default.command=ready
 
 # === PRIORITIES ===
 
-uda.priority.values=Must,Should,Could,Wont,
-urgency.uda.priority.Must.coefficient=6.0
-urgency.uda.priority.Should.coefficient=3.9
-urgency.uda.priority.Could.coefficient=1.8
-urgency.uda.priority.Wont.coefficient=-2.0
+uda.priority.values=M,S,C,W,
+urgency.uda.priority.M.coefficient=6.0
+urgency.uda.priority.S.coefficient=3.9
+urgency.uda.priority.C.coefficient=1.8
+urgency.uda.priority.W.coefficient=-2.0
 
 # === REPORTS ===
 
@@ -80,12 +80,9 @@ color.summary.background=on black
 color.summary.bar=black on blue
 
 # PRIORITIES
-color.uda.priority.H=red
-color.uda.priority.M=yellow
-color.uda.priority.L=blue
-color.uda.priority.Must=red
-color.uda.priority.Should=yellow
-color.uda.priority.Could=blue
+color.uda.priority.M=red
+color.uda.priority.S=yellow
+color.uda.priority.C=blue
 
 # === TASKWARRIOR TUI ===
 
