@@ -39,19 +39,19 @@ def get_projects() -> dict:
     return projects
 
 
-def generate_entries(new_task: str, general_reports: list) -> dict:
+def generate_entries(new_task: str, simple_actions: list) -> dict:
     # List that will contain the entries for Walker
     entries = []
 
     if new_task:
         entries.append({
-            'label': f'Add task: {new_task}',
+            'label': f'  Add task: {new_task}',
             'searchable': new_task.lower(),
             'exec': f'task add "{new_task}" +new && {new_task_notif(new_task)}'
         })
 
-    # Generate general report entries
-    for k, v in general_reports.items():
+    # Generate general report and simple actions entries
+    for k, v in simple_actions.items():
         entries.append({
             'label': k,
             'searchable': k.lower(),
@@ -61,8 +61,8 @@ def generate_entries(new_task: str, general_reports: list) -> dict:
     # Generate project report entries
     for k, v in get_projects().items():
         entries.append({
-            'label': f'Project: {k}',
-            'searchable': f'project: {k.lower()}',
+            'label': f'󱥾  {k}',
+            'searchable': f'project {k.lower()}',
             'exec': f'{vit_cmd} project:{v}'
         })
 
@@ -70,9 +70,10 @@ def generate_entries(new_task: str, general_reports: list) -> dict:
 
 
 print(json.dumps(generate_entries(user_input, {
-    'Ready': f'{vit_cmd} ready',
-    'Inbox': f'{vit_cmd} inbox',
-    'Next': f'{vit_cmd} next',
-    'Active': f'{vit_cmd} active',
-    'Completed': f'{vit_cmd} completed'
+    '  Ready': f'{vit_cmd} ready',
+    '  Inbox': f'{vit_cmd} inbox',
+    '  Next': f'{vit_cmd} next',
+    '  Active': f'{vit_cmd} active',
+    '  Completed': f'{vit_cmd} completed',
+    '  Daily Plan': 'tp'
 })))
