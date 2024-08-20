@@ -3,27 +3,29 @@ import subprocess
 import json
 
 # Get user input in prompt
-input_text = ' '.join(sys.argv[1:])
+user_input = ' '.join(sys.argv[1:])
 
 # VIT command to open reports
 vit_cmd = 'kitty --class="ls-tasks" vit'
 
-# List that will contain the entries for Walker
-entries = []
 
-# General reports options
-actions = {
-    'Ready': f'{vit_cmd} ready',
-    'Inbox': f'{vit_cmd} inbox',
-    'Next': f'{vit_cmd} next',
-    'Active': f'{vit_cmd} active',
-    'Completed': f'{vit_cmd} completed'
-}
+def new_task_notif(task: str) -> str:
+    """
+    Generate a shell command that sends a notification, informing
+    the user that the new task was added successfully.
+    """
+    app = 'ls-tasks'
+    title = 'Task added'
+    body = f'Your new task \\"{task}\\" has been added successfully'
+    return f'''notify-send --app-name={app} "{title}" "{body}"'''
 
 
 def get_projects() -> dict:
-    """Get Taskwarrior projects and return a dictionary where the keys are
-    pretty names (title case) and the values are their name in Taskwarrior."""
+    """
+    Get Taskwarrior projects and return a dictionary where the keys are
+    pretty names (title case) and the values are their name in Taskwarrior.
+    """
+
     # Get all Taskwarrior projects
     tw_projects = subprocess.run(['task', '_projects'],
                                  stdout=subprocess.PIPE,
@@ -37,17 +39,19 @@ def get_projects() -> dict:
     return projects
 
 
-def generate_entries(i, a, p):
-    # If the input isn't empty, add an "Add task" option
-    if input_text:
+def generate_entries(new_task: str, general_reports: list) -> dict:
+    # List that will contain the entries for Walker
+    entries = []
+
+    if new_task:
         entries.append({
-            'label': f'Add task: {input_text}',
-            'searchable': input_text.lower(),
-            'exec': f'task add "{input_text}" +new'
+            'label': f'Add task: {new_task}',
+            'searchable': new_task.lower(),
+            'exec': f'task add "{new_task}" +new && {new_task_notif(new_task)}'
         })
 
     # Generate general report entries
-    for k, v in actions.items():
+    for k, v in general_reports.items():
         entries.append({
             'label': k,
             'searchable': k.lower(),
@@ -62,5 +66,13 @@ def generate_entries(i, a, p):
             'exec': f'{vit_cmd} project:{v}'
         })
 
+    return entries
 
-print(json.dumps(entries))
+
+print(json.dumps(generate_entries(user_input, {
+    'Ready': f'{vit_cmd} ready',
+    'Inbox': f'{vit_cmd} inbox',
+    'Next': f'{vit_cmd} next',
+    'Active': f'{vit_cmd} active',
+    'Completed': f'{vit_cmd} completed'
+})))
