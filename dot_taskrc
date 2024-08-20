@@ -30,8 +30,8 @@ urgency.uda.priority.W.coefficient=-2.0
 # === REPORTS ===
 
 # READY
-report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.ready.labels=ID,D,Project,Tag,Description,Due,P,Urg
+report.ready.columns=id,start.age,end.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.ready.labels=ID,Started,Ended,D,Project,Tag,Description,Due,P,Urg
 report.ready.filter=+READY -new
 report.ready.sort=urgency-
 
@@ -41,8 +41,8 @@ report.active.labels=ID,Active,Project,Tags,Description,Due,P
 report.active.sort=due+,project+,description+
 
 # NEXT
-report.next.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.next.labels=ID,D,Project,Tag,Description,Due,P,Urg
+report.next.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.next.labels=ID,Active,D,Project,Tag,Description,Due,P,Urg
 report.next.filter=status:pending -WAITING +next limit:page
 
 # INBOX
