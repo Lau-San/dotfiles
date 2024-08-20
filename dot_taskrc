@@ -8,70 +8,87 @@ news.version=3.1.0
 #data.location=~/.local/share/task
 #hooks.location=~/.config/task/hooks
 
-# Color theme (uncomment one to use)
-#include light-16.theme
-#include light-256.theme
-#include dark-16.theme
-#include dark-256.theme
-#include dark-red-256.theme
-#include dark-green-256.theme
-#include dark-blue-256.theme
-# include dark-violets-256.theme
-#include dark-yellow-green.theme
-#include dark-gray-256.theme
-# include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
-#include solarized-light-256.theme
-# include ~/.task/themes/dark-blue-256.theme
+# === GENERAL ===
 
 column.padding=2
 confirmation=0
 indent.report=1
 complete.all.tags=1
 weekstart=Monday
+
+# Defaults
 default.command=ready
 
-report.active.columns=id,start.age,project,tags,description,due,priority
-report.active.labels=ID,Active,Project,Tags,Description,Due,P
-report.active.sort=due+,project+,description+
+# === PRIORITIES ===
 
-report.next.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.next.labels=ID,D,Project,Tag,Description,Due,P,Urg
-report.next.filter=status:pending -WAITING +next limit:page
-
-report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.ready.labels=ID,D,Project,Tag,Description,Due,P,Urg
-report.ready.filter=+READY -new
-report.ready.sort=urgency-
-
-report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
-report.inbox.filter=+new
-report.inbox.description=New tasks that need to be processed
-
-uda.priority.values=Must,Should,Could,
+uda.priority.values=Must,Should,Could,Wont,
 urgency.uda.priority.Must.coefficient=6.0
 urgency.uda.priority.Should.coefficient=3.9
 urgency.uda.priority.Could.coefficient=1.8
+urgency.uda.priority.Wont.coefficient=-2.0
 
-# Colors
+# === REPORTS ===
+
+# READY
+report.ready.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.ready.labels=ID,D,Project,Tag,Description,Due,Priority,Urg
+report.ready.filter=+READY -new
+report.ready.sort=urgency-
+
+# ACTIVE
+report.active.columns=id,start.age,project,tags,description,due,priority
+report.active.labels=ID,Active,Project,Tags,Description,Due,Priority
+report.active.sort=due+,project+,description+
+
+# NEXT
+report.next.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.next.labels=ID,D,Project,Tag,Description,Due,Priority,Urg
+report.next.filter=status:pending -WAITING +next limit:page
+
+# INBOX
+report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.inbox.labels=ID,D,Project,Tag,Description,Due,Priority,Urg
+report.inbox.filter=+new
+report.inbox.description=New tasks that need to be processed
+
+# === COLORS ===
 
 include no-color.theme
 
+# GENERAL
 color.alternate=on black
 color.active=bold black on magenta
-color.blocked=yellow
+color.blocked=red
 color.completed=green
 color.deleted=red
-color.due.today=bold underline cyan
-color.overdue=bold black on red
-color.label=bold underline white
-color.tag.next=bold underline magenta
-color.header=red
-color.summary.background=on black
-color.summary.bar=on blue
+color.label=bold underline black on white
+color.label.sort=bold underline black on green
+color.header=bold black on yellow
+color.error=black on red
+color.footnote=black on white
+color.warning=bold black on yellow
 
-# Taskwarrior TUI
+# DUE
+color.due.today=bold underline cyan
+color.overdue=black on red
+
+# TAGS
+color.tag.next=bold underline magenta
+
+# SUMMARY REPORT
+color.summary.background=on black
+color.summary.bar=black on blue
+
+# PRIORITIES
+color.uda.priority.H=red
+color.uda.priority.M=yellow
+color.uda.priority.L=blue
+color.uda.priority.Must=red
+color.uda.priority.Should=yellow
+color.uda.priority.Could=blue
+
+# === TASKWARRIOR TUI ===
+
 # uda.taskwarrior-tui.task-report.show-info=false
 # uda.taskwarrior-tui.style.report.selection=black on cyan
 # uda.taskwarrior-tui.style.report.scrollbar.area=black

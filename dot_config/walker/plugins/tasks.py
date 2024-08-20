@@ -1,40 +1,38 @@
 import sys
 import json
 
-text = ' '.join(sys.argv[1:])
+# Text being enterd by user on prompt
+input_text = ' '.join(sys.argv[1:])
 
-notif = {
-    'app': 'Tasks',
-    'title': 'Task added',
-    'body': f'Yout task "{text}" has been added to your inbox.'
-}
+# Window Class for kitty windows
+w_class = 'ls-tasks'
 
+# List that will contain the entries for Walker
+entries = []
 
-cmd = f'''task add "{
-    text}" +new && notify-send -a "{notif['app']}" "{notif['title']}" "{notif['body']}"'''
-
-
-options = []
-
-if text:
-    options.append({
-        'label': f'Add task: {text}',
-        'searchable': text.lower(),
-        'exec': cmd
+# If the input isn't empty, add an "Add task" option
+if input_text:
+    entries.append({
+        'label': f'Add task: {input_text}',
+        'searchable': input_text.lower(),
+        'exec': f'task add "{input_text}" +new'
     })
 
+# Add all options to view tasks
 actions = {
-    'Ready (Actionable tasks)': 'kitty taskwarrior-tui -r ready',
-    'Inbox (New tasks)': 'kitty taskwarrior-tui -r inbox',
-    'Active (Tasks in progress)': 'kitty taskwarrior-tui -r active',
-    'Next (Tasks to focus on)': 'kitty taskwarrior-tui -r next',
+    'Ready': f'kitty --class="{w_class}" vit ready',
+    'Inbox': f'kitty --class="{w_class}" vit inbox',
+    'Next': f'kitty --class="{w_class}" vit next',
+    'Active': f'kitty --class="{w_class}" vit active',
+    'Completed': f'kitty --class="{w_class}" vit completed',
+    'Open project ': 'task _projects | walker - -dmenu - n - -theme = tokyonight-centered'
 }
-
 for k, v in actions.items():
-    options.append({
+    entries.append({
         'label': k,
         'searchable': k.lower(),
         'exec': v
     })
 
-print(json.dumps(options))
+# print(projects)
+print(json.dumps(entries))

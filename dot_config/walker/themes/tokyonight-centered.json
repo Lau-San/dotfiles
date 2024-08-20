@@ -38,11 +38,13 @@
                     "h_scrollbar_policy": "external",
                     "v_scrollbar_policy": "never",
                     "list": {
+                        "min_width": 600,
+                        "max_width": 600,
                         "width": 600,
                         "min_height": 300,
                         "max_height": 300,
                         "height": 300,
-                        "always_show": true,
+                        "always_show": false,
                         "item": {
                             "spacing": 18,
                             "activation_label": {
