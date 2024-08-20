@@ -10,13 +10,15 @@ binds {
 bind = SUPER CTRL   , Q         , exit,
 bind = SUPER CTRL   , R         , exec, hyprctl reload
 bind = SUPER CTRL   , E         , exec, killall eww; eww daemon && eww open bar1 && eww open bar2
-bind = SUPER CTRL   , W         , exec, killall walker; walker --gapplication-service & notify-send "Restarted Walker"
+bind = SUPER CTRL   , W         , exec, killall walker; walker --gapplication-service && $notif "Restarted Walker" "Walker service was restarted successfully"
+bind = SUPER CTRL   , P         , exec, sleep 1; hyprctl reload && $notif "Reloaded Hyprpm" "Hyprpm packages reloaded successfully"
 bind = SUPER        , G         , exec, $hypr/scripts/gamemode
 
 # Apps
 bind = SUPER        , Return    , exec, $terminal
 bind = SUPER        , F         , exec, $fileManager
 bind = SUPER        , B         , exec, $browser
+bind = SUPER        , period    , exec, $systemMonitor
 
 # Utilities
 bind = SUPER ALT    , S         , exec, flameshot gui

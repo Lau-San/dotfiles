@@ -12,6 +12,8 @@
 $home = {{ .chezmoi.homeDir }}
 $hypr = $home/.config/hypr
 
+$notif = notify-send --app-name="Hyprland"
+
 source = $hypr/monitors.conf
 source = $hypr/programs.conf
 source = $hypr/autostart.conf
