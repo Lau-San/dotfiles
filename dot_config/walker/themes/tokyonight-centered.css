@@ -89,9 +89,7 @@ slider {
 }
 
 #input>*:last-child,
-#typeahead>*:last-child {
-    color: #7f849c;
-}
+#typeahead>*:last-child {}
 
 #spinner {}
 
