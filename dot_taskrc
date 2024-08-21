@@ -32,7 +32,7 @@ urgency.uda.priority.W.coefficient=-12.0
 # READY
 report.ready.columns=id,start.age,end.age,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.ready.labels=ID,Started,Ended,D,Project,Tag,Description,Due,P,Urg
-report.ready.filter=+READY -new
+report.ready.filter=+READY
 report.ready.sort=urgency-
 
 # ACTIVE

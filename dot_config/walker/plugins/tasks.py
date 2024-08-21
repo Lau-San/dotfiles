@@ -55,6 +55,14 @@ def generate_entries(new_task: str, reports: dict, actions: dict) -> dict:
         entries.append({
             'label': f'  {k}',
             'searchable': k.lower(),
+            'exec': f'{vit_cmd} {v}'
+        })
+
+    # Generate action entries
+    for k, v in actions.items():
+        entries.append({
+            'label': f'  {k}',
+            'searchable': k.lower(),
             'exec': v
         })
 
@@ -66,23 +74,17 @@ def generate_entries(new_task: str, reports: dict, actions: dict) -> dict:
             'exec': f'{vit_cmd} project:{v}'
         })
 
-    # Generate action entries
-    for k, v in actions.items():
-        entries.append({
-            'label': f'  {k}'
-        })
-
     return entries
 
 
 print(json.dumps(generate_entries(
     user_input,
     reports={
-        'Ready': f'{vit_cmd} ready',
-        'Inbox': f'{vit_cmd} inbox',
-        'Next': f'{vit_cmd} next',
-        'Active': f'{vit_cmd} active',
-        'Completed': f'{vit_cmd} completed',
+        'Ready': 'ready',
+        'Inbox': 'inbox',
+        'Next': 'next',
+        'Active': 'active',
+        'Completed': 'completed',
     },
     actions={
         'Daily Plan': 'tp'
