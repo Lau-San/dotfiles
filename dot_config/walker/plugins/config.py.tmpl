@@ -1,44 +1,42 @@
 import json
 
-homedir = '{{ .chezmoi.homeDir }}'
-confdir = f'{homedir}/.config'
-
 configs = {
-    'AwesomeWM': f'{confdir}/awesome',
-    'Hyprland': f'{confdir}/hypr',
-    'QTile': f'{confdir}/qtile',
+    'AwesomeWM': '~/.config/awesome',
+    'Hyprland': '~/.config/hypr',
+    'QTile': '~/.config/qtile',
 
-    'Eww': f'{confdir}/eww',
+    'Eww': '~/.config/eww',
 
-    'Picom': f'{confdir}/picom.conf',
-    'Dunst': f'{confdir}/dunst',
-    'Fnott': f'{confdir}/fnott',
+    'Picom': '~/.config/picom.conf',
+    'Dunst': '~/.config/dunst',
+    'Fnott': '~/.config/fnott',
 
-    'Xresources': f'{homedir}/.Xresources',
+    'Xresources': f'~/.Xresources',
 
-    'Rofi': f'{confdir}/rofi',
-    'Walker': f'{confdir}/walker',
-    'Anyrun': f'{confdir}/anyrun',
-    'Sysmenu': f'{confdir}/sys64/menu',
+    'Rofi': '~/.config/rofi',
+    'Walker': '~/.config/walker',
+    'Anyrun': '~/.config/anyrun',
+    'Sysmenu': '~/.config/sys64/menu',
 
-    'Alacritty': f'{confdir}/alacritty/alacritty.toml',
-    'Kitty': f'{confdir}/kitty/kitty.conf',
+    'Alacritty': '~/.config/alacritty/alacritty.toml',
+    'Kitty': '~/.config/kitty/kitty.conf',
 
-    'Bash RC': f'{homedir}/.bashrc',
-    'Bash Aliases': f'{homedir}/.bash_aliases',
-    'Bash Profile': f'{homedir}/.bash_profile',
-    'Fish': f'{confdir}/fish/config.fish',
+    'Bash RC': '~/.bashrc',
+    'Bash Aliases': '~/.bash_aliases',
+    'Bash Profile': '~/.bash_profile',
+    'Fish': '~/.config/fish/config.fish',
 
-    'Starship': f'{confdir}/starship.toml',
-    'Fastfetch': f'{confdir}/fastfetch/config.jsonc',
-    'Zellij': f'{confdir}/zellij',
+    'Starship': '~/.config/starship.toml',
+    'Fastfetch': '~/.config/fastfetch/config.jsonc',
+    'Zellij': '~/.config/zellij',
 
-    'Neovim': f'{confdir}/nvim/lua',
+    'Neovim': '~/.config/nvim/lua',
 
-    'Btop': f'{confdir}/btop/btop.conf',
-    'MPV': f'{confdir}/mpv/mpv.conf',
-    'Yazi': f'{confdir}/yazi',
-    'Taskwarrior': f'{homedir}/.taskrc',
+    'Btop': '~/.config/btop/btop.conf',
+    'MPV': '~/.config/mpv/mpv.conf',
+    'Yazi': '~/.config/yazi',
+    'Taskwarrior': '~/.taskrc',
+    'VIT': '~/.vit/config.ini',
 }
 
 notif = {
