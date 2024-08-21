@@ -54,7 +54,7 @@ def generate_entries(new_task: str, reports: dict, actions: dict) -> dict:
     for k, v in reports.items():
         entries.append({
             'label': f'  {k}',
-            'searchable': k.lower(),
+            'searchable': f'report {k.lower()}',
             'exec': f'{vit_cmd} {v}'
         })
 
