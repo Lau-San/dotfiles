@@ -25,7 +25,7 @@ uda.priority.values=M,S,C,W,
 urgency.uda.priority.M.coefficient=6.0
 urgency.uda.priority.S.coefficient=3.9
 urgency.uda.priority.C.coefficient=1.8
-urgency.uda.priority.W.coefficient=-2.0
+urgency.uda.priority.W.coefficient=-12.0
 
 # === REPORTS ===
 
@@ -48,7 +48,7 @@ report.next.filter=status:pending -WAITING +next limit:page
 # INBOX
 report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
-report.inbox.filter=+new
+report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
 report.inbox.description=New tasks that need to be processed
 
 # === COLORS ===
@@ -58,9 +58,9 @@ include no-color.theme
 # GENERAL
 color.alternate=on black
 color.active=bold black on magenta
-color.blocked=red
+color.blocked=black on color8
 color.completed=green
-color.deleted=red
+color.deleted=color8
 color.label=bold underline black on white
 color.label.sort=bold underline black on green
 color.header=bold black on yellow
