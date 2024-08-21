@@ -85,6 +85,8 @@ print(json.dumps(generate_entries(
         'Next': 'next',
         'Active': 'active',
         'Completed': 'completed',
+        'Waiting': 'waiting',
+        'Blocked': 'blocked'
     },
     actions={
         'Daily Plan': 'tp'

@@ -76,6 +76,16 @@ report.inbox.labels=ID,Project,Tag,Description,Due,P
 report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
 report.inbox.description=New tasks that need to be processed
 
+# WAITING
+report.waiting.columns=id,entry.age,project,tags,description,due.relative,wait,wait.remaining,priority,urgency
+report.waiting.labels=ID,Age,Project,Tag,Description,Due,Wait,Remaining,P,Urg
+report.waiting.sort=due+,wait+
+
+# BLOCKED
+report.blocked.columns=id,entry.age,depends,project,tags,description,due,priority
+report.blocked.labels=ID,Age,Deps,Project,Tag,Description,Due,P
+report.blocked.sort=due+,wait+
+
 # === COLORS ===
 
 include no-color.theme

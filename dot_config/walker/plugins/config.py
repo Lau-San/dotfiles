@@ -11,7 +11,7 @@ configs = {
     'Dunst': '~/.config/dunst',
     'Fnott': '~/.config/fnott',
 
-    'Xresources': f'~/.Xresources',
+    'Xresources': '~/.Xresources',
 
     'Rofi': '~/.config/rofi',
     'Walker': '~/.config/walker',
