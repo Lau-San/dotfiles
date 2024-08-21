@@ -28,39 +28,6 @@ urgency.uda.priority.S.coefficient=3.9
 urgency.uda.priority.C.coefficient=1.8
 urgency.uda.priority.W.coefficient=-12.0
 
-# === REPORTS ===
-
-# READY
-report.ready.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.ready.labels=ID,Started,D,Project,Tag,Description,Due,P,Urg
-report.ready.filter=+READY
-report.ready.sort=urgency-
-
-# STUDIES
-#
-# NOTE: This seems to be breaking VIT even if I'm not opening this report. Could be the custom attributes.
-#
-# report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
-# report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
-# report.studies.filter=+READY project:studies
-# report.schools.sort=school+/,topic+,resource+,section+,description+
-
-# ACTIVE
-report.active.columns=id,start.age,project,tags,description,due,priority
-report.active.labels=ID,Active,Project,Tags,Description,Due,P
-report.active.sort=due+,project+,description+
-
-# NEXT
-report.next.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.next.labels=ID,Active,D,Project,Tag,Description,Due,P,Urg
-report.next.filter=status:pending -WAITING +next limit:page
-
-# INBOX
-report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,priority,urgency
-report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
-report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
-report.inbox.description=New tasks that need to be processed
-
 # === UDAs ===
 
 uda.school.type=string
@@ -75,6 +42,39 @@ uda.resource.label=Resource
 
 uda.section.type=string
 uda.resource.label=Section
+
+# === REPORTS ===
+
+# READY
+report.ready.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.ready.labels=ID,Started,D,Project,Tag,Description,Due,P,Urg
+report.ready.filter=+READY +PROJECT +PRIORITY
+report.ready.sort=urgency-
+
+# STUDIES
+#
+# NOTE: This seems to be breaking VIT even if I'm not opening this report. Could be the custom attributes.
+#
+report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
+report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
+report.studies.filter=+READY project:studies
+report.schools.sort=school+/,topic+,resource+,section+,description+
+
+# ACTIVE
+report.active.columns=id,start.age,project,tags,description,due,priority
+report.active.labels=ID,Active,Project,Tags,Description,Due,P
+report.active.sort=due+,project+,description+
+
+# NEXT
+report.next.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.next.labels=ID,Active,D,Project,Tag,Description,Due,P,Urg
+report.next.filter=status:pending -WAITING +next limit:page
+
+# INBOX
+report.inbox.columns=id,project,tags,description,due.relative,priority
+report.inbox.labels=ID,Project,Tag,Description,Due,P
+report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
+report.inbox.description=New tasks that need to be processed
 
 # === COLORS ===
 

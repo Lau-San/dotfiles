@@ -4,8 +4,7 @@
 function fish_greeting
 end
 
-# Aliases
-# -------
+# === Aliases ===
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -42,8 +41,7 @@ alias yayu='yay -Syu'
 
 # Python
 
-alias py='python3'
-alias apy='python'
+alias py='python'
 
 # Git
 
@@ -59,9 +57,7 @@ alias df='git diff'
 
 alias chezedit='chezmoi edit --apply -v'
 
-alias testawesome='Xephyr -screen 1220x800 :5 & sleep 1 ; DISPLAY=:5 awesome'
-
-# Colors
+# === COLOR UTILS ===
 
 set default "\e[1;0m"
 set black "\e[1;30m"
@@ -73,8 +69,7 @@ set magenta "\e[1;35m"
 set cyan "\e[1;36m"
 set white "\e[1;37m"
 
-# Functions
-# ---------
+# === FUNCTIONS ===
 
 function green
     echo -e "$green$argv[1]"
@@ -93,10 +88,10 @@ function fishtheme
     set --local theme $argv[1]
 end
 
-function formatnames
-    rename y/A-Z/a-z/ *
-    rename 'y/ /-/' *
-    rename y/_/-/ *
+function namefmt
+    rename y/A-Z/a-z/ $argv
+    rename 'y/ /-/' $argv
+    rename y/_/-/ $argv
 end
 
 function prettierhere
@@ -114,14 +109,6 @@ function prettierhere
     return 1
 end
 
-# function sdk
-#     bash "sdk $argv[1]"
-# end
-
-function maven-new
-    mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=$argv[1] -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
-end
-
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -131,13 +118,12 @@ function yy
     rm -f -- "$tmp"
 end
 
-# Pfetch
-# ------
+# === BINDS ===
 
-set -u PF_INFO 'ascii title os host'
+set -g fish_sequence_key_delay_ms 200
+bind -M insert -m default jj cancel repaint-mode
 
-# Prompt config
-# -------------
+# === PROMPT ===
 
 set -g theme_display_git yes
 set -g theme_display_git_dirty yes
@@ -179,6 +165,8 @@ set -g fish_prompt_pwd_dir_length 4
 set -g theme_project_dir_length 4
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt ' ❯ '
+
+# === COLORS ===
 
 set -U fish_color_command cyan --bold
 set -U fish_color_keyword magenta
