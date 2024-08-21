@@ -40,8 +40,8 @@ run flameshot
 run megasync
 
 # run ticktick
-run thunderbird
-run discord
+# run thunderbird
+# run discord
 # run "$HOME/Applications/Obsidian-1.3.4_840d2a4751277566044dbaa931301565.AppImage"
 
 # brave-browser --app="https://mail.google.com" &
