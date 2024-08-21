@@ -27,7 +27,7 @@ def get_projects() -> dict:
     """
 
     # Get all Taskwarrior projects
-    tw_projects = subprocess.run(['task', '_projects'],
+    tw_projects = subprocess.run(['task', '+PENDING', '_projects'],
                                  stdout=subprocess.PIPE,
                                  text=True).stdout.strip().split()
     # Format project names
