@@ -55,10 +55,10 @@ report.ready.sort=urgency-
 #
 # NOTE: This seems to be breaking VIT even if I'm not opening this report. Could be the custom attributes.
 #
-report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
-report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
-report.studies.filter=+READY project:studies
-report.schools.sort=school+/,topic+,resource+,section+,description+
+# report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
+# report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
+# report.studies.filter=+READY project:studies
+# report.schools.sort=school+/,topic+,resource+,section+,description+
 
 # ACTIVE
 report.active.columns=id,start.age,project,tags,description,due,priority
