@@ -28,34 +28,22 @@ urgency.uda.priority.S.coefficient=3.9
 urgency.uda.priority.C.coefficient=1.8
 urgency.uda.priority.W.coefficient=-12.0
 
-# === UDAs ===
-
-uda.school.type=string
-uda.school.label=School
-uda.school.values=game-dev,math
-
-uda.topic.type=string
-uda.topic.label=Topic
-
-uda.resource.type=string
-uda.resource.label=Resource
-
-uda.section.type=string
-uda.resource.label=Section
-
 # === REPORTS ===
 
 # READY
-report.ready.columns=id,start.age,depends.indicator,project.parent,tags,description,due.relative,priority,urgency
+report.ready.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.ready.labels=ID,Started,D,Project,Tag,Description,Due,P,Urg
 report.ready.filter=+READY
 report.ready.sort=urgency-
 
 # STUDIES
-report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
-report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
-report.studies.filter=+READY project:studies
-report.schools.sort=school+/,topic+,resource+,section+,description+
+#
+# NOTE: This seems to be breaking VIT even if I'm not opening this report. Could be the custom attributes.
+#
+# report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
+# report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
+# report.studies.filter=+READY project:studies
+# report.schools.sort=school+/,topic+,resource+,section+,description+
 
 # ACTIVE
 report.active.columns=id,start.age,project,tags,description,due,priority
@@ -72,6 +60,21 @@ report.inbox.columns=id,depends.indicator,project,tags,description,due.relative,
 report.inbox.labels=ID,D,Project,Tag,Description,Due,P,Urg
 report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
 report.inbox.description=New tasks that need to be processed
+
+# === UDAs ===
+
+uda.school.type=string
+uda.school.label=School
+uda.school.values=game-dev,math
+
+uda.topic.type=string
+uda.topic.label=Topic
+
+uda.resource.type=string
+uda.resource.label=Resource
+
+uda.section.type=string
+uda.resource.label=Section
 
 # === COLORS ===
 
