@@ -47,7 +47,7 @@ def generate_entries(new_task: str, reports: dict, actions: dict) -> dict:
         entries.append({
             'label': f'  Add task: {new_task}',
             'searchable': new_task.lower(),
-            'exec': f'task add "{new_task}" +new && {new_task_notif(new_task)}'
+            'exec': f'task add "{new_task}" && {new_task_notif(new_task)}'
         })
 
     # Generate general report and simple actions entries
