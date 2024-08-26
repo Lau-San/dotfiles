@@ -40,7 +40,7 @@ configs = {
 }
 
 notif = {
-    "title": "System Config",
+    "title": "ls-config",
     "success": {
         'summary': 'New configuration applied',
         'body': 'Your new configuration has been successfully applied ' +
