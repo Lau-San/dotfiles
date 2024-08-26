@@ -1,6 +1,24 @@
 import json
 
 
+def zj_find(session: str) -> str:
+    '''Generate a command that finds whether the given Zelli session exists'''
+    return f'zellij ls | grep {session}'
+
+
+def zj_attach(session: str) -> str:
+    '''Generate command that attaches an existing Zellij session'''
+    return f'kitty zellij attach {session}'
+
+
+def zj_new(session_name: str, layout: bool = False) -> str:
+    '''Generate a command that creates a new session with the given name'''
+    cmd = f'kitty zellij --session "{session_name}"'
+    if layout:
+        cmd += f' --layout {session_name}'
+    return cmd
+
+
 def generate_entries(simple: dict, zellij_layouts: dict) -> list:
     entries = []
 
@@ -19,7 +37,7 @@ def generate_entries(simple: dict, zellij_layouts: dict) -> list:
         entries.append({
             'label': f'  {k}',
             'searchable': k.lower(),
-            'exec': f'kitty zellij --layout {v}'
+            'exec': f'{zj_find(v)} && {zj_attach(v)} || {zj_new(v, True)}'
         })
 
     return entries
