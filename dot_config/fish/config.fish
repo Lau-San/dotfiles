@@ -89,9 +89,9 @@ function fishtheme
 end
 
 function namefmt
-    rename y/A-Z/a-z/ $argv
-    rename 'y/ /-/' $argv
-    rename y/_/-/ $argv
+    rename y/A-Z/a-z/ "$argv[1]"
+    rename 'y/ /-/' "$argv[1]"
+    rename y/_/-/ "$argv[1]"
 end
 
 function prettierhere
