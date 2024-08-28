@@ -68,7 +68,7 @@ report.active.sort=due+,project+,description+
 # NEXT
 report.next.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
 report.next.labels=ID,Active,D,Project,Tag,Description,Due,P,Urg
-report.next.filter=status:pending -WAITING +next limit:page
+report.next.filter=(+next -WAITING +PENDING) and (-CHILD or (+CHILD +DUETODAY))
 
 # INBOX
 report.inbox.columns=id,project,tags,description,due.relative,priority
