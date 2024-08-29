@@ -1,38 +1,20 @@
 @import 'scss/variables.scss';
 @import 'scss/main.scss';
+@import 'scss/section.scss';
 
 $clr-disabled: $black;
 
-.eww_bar {
+.bar {
     all: unset;
     background: $black;
-    // background: rgba($black, 0.5);
+    background: rgba($black, 0.8);
     padding: 5px 10px;
-}
-
-tooltip {
-    background: $background;
-    border-radius: $border-radius;
-    opacity: 0.9;
-}
-
-.section {
-    background: $background;
-    // padding: 5px 10px;
-    border-radius: $border-radius;
 }
 
 // ===========
 // == ICONS ==
 // ===========
 
-.music_play,
-.music_prev,
-.music_next,
-.pow_off,
-.pow_reload_hypr,
-.pow_reboot,
-.pow_logout,
 .icon {
     font-family: 'Font Awesome 6 Free';
     color: $foreground;

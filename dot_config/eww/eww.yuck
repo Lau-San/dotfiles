@@ -1,7 +1,7 @@
 ;; Eww configuration path
 
-(defwidget section [side ?button]
-    (box  :class "section ${button ? "btn" : ""}"
+(defwidget section [side ?btn]
+    (box  :class "section ${btn == true ? 'btn' : ''}"
           :orientation "h"
           :halign {side == "left" ? "start" : side == "right" ? "end" : "center"}
           :valign "center"

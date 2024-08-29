@@ -2,10 +2,10 @@
 
 (defwidget bar [monitor]
     (centerbox  :orientation "h"
-          :halign "fill"
-          :vexpand false
-          :hexpand false
-          :class "eww_bar"
+                :halign "fill"
+                :vexpand false
+                :hexpand false
+                :class "bar"
       (left :monitor monitor)
       (center)
       (right  :monitor monitor)))
