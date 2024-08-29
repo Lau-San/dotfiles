@@ -1,29 +1,9 @@
-@import 'scss/variables.scss';
-@import 'scss/main.scss';
-@import 'scss/section.scss';
-
-$clr-disabled: $black;
-
-.bar {
-    all: unset;
-    background: $black;
-    background: rgba($black, 0.8);
-    padding: 5px 10px;
-}
-
-// ===========
-// == ICONS ==
-// ===========
-
-.icon {
-    font-family: 'Font Awesome 6 Free';
-    color: $foreground;
-    font-weight: 700;
-
-    &.disabled {
-        color: $clr-disabled;
-    }
-}
+@import 'scss/variables';
+@import 'scss/main';
+@import 'scss/bar';
+@import 'scss/section';
+@import 'scss/icon';
+@import 'scss/widgets';
 
 // ==============
 // == LAUNCHER ==
