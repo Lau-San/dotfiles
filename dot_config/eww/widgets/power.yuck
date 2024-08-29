@@ -11,6 +11,8 @@
                           :reveal {monitor == 0 ? reveal-power1 : monitor == 1 ? reveal-power2 : true}
                     (box    :orientation 'h'
                             :space-evenly false
+                            :class 'content'
+                            ; :spacing 5
                         (button :class 'reload icon'
                                 :tooltip 'Reload Hyprland'
                                 :onclick 'hyprctl reload' '')

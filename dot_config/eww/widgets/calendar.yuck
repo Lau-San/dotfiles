@@ -1,7 +1,7 @@
 (defwidget cal []
-    (box          :class "cal_box"
+    (box          :class "calendar"
                   :orientation "v"
-      (box        :class "cal_inner_box"
+      (box        :class "inner"
         (calendar :class "cal"
                   :day calendar_day
                   :month calendar_month

@@ -1,0 +1,13 @@
+$clr-vol: $cyan;
+
+.volume {
+    .icon {
+        color: $clr-vol;
+        // margin-left: 5px;
+    }
+
+    scale trough highlight {
+        background: $clr-vol;
+        border-radius: $border-radius;
+    }
+}

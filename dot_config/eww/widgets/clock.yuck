@@ -4,7 +4,8 @@
     (section        :side "right"
       (eventbox     :onhover "${eww} update reveal-date${monitor + 1}=true"
                     :onhoverlost "${eww} update reveal-date${monitor + 1}=false"
-        (box        :orientation "h"
+        (box        :class 'clock'
+                    :orientation "h"
                     :halign "end"
                     :space-evenly false
           (revealer :transition "slideleft"

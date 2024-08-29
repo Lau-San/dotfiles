@@ -41,3 +41,13 @@ tooltip {
     border-radius: $border-radius;
     opacity: 0.9;
 }
+
+// Scales
+scale trough {
+    all: unset;
+    background: $black;
+    border-radius: $border-radius;
+    min-width: 80px;
+    min-height: 10px;
+    // margin-left: 5px;
+}
