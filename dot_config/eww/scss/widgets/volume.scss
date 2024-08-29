@@ -3,7 +3,10 @@ $clr-vol: $cyan;
 .volume {
     .icon {
         color: $clr-vol;
-        // margin-left: 5px;
+    }
+
+    scale {
+        padding-right: 10px;
     }
 
     scale trough highlight {

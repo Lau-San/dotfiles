@@ -12,7 +12,7 @@
                     (box    :orientation 'h'
                             :space-evenly false
                             :class 'content'
-                            ; :spacing 5
+                            :spacing 10
                         (button :class 'reload icon'
                                 :tooltip 'Reload Hyprland'
                                 :onclick 'hyprctl reload' '')
