@@ -1,0 +1,36 @@
+* {
+    all: unset;
+    font-size: 16px;
+}
+
+// Context Menus
+menu {
+    background-color: rgba($background, 0.9);
+    padding: 5px;
+    border-radius: $border-radius;
+    border: 2px solid $black;
+
+    &>menuitem {
+        padding: 5px 10px;
+        border-radius: $border-radius;
+
+        &:hover {
+            background: $black;
+        }
+
+        arrow {
+            min-height: 16px;
+            min-width: 16px;
+
+            &:dir(ltr) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+                margin-left: 10px;
+            }
+
+            &:dir(rtl) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+                margin-right: 10px;
+            }
+        }
+    }
+}

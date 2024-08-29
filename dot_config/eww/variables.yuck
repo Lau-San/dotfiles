@@ -29,3 +29,6 @@
 (defpoll title      :interval "1s" "scripts/music title")
 (defpoll artist     :interval "1s" "scripts/music artist")
 (defpoll playpause  :interval "1s" "scripts/music statusicon")
+
+(defvar reveal-power1 false)
+(defvar reveal-power2 false)

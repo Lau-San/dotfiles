@@ -1,61 +1,13 @@
-* {
-    all: unset;
-    font-size: 16px;
-}
-
-$background: #1a1b26;
-$foreground: #a9b1d6;
-
-$black: #24283b;
-$gray: #565f89;
-$red: #f7768e;
-$green: #9ece6a;
-$yellow: #ff9e64;
-$blue: #7aa2f7;
-$magenta: #bb9af7;
-$cyan: #89ddff;
-$white: $foreground;
+@import 'scss/variables.scss';
+@import 'scss/main.scss';
 
 $clr-disabled: $black;
-
-$border-radius: 5px;
 
 .eww_bar {
     all: unset;
     background: $black;
     // background: rgba($black, 0.5);
     padding: 5px 10px;
-}
-
-menu {
-    background-color: rgba($background, 0.9);
-    padding: 5px;
-    border-radius: $border-radius;
-    border: 2px solid $black;
-
-    &>menuitem {
-        padding: 5px 10px;
-        border-radius: $border-radius;
-
-        &:hover {
-            background: $black;
-        }
-
-        arrow {
-            min-height: 16px;
-            min-width: 16px;
-
-            &:dir(ltr) {
-                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-                margin-left: 10px;
-            }
-
-            &:dir(rtl) {
-                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
-                margin-right: 10px;
-            }
-        }
-    }
 }
 
 tooltip {

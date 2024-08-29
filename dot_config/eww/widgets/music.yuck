@@ -1,0 +1,16 @@
+(defwidget music []
+  (section :side "center"
+    (box :class "music icon"
+          :space-evenly false
+      "")
+    (box :class "music playing"
+          :space-evenly false
+      {title == "Nothing Playing" ? title : "${title}  -  ${artist}"})
+    (box  :orientation "h"
+          :space-evenly false
+          :halign "center"
+          :valign "center"
+          :spacing 10
+      (button :class "music icon" :onclick "scripts/music previous" "")
+      (button :class "music icon" :onclick "scripts/music toggle" playpause)
+      (button :class "music icon" :onclick "scripts/music next" ""))))
