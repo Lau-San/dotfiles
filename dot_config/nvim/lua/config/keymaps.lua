@@ -15,14 +15,41 @@ end
 
 map("i", "jj", "<ESC>")
 
-map("n", "<leader>fs", "<cmd>w<cr><esc>", { desc = "Save file" })
+-- Lazy
+map("n", "<leader>ll", ":Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>le", ":LazyExtras<cr>", { desc = "LazyExtras" })
+map("n", "<leader>lc", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog" })
 
+-- Files
+map("n", "<leader>fs", ":w<cr>", { desc = "Save file" })
+
+-- Buffers
+map("n", "<leader>bx", LazyVim.ui.bufremove, { desc = "Close Buffer" })
+map("n", "<leader>bX", "<cmd>:bd<cr>", { desc = "Close Buffer and window" })
+
+-- Windows
 map("n", "<leader>wj", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<leader>wk", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<leader>wl", "<C-w>l", { desc = "Go to right window" })
 map("n", "<leader>wh", "<C-w>h", { desc = "Go to left window" })
+map('n', '<leader>wx', '<C-W>c', { desc = 'Close window' })
 
-map('n', '<C-j>', '<cmd> TmuxNavigateDown<CR>')
-map('n', '<C-k>', '<cmd> TmuxNavigateUp<CR>')
-map('n', '<C-h>', '<cmd> TmuxNavigateLeft<CR>')
-map('n', '<C-l>', '<cmd> TmuxNavigateRight<CR>')
+-- Toggle options
+LazyVim.toggle.map("<leader>tf", LazyVim.toggle.format())
+LazyVim.toggle.map("<leader>tF", LazyVim.toggle.format(true))
+LazyVim.toggle.map("<leader>ts", LazyVim.toggle("spell", { name = "Spellcheck" }))
+LazyVim.toggle.map("<leader>tw", LazyVim.toggle("wrap", { name = "Wrap" }))
+LazyVim.toggle.map("<leader>tl", LazyVim.toggle.number)
+LazyVim.toggle.map("<leader>tL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
+LazyVim.toggle.map("<leader>td", LazyVim.toggle.diagnostics)
+
+-- Terminal
+local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
+map("n", "<leader>Tt", lazyterm, { desc = "Terminal (Root Dir" })
+map("n", "<leader>TT", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
+
+-- Tmux
+map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
