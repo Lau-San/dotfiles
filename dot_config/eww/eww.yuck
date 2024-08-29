@@ -1,6 +1,6 @@
 ;; Eww configuration path
-(defvar eww "$HOME/.local/bin/eww")
 
+(include 'variables.yuck')
 
 (defwidget section [side]
     (box  :class "section"
@@ -17,138 +17,21 @@
 ;;                    WIDGETS                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defwidget launcher []
-    (section :side "left"
-      (button :class "launcher"
-              :tooltip "Launcher"
-              :halign "center"
-              :valign: "center"
-              :onclick "walker -m applications"
-        "")))
+(include 'widgets/launcher.yuck')
+(include 'widgets/workspaces.yuck')
+(include 'widgets/clock.yuck')
+(include 'widget/calendar.yuck')
+(include 'widgets/volume.yuck')
+(include 'widgets/indicators.yuck')
 
-;; Workspaces
-(deflisten monitor_workspaces1 "scripts/workspaces 0")
-(deflisten monitor_workspaces2 "scripts/workspaces 1")
-(defwidget w_workspaces [monitor]
-    (literal :content {monitor == 0 ? monitor_workspaces1 : monitor == 1 ? monitor_workspaces2 : "WORKSPACES"}))
-
-;; Date-Time
-;; Other formats:
-;;    - +%a, %b %d | %I:%M %p
-(defpoll time  :interval "1s"
-  `date "+%I:%M %p"`)
-(defpoll date  :interval "1s"
-  `date "+%a, %b %d"`)
-; (defwidget w_datetime [monitor]
-;     (button   :class "datetime"
-;               :orientation "h"
-;               :halign "center"
-;               :valign "fill"
-;               :onclick "scripts/popup calendar ${monitor}"
-;       time))
-
-
-(defvar reveal-date1 false)
-(defvar reveal-date2 false)
-(defwidget clock [monitor]
-    (section        :side "right"
-      (eventbox     :onhover "${eww} update reveal-date${monitor + 1}=true"
-                    :onhoverlost "${eww} update reveal-date${monitor + 1}=false"
-        (box        :orientation "h"
-                    :halign "end"
-                    :space-evenly false
-          (revealer :transition "slideleft"
-                    :duration "550ms"
-                    :reveal {monitor == 0 ? reveal-date1 : monitor == 1 ? reveal-date2 : true}
-            (button :class "date"
-                    :orientation "h"
-                    :halign "center"
-                    :valign "fill"
-                    :onclick "scripts/popup calendar ${monitor}"
-             "${date} | "))
-          (button   :class "time"
-                    :orientation "h"
-                    :halign "center"
-                    :valign "fill"
-                    :onclick "scripts/popup calendar ${monitor}"
-            time)))))
-
-
-;; Calendar
-(defpoll calendar_day   :interval "1m"
-  "date '+%d'")
-(defpoll calendar_month :interval "1m"
-  "scripts/calendar")
-(defpoll calendar_year  :interval "1m"
-  "date '+%Y'")
-(defwidget cal []
-    (box          :class "cal_box"
-                  :orientation "v"
-      (box        :class "cal_inner_box"
-        (calendar :class "cal"
-                  :day calendar_day
-                  :month calendar_month
-                  :year calendar_year))))
-
-;; Volume
-(defvar reveal-volume1 false)
-(defvar reveal-volume2 false)
-(defpoll current-volume :interval "1s"
-                        :initial "100"
-  "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-
-(defwidget volume [monitor]
-    (eventbox     :onhover "${eww} update reveal-volume${monitor + 1}=true"
-                  :onhoverlost "${eww} update reveal-volume${monitor + 1}=false"
-      (box        :orientation "h"
-                  :halign "end"
-                  :space-evenly false
-        (revealer :transition "slideleft"
-                  :duration "550ms"
-                  :reveal {monitor == 0 ? reveal-volume1 : monitor == 1 ? reveal-volume2 : true}
-          (scale  :class "volbar"
-                  :value current-volume
-                  :orientation "h"
-                  :flipped true
-                  :tooltip "Volume: ${current-volume}"
-                  :max 101
-                  :min 0
-                  :onchange "amixer -D pulse sset Master {}%"))
-        (button   :class "vol_icon"
-                  :onclick "scripts/popup audio"
-          ""))))
-
-;; Gamemode
-(defpoll gamemode-status  :interval "200ms"
-                          :initial "1"
-  "hyprctl getoption animations:enabled | awk 'NR==1{print $2}'")
-(defwidget gamemode []
-    (button :class {gamemode-status == "1" ? "gamemode_icon_disabled" : "gamemode_icon_enabled"}
-            :tooltip "Gamemode"
-            :onclick "~/.config/hypr/scripts/gamemode"
-      ""))
-
-;; Capslock
-(defpoll capslock-status  :interval "200ms"
-                          :initial "0"
-  "cat /sys/class/leds/input*::capslock/brightness")
-(defwidget capslock []
-    (button :class {capslock-status == "1" ? "capslock_icon_enabled" : "capslock_icon_disabled"}
-            :tooltip "Capslock"
-            :valign: "center"
-            :vexpand "true"
-      ""))
 
 ;; Music
-(defpoll title      :interval "5s" "scripts/music title")
-(defpoll artist     :interval "5s" "scripts/music artist")
-(defpoll playpause  :interval "1s" "scripts/music statusicon")
 (defwidget music []
   (section :side "center"
-    (box :class "music_icon"
+    (box :class "music icon"
           :space-evenly false
       "")
-    (box :class "music_playing"
+    (box :class "music playing"
           :space-evenly false
       {title == "Nothing Playing" ? title : "${title}  -  ${artist}"})
     (box  :orientation "h"
@@ -156,58 +39,43 @@
           :halign "center"
           :valign "center"
           :spacing 10
-      (button :class "music_prev" :onclick "scripts/music previous" "")
-      (button :class "music_play" :onclick "scripts/music toggle" playpause)
-      (button :class "music_next" :onclick "scripts/music next" ""))))
+      (button :class "music icon" :onclick "scripts/music previous" "")
+      (button :class "music icon" :onclick "scripts/music toggle" playpause)
+      (button :class "music icon" :onclick "scripts/music next" ""))))
 
 ;; Power Menu
 (defvar reveal-power1 false)
 (defvar reveal-power2 false)
 (defwidget power [monitor]
-    (eventbox     :onhover "${eww} update reveal-power${monitor + 1}=true"
-                  :onhoverlost "${eww} update reveal-power${monitor + 1}=false"
-      (box        :class "powermenu"
-                  :orientation "h"
-                  :halign "end"
-                  :space-evenly false
-        (revealer :transition "slideleft"
-                  :duration "550ms"
-                  :reveal {monitor == 0 ? reveal-power1 : monitor == 1 ? reveal-power2 : true}
-          (box    :orientation "h"
-                  :space-evenly false
-
-            (button :class "pow_reload_hypr"
-                    :tooltip "Reload Hyprland"
-                    :onclick "hyprctl reload" "")
-
-            (button :class "pow_logout"
-                    :tooltip "Logout"
-                    :onclick "hyprctl dispatch exit" "")
-
-            (button :class "pow_reboot"
-                    :tooltip "Reboot"
-                    :onclick "reboot" "")))
-
-
-        (button   :class "pow_off"
-                  :tooltip "Shutdown"
-                  :onclick "shutdown now"
-          ""))))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                    SECTIONS                    ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defwidget workspaces [monitor]
-    (section :side "left"
-      (w_workspaces   :monitor monitor)))
-
-(defwidget control [monitor]
-    (section :side "right"
-      (gamemode)
-      (capslock)
-      (volume :monitor monitor)))
+    (section :side 'right'
+        (eventbox   :onhover "${eww} update reveal-power${monitor + 1}=true"
+                    :onhoverlost "${eww} update reveal-power${monitor + 1}=false"
+                      ;; TODO: Class
+            (box      :class 'powermenu'
+                      :orientation 'h'
+                      :halign 'end'
+                      :space-evenly false
+                (revealer :transition 'slideleft'
+                          :duration '550ms'
+                          :reveal {monitor == 0 ? reveal-power1 : monitor == 1 ? reveal-power2 : true}
+                    (box    :orientation 'h'
+                            :space-evenly false
+                                ;; TODO: Class
+                        (button :class 'reload icon'
+                                :tooltip 'Reload Hyprland'
+                                :onclick 'hyprctl reload' '')
+                                ;; TODO: Class
+                        (button :class 'logout icon'
+                                :tooltip 'Logout'
+                                :onclick 'hyprctl dispatch exit' '')
+                                ;; TODO: Class
+                        (button :class 'reboot icon'
+                                :tooltip 'Reboot'
+                                :onclick 'reboot' '')))
+                          ;; TODO: Class
+                (button   :class 'shutdown icon'
+                          :tooltip 'Shutdown'
+                          :onclick 'shutdown now' '')))))
 
 (defwidget systemtray []
     (section :side "right"
@@ -215,15 +83,9 @@
                 :halign "end"
                 :spacing 5)))
 
-; (defwidget datetime [monitor]
-;     (section :side "right"
-;       (w_datetime :monitor monitor)))
-
-
-(defwidget powermenu [monitor]
-    (section :side "right"
-      (power :monitor monitor)))
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                    SECTIONS                    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                     AREAS                      ;;
@@ -251,9 +113,10 @@
 (defwidget right [monitor]
     (area :side "right"
       (literal :content {monitor == 0 ? "(systemtray)" : ""})
-      (control :monitor monitor)
+      (indicators :monitor monitor)
+      (volume :monitor monitor)
       (clock :monitor monitor)
-      (powermenu :monitor monitor)))
+      (power :monitor monitor)))
 
 ;; Bars
 

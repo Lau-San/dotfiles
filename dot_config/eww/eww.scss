@@ -1,5 +1,6 @@
 * {
     all: unset;
+    font-size: 16px;
 }
 
 $background: #1a1b26;
@@ -32,7 +33,7 @@ menu {
     border-radius: $border-radius;
     border: 2px solid $black;
 
-    & > menuitem {
+    &>menuitem {
         padding: 5px 10px;
         border-radius: $border-radius;
 
@@ -43,10 +44,12 @@ menu {
         arrow {
             min-height: 16px;
             min-width: 16px;
+
             &:dir(ltr) {
                 -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
                 margin-left: 10px;
             }
+
             &:dir(rtl) {
                 -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
                 margin-right: 10px;
@@ -63,33 +66,29 @@ tooltip {
 
 .section {
     background: $background;
-    padding: 5px 10px;
+    // padding: 5px 10px;
     border-radius: $border-radius;
-    font-size: 16px;
 }
 
 // ===========
 // == ICONS ==
 // ===========
 
-.launcher,
-.ws_btn,
-.gamemode_icon_enabled,
-.gamemode_icon_disabled,
-.capslock_icon_disabled,
-.capslock_icon_enabled,
-.music_icon,
 .music_play,
 .music_prev,
 .music_next,
-.vol_icon,
 .pow_off,
 .pow_reload_hypr,
 .pow_reboot,
-.pow_logout {
+.pow_logout,
+.icon {
     font-family: 'Font Awesome 6 Free';
     color: $foreground;
     font-weight: 700;
+
+    &.disabled {
+        color: $clr-disabled;
+    }
 }
 
 // ==============
@@ -104,85 +103,86 @@ tooltip {
 // == WORKSPACES ==
 // ================
 
-.ws_btn {
+.workspace {
     color: rgba($blue, 0.1);
     font-weight: 500;
+
+    &.occupied {
+        color: $blue;
+    }
+
+    &.focused {
+        font-weight: 600;
+        color: $blue;
+    }
 }
 
-.ws_btn.occupied {
-    color: $blue;
-}
 
-.ws_btn.focused {
-    font-weight: 600;
-    color: $blue;
-}
 
 // ===========
 // == MUSIC ==
 // ===========
 
-.music_icon,
-.music_prev,
-.music_play,
-.music_next {
-    color: $blue;
-}
-.music_icon {
-    padding-right: 2px;
-}
-.music_playing {
-    font-family: Dosis;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+.music {
     color: $foreground;
-    padding: 0 10px;
+
+    &.icon {
+        color: $blue;
+        // padding-right: 2px;
+    }
+
+    &.playing {
+        font-family: Dosis;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        // padding: 0 10px;
+    }
 }
 
 // =============
 // == CONTROL ==
 // =============
 
-.gamemode_icon_enabled,
-.gamemode_icon_disabled {
-    margin-right: 5px;
-}
+// .gamemode_icon_enabled,
+// .gamemode_icon_disabled {
+//     margin-right: 5px;
+// }
 
 // Gamemode
-.gamemode_icon_enabled {
+.gamemode.enabled {
     color: $magenta;
-}
-.gamemode_icon_disabled {
-    color: $clr-disabled;
 }
 
 // Capslock
-.capslock_icon_enabled {
+.capslock.enabled {
     color: $yellow;
-}
-.capslock_icon_disabled {
-    color: $clr-disabled;
 }
 
 // Volume
 $clr-vol: $cyan;
-.vol_icon {
-    color: $clr-vol;
-    margin-left: 5px;
+
+.volume {
+    .icon {
+        color: $clr-vol;
+        // margin-left: 5px;
+    }
+
+    .bar trough highlight {
+        background: $clr-vol;
+        border-radius: $border-radius;
+    }
 }
+
 scale trough {
     all: unset;
     background: $black;
     border-radius: $border-radius;
     min-width: 80px;
     min-height: 10px;
-    margin-left: 5px;
+    // margin-left: 5px;
 }
-.volbar trough highlight {
-    background: $clr-vol;
-    border-radius: $border-radius;
-}
+
 
 // Clock
 .date,
@@ -204,25 +204,27 @@ scale trough {
 }
 
 // Power Menu
-.pow_off {
-    margin-left: 5px;
-    margin-right: 5px;
-    color: $red;
+.reload,
+.reboot,
+.logout {
+    // padding: 0 5px;
+    // margin-right: 5px;
 }
 
-.pow_reload_hypr,
-.pow_reboot,
-.pow_logout {
-    padding: 0 5px;
-    margin-right: 5px;
-}
-
-.pow_reboot {
+.reboot {
     color: $yellow;
 }
-.pow_logout {
+
+.logout {
     color: $magenta;
 }
-.pow_reload_hypr {
+
+.reload {
     color: $cyan;
+}
+
+.shutdown {
+    // margin-left: 5px;
+    // margin-right: 5px;
+    color: $red;
 }
