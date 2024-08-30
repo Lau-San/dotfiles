@@ -16,3 +16,7 @@ local venv_selector = {
     ft = "python",
     keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
 }
+
+return {
+    venv_selector
+}
