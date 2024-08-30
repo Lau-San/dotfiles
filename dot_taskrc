@@ -89,6 +89,7 @@ report.blocked.sort=due+,wait+
 # === COLORS ===
 
 include no-color.theme
+rule.precedence.color=deleted,completed,active,keyword.,overdue,due.today,due,tag.,project.,scheduled,blocked,blocking,recurring,tagged,uda.
 
 # GENERAL
 color.alternate=on black
