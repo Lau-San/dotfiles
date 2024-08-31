@@ -48,6 +48,7 @@ del('n', '<leader>,')
 del('n', '<leader>bb')
 del('n', '<leader>bd')
 del('n', '<leader>bD')
+del('n', '<leader>`')
 
 map('n', '<leader>bb', ':Telescope buffers<cr>', { desc = 'Find buffer' })
 map("n", "<leader>bx", LazyVim.ui.bufremove, { desc = "Close Buffer" })
@@ -95,3 +96,9 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+
+------------
+-- Others --
+------------
+
+del('n', '<leader>K')
