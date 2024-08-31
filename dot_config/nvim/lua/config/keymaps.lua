@@ -38,8 +38,6 @@ map("n", "<leader>lc", function() LazyVim.news.changelog() end, { desc = "LazyVi
 -----------
 
 del('n', '<leader>fF')
-del('n', '<leader>fe')
-del('n', '<leader>fE')
 
 map("n", "<leader>fs", ":w<cr>", { desc = "Save file" })
 
