@@ -27,6 +27,7 @@ map("i", "jj", "<ESC>")
 
 del('n', '<leader>l')
 del('n', '<leader>L')
+del('n', '<leader>fc')
 
 map("n", "<leader>ll", ":Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>le", ":LazyExtras<cr>", { desc = "LazyExtras" })
@@ -37,6 +38,8 @@ map("n", "<leader>lc", function() LazyVim.news.changelog() end, { desc = "LazyVi
 -----------
 
 del('n', '<leader>fF')
+del('n', '<leader>fe')
+del('n', '<leader>fE')
 
 map("n", "<leader>fs", ":w<cr>", { desc = "Save file" })
 
@@ -49,6 +52,7 @@ del('n', '<leader>bb')
 del('n', '<leader>bd')
 del('n', '<leader>bD')
 del('n', '<leader>`')
+del('n', '<leader>fb')
 
 map('n', '<leader>bb', ':Telescope buffers<cr>', { desc = 'Find buffer' })
 map("n", "<leader>bx", LazyVim.ui.bufremove, { desc = "Close Buffer" })
