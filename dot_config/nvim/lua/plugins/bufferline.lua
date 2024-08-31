@@ -12,7 +12,14 @@ return {
             tab_size = 20,
             show_close_icon = false,
             show_tab_indicators = false,
-            show_buffer_close_icons = false
+            show_buffer_close_icons = false,
+            groups = {
+                items = {
+                    require('bufferline.groups').builtin.pinned:with({
+                        icon = '󰐃 ', highlight = { underline = true }
+                    })
+                }
+            }
         }
     }
 }

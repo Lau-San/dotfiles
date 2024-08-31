@@ -60,6 +60,8 @@ map("n", "<leader>bX", "<cmd>:bd<cr>", { desc = "Close Buffer and window" })
 -- Windows --
 -------------
 
+del('n', '<leader>wd')
+
 map("n", "<leader>wj", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<leader>wk", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<leader>wl", "<C-w>l", { desc = "Go to right window" })
@@ -69,8 +71,6 @@ map('n', '<leader>wx', '<C-W>c', { desc = 'Close window' })
 --------------------
 -- Toggle options --
 --------------------
-del('n', '<leader>uc')
-
 LazyVim.toggle.map("<leader>tf", LazyVim.toggle.format())
 LazyVim.toggle.map("<leader>tF", LazyVim.toggle.format(true))
 LazyVim.toggle.map("<leader>ts", LazyVim.toggle("spell", { name = "Spellcheck" }))
