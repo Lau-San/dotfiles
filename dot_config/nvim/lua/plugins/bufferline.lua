@@ -1,3 +1,4 @@
+local colors = require('tokyonight.colors').setup()
 return {
     'akinsho/bufferline.nvim',
     opts = {
@@ -15,7 +16,7 @@ return {
             show_buffer_close_icons = false,
             groups = {
                 items = {
-                    require('bufferline.groups').builtin.pinned:with({ icon = '󰐃 ', highlight = { fg = 'green' } })
+                    require('bufferline.groups').builtin.pinned:with({ icon = '󰐃 ', highlight = { fg = colors.green } })
                 }
             }
         }
