@@ -15,9 +15,7 @@ return {
             show_buffer_close_icons = false,
             groups = {
                 items = {
-                    require('bufferline.groups').builtin.pinned:with({
-                        icon = ' 󰐃 ', highlight = { ctermfg = 'green' }
-                    })
+                    require('bufferline.groups').builtin.pinned:with({ icon = '󰐃 ', highlight = { fg = 'green' } })
                 }
             }
         }
