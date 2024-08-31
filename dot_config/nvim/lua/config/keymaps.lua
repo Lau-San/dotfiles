@@ -69,6 +69,7 @@ map('n', '<leader>wx', '<C-W>c', { desc = 'Close window' })
 --------------------
 -- Toggle options --
 --------------------
+del('n', '<leader>uc')
 
 LazyVim.toggle.map("<leader>tf", LazyVim.toggle.format())
 LazyVim.toggle.map("<leader>tF", LazyVim.toggle.format(true))
