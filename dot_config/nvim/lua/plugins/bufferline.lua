@@ -16,7 +16,7 @@ return {
             groups = {
                 items = {
                     require('bufferline.groups').builtin.pinned:with({
-                        icon = '󰐃 ', highlight = { color = 'green' }
+                        icon = ' 󰐃 ', highlight = { ctermfg = 'green' }
                     })
                 }
             }
