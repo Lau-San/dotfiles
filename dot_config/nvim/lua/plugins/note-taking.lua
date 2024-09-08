@@ -40,5 +40,4 @@ local neorg = {
 }
 
 return {
-    neorg
 }

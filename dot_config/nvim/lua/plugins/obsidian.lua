@@ -6,6 +6,15 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             disable_frontmatter = true,
+            new_notes_location = 'inbox',
+
+            --- @param spec { id: string, dir: obsidian.Path, title: string|? }
+            note_path_func = function(spec)
+                local title = string.gsub(spec.title, ' ', '-')
+                local path = spec.dir / tostring(title or spec.id)
+                return path:with_suffix('.md')
+            end,
+
             workspaces = {
                 {
                     name = 'personal',
@@ -14,15 +23,15 @@ return {
                 }
             },
             ui = {
-                enable = false,
-                checkboxes = {
-                    [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-                    ["x"] = { char = "", hl_group = "ObsidianDone" },
-                    [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-                    ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
-                    ["-"] = { char = "", hl_group = "ObsidianTilde" },
-                    ["!"] = { char = "", hl_group = "ObsidianImportant" },
-                }
+                enable = false
+                -- checkboxes = {
+                --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                --     ["x"] = { char = "", hl_group = "ObsidianDone" },
+                --     [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+                --     ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
+                --     ["-"] = { char = "", hl_group = "ObsidianTilde" },
+                --     ["!"] = { char = "", hl_group = "ObsidianImportant" },
+                -- }
             },
             templates = {
                 folder = 'templates',
@@ -52,7 +61,7 @@ return {
             { '<leader>od', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
 
             -- Manipulate checkboxes
-            { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }
+            -- { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }
         },
     }
 }
