@@ -67,6 +67,11 @@ local markdown = {
     -- end,
 -- }
 
+local markdown_preview = {
+    'iamcco/markdown-preview.nvim'
+}
+
 return {
-    markdown
+    markdown,
+    markdown_preview
 }
