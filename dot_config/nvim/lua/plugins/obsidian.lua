@@ -6,7 +6,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             disable_frontmatter = true,
-            new_notes_location = 'inbox',
+            new_notes_location = 'notes_subdir',
 
             --- @param spec { id: string, dir: obsidian.Path, title: string|? }
             note_path_func = function(spec)
@@ -54,7 +54,7 @@ return {
         keys = {
             { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
             { '<leader>on', ':ObsidianNew<cr>', desc = 'create new note' },
-            { '<leader>oo', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
+            { '<leader>ot', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
