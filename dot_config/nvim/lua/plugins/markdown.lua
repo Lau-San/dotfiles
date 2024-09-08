@@ -48,7 +48,7 @@ local markdown = {
     }
 }
 
-local markdown_preview = {
+-- local markdown_preview = {
     -- Install markdown preview, use npx if available.
     -- 'iamcco/markdown-preview.nvim',
     -- cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
@@ -65,9 +65,8 @@ local markdown_preview = {
     -- init = function()
     --     if vim.fn.executable 'npx' then vim.g.mkdp_filetypes = { 'markdown' } end
     -- end,
-}
+-- }
 
 return {
-    markdown,
-    -- markdown_preview
+    markdown
 }
