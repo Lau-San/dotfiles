@@ -62,7 +62,7 @@ slider {
 #prompt {
     font-family: Mononoki Nerd Font;
     font-size: 20px;
-    color: #7AA2F7;
+    color: #7aa2f7;
     padding-left: 5px;
 }
 
@@ -82,16 +82,18 @@ slider {
     background: none;
 }
 
-#input>*:first-child,
-#typeahead>*:first-child {
-    color: #7AA2F7;
+#input > *:first-child,
+#typeahead > *:first-child {
+    color: #7aa2f7;
     margin-right: 10px;
 }
 
-#input>*:last-child,
-#typeahead>*:last-child {}
+#input > *:last-child,
+#typeahead > *:last-child {
+}
 
-#spinner {}
+#spinner {
+}
 
 #typeahead {
     color: #89b4fa;
@@ -105,13 +107,13 @@ child {
     border-radius: 5px;
     padding: 8px;
     transition-property: background-color;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
 
 child #label {
     transition-property: color;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
 
@@ -123,14 +125,17 @@ child:hover {
 
 child:selected #label,
 child:hover #label {
-    color: #7AA2F7;
+    color: #7aa2f7;
 }
 
-#item {}
+#item {
+}
 
-#icon {}
+#icon {
+}
 
-#text {}
+#text {
+}
 
 #label {
     font-weight: 500;
@@ -154,4 +159,5 @@ child:hover #label {
 
 .activation #text,
 .activation #icon,
-.activation #search {}
+.activation #search {
+}
