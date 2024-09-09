@@ -4,11 +4,19 @@ local markdown = {
         heading = {
             position = 'overlay',
             icons = { '󰎤 ', '󰎧 ', '󰎪 ', '󰎭 ', '󰎱 ', '󰎳 ' },
-            width = 'block',
+            width = 'full',
             left_pad = 1,
             right_pad = 2,
             -- min_width = 80,
-            border = true
+            border = true,
+            backgrounds = {
+                'RenderMarkdownH2BG',
+                'RenderMarkdownH2BG',
+                'RenderMarkdownH2BG',
+                'RenderMarkdownH2BG',
+                'RenderMarkdownH2BG',
+                'RenderMarkdownH2BG'
+            }
         },
         code = {
             -- position = 'right'
