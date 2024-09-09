@@ -23,18 +23,18 @@ bind = SUPER        , Period    , exec, $systemMonitor
 bind = SUPER        , M         , exec, $musicPlayer
 
 # Utilities
-bind = SUPER ALT    , S         , exec, flameshot gui
-bind = SUPER ALT    , P         , exec, $hypr/scripts/colorpicker
-bind = SUPER ALT    , C         , exec, walker -n --theme=tokyonight-centered -m calc
-bind = SUPER ALT    , E         , exec, walker -n --theme=tokyonight-centered -m emojis
 
-# Prompts
+# Prompts/Utilities
 bind = SUPER        , P         , exec, $menu
 bind = SUPER        , R         , exec, walker -m runner
 bind = SUPER        , C         , exec, walker -m config
 bind = SUPER        , O         , exec, walker -n --theme=tokyonight-centered -m obsidian
-bind = SUPER        , T         , exec, walker -n --theme=tokyonight-centered -m tasks
 bind = SUPER        , Comma     , exec, walker -n --theme=tokyonight-centered -m projects
+bind = SUPER        , Plus      , exec, walker -n --theme=tokyonight-centered -m calc
+bind = SUPER        , S         , exec, flameshot gui
+bind = SUPER        , T         , exec, io.github.alainm23.planify.quick-add
+bind = SUPER ALT    , C         , exec, $hypr/scripts/colorpicker
+bind = SUPER ALT    , E         , exec, walker -n --theme=tokyonight-centered -m emojis
 
 # Windows
 bind = SUPER        , J         , movefocus, d
