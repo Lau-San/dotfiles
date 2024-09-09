@@ -2,7 +2,7 @@ local markdown = {
     'MeanderingProgrammer/markdown.nvim',
     opts = {
         heading = {
-            position = 'inline',
+            position = 'overlay',
             icons = { '󰎤', '󰎧', '󰎪', '󰎭', '󰎱', '󰎳' },
             width = 'block',
             left_pad = 1,
