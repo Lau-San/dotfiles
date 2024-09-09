@@ -9,7 +9,9 @@ return {
             }
         },
         plugins = {
-            laststatus = 0
+            options = {
+                laststatus = 0
+            }
         }
     },
     keys = {
