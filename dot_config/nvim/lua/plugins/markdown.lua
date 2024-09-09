@@ -7,8 +7,8 @@ local markdown = {
             width = 'block',
             left_pad = 1,
             right_pad = 4,
-            min_width = 80,
-            border = true
+            -- min_width = 80,
+            border = false
         },
         code = {
             -- position = 'right'
