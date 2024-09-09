@@ -1,6 +1,10 @@
 local markdown = {
     'MeanderingProgrammer/markdown.nvim',
     opts = {
+        latex = { enabled = false },
+        win_options = {
+            conceallevel = { rendered = 2 }
+        },
         heading = {
             position = 'overlay',
             icons = { '󰎤 ', '󰎧 ', '󰎪 ', '󰎭 ', '󰎱 ', '󰎳 ' },
