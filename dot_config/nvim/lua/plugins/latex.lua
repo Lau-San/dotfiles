@@ -4,7 +4,8 @@ local latex = {
         require('latex').setup({
             conceals = {
                 add = {
-                    ['sqrt'] = '√'
+                    ['sqrt'] = '√',
+                    ['inf'] = ' '
                 }
             }
         })
