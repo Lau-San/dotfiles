@@ -1,4 +1,4 @@
-return {
+local zen_mode = {
     'folke/zen-mode.nvim',
     opts = {
         window = {
@@ -17,4 +17,13 @@ return {
     keys = {
         { '<leader>tz', ':ZenMode<cr>', desc = 'Toggle Zen Mode' }
     }
+}
+
+local twilight = {
+    'folke/twilight.nvim',
+}
+
+return {
+    zen_mode,
+    twilight
 }
