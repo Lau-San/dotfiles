@@ -11,7 +11,8 @@ local zen_mode = {
         plugins = {
             options = {
                 laststatus = 0
-            }
+            },
+            twilight = { enabled = false }
         }
     },
     keys = {
