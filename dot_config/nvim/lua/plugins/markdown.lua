@@ -60,30 +60,66 @@ local markdown = {
     }
 }
 
--- local markdown_preview = {
-    -- Install markdown preview, use npx if available.
-    -- 'iamcco/markdown-preview.nvim',
-    -- cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    -- ft = { 'markdown' },
-    -- build = 'cd app && npm install',
-    -- -- build = function(plugin)
-    -- --     if vim.fn.executable 'npx' then
-    -- --         vim.cmd("!cd " .. plugin.dir .. ' && cd app && npx --yes yarn install')
-    -- --     else
-    -- --         vim.cmd [[Lazy load markdown-preview.nvim]]
-    -- --         vim.fn['mkdp#util#install']()
-    -- --     end
-    -- -- end,
-    -- init = function()
-    --     if vim.fn.executable 'npx' then vim.g.mkdp_filetypes = { 'markdown' } end
-    -- end,
--- }
-
 local markdown_preview = {
-    'iamcco/markdown-preview.nvim'
+    'iamcco/markdown-preview.nvim',
+    keys = {
+        { '<leader>mp', ':MarkdownPreview<cr>', desc = 'markdown preview' }
+    }
+}
+
+local outline = {
+    'hedyhli/outline.nvim',
+    cmd = { 'Outline', 'OutlineOpen' },
+    keys = {
+        { '<leader>mo', ':Outline<cr>', desc = 'toggle outline' }
+    },
+    config = function()
+        require('outline').setup()
+    end
+}
+
+local image = {
+    {
+        'vhyrro/luarocks.nvim',
+        priority = 1001,
+        opts = {
+            rocks = { 'magick' }
+        }
+    },
+    {
+        '3rd/image.nvim',
+        dependencies = { 'luarocks.nvim' },
+        opts = {
+            backend = 'kitty',
+            kitty_method = 'normal',
+            integrations = {
+                markdown = {
+                    enabled = true,
+                    filetypes = { 'markdown', 'vimwiki' },
+                    only_render_image_at_cursor = true,
+                    download_remote_images = true,
+                    clear_in_insert_mode = true
+                }
+            },
+            max_width = nil,
+            max_height = nil,
+            max_width_window_percentage = nil,
+            max_height_window_percentage = 50,
+            window_overlap_clear_enabled = true,
+            window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
+            editor_only_render_when_focused = false,
+            hijack_file_patterns = {
+                '*.png',
+                '*.jpg',
+                '*.jpeg',
+            }
+        }
+    }
 }
 
 return {
     markdown,
-    markdown_preview
+    markdown_preview,
+    outline,
+    unpack(image)
 }

@@ -10,7 +10,8 @@ return {
                     { '<leader>t', group = 'toggles', icon= { icon = '', color = 'orange' } },
                     { '<leader>l', group = 'Lazy', icon= { icon = '󰒲', color = 'blue' } },
                     { '<leader>T', group = 'terminal', icon = { icon = '', color = 'red' } },
-                    { '<leader>f', group = 'file', icon = { icon = '' } }
+                    { '<leader>f', group = 'file', icon = { icon = '' } },
+                    { '<leader>m', group = 'markdown', icon = { icon = '', color = 'white' } }
                 }
             }
         }
