@@ -6,9 +6,9 @@ local markdown = {
             icons = { '󰎤', '󰎧', '󰎪', '󰎭', '󰎱', '󰎳' },
             width = 'block',
             left_pad = 1,
-            right_pad = 4,
+            right_pad = 2,
             -- min_width = 80,
-            border = false
+            border = true
         },
         code = {
             -- position = 'right'
