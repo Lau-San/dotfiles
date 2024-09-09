@@ -11,7 +11,7 @@ return {
             --- @param spec { id: string, dir: obsidian.Path, title: string|? }
             note_path_func = function(spec)
                 local title = string.gsub(spec.title, ' ', '-')
-                local path = spec.dir / 'inbox/' .. tostring(title or spec.id)
+                local path = spec.dir / ('inbox/' .. tostring(title or spec.id))
                 return path:with_suffix('.md')
             end,
 
