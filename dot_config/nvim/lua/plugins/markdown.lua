@@ -12,7 +12,7 @@ local markdown = {
             left_pad = 1,
             right_pad = 2,
             -- min_width = 80,
-            border = true,
+            border = false,
             backgrounds = {
                 'RenderMarkdownH2BG',
                 'RenderMarkdownH2BG',
@@ -117,9 +117,22 @@ local image = {
     }
 }
 
+local bullets = {
+    'bullets-vim/bullets.vim'
+}
+
+local stay_centered = {
+    'arnamak/stay-centered.nvim',
+    opts = {
+        enabled = false
+    }
+}
+
 return {
     markdown,
     markdown_preview,
     outline,
-    unpack(image)
+    unpack(image),
+    bullets,
+    stay_centered,
 }

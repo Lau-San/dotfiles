@@ -27,5 +27,6 @@ autocmd({ "FileType" }, {
         -- vim.opt_local.textwidth = 80
         vim.opt_local.spell = false
         vim.b.autoformat = false
+        require('stay-centered').enable()
      end
  })

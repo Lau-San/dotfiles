@@ -23,15 +23,16 @@ return {
                 }
             },
             ui = {
-                enable = false
-                -- checkboxes = {
-                --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-                --     ["x"] = { char = "", hl_group = "ObsidianDone" },
-                --     [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-                --     ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
-                --     ["-"] = { char = "", hl_group = "ObsidianTilde" },
-                --     ["!"] = { char = "", hl_group = "ObsidianImportant" },
-                -- }
+                enable = false,
+                checkboxes = {
+                    [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                    ["/"] = { char = "", hl_group = "ObsidianTilde" },
+                    ["x"] = { char = "", hl_group = "ObsidianDone" },
+                    -- [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+                    -- ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
+                    ["-"] = { char = "", hl_group = "ObsidianTilde" },
+                    -- ["!"] = { char = "", hl_group = "ObsidianImportant" },
+                }
             },
             templates = {
                 folder = 'templates',
@@ -59,6 +60,11 @@ return {
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
             { '<leader>od', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
+
+            { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
+            { '<leader>otp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
+            { '<leader>otd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
+            { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
 
             -- Manipulate checkboxes
             -- { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }
