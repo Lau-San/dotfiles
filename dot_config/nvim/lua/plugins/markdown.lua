@@ -127,7 +127,8 @@ local toc = {
     opts = {
         toc_list = {
             markers = '-',
-            cycle_markers = false
+            cycle_markers = false,
+            indent_size = 4
         }
     },
     keys = {

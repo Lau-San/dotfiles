@@ -1,3 +1,9 @@
+local function new_note()
+    vim.cmd('ObsidianNew')
+    vim.cmd('ObsidianTemplate note')
+    vim.cmd('normal! 1G')
+    vim.cmd('normal! dd')
+end
 return {
     {
         'epwalsh/obsidian.nvim',
@@ -55,6 +61,7 @@ return {
         keys = {
             { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
             { '<leader>on', ':ObsidianNew<cr>', desc = 'create new note' },
+            { '<leader>on', new_note, desc = 'create new note' },
             { '<leader>ot', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
