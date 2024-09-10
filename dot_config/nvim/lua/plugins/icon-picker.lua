@@ -5,6 +5,6 @@ return {
         disable_legacy_commands = true
     },
     keys = {
-        { '<leader>si', ':IconPickerYank nerd_font<cr>', desc = 'Search Nerdfont icons' }
+        { '<leader>si', ':IconPickerNormal nerd_font<cr>', desc = 'Search Nerdfont icons' }
     }
 }

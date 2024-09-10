@@ -66,7 +66,7 @@ return {
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
-            { '<leader>od', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
+            { '<leader>odd', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
 
             { '<leader>oct', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
             { '<leader>ocp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
