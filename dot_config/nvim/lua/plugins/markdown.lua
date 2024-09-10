@@ -36,7 +36,7 @@ local markdown = {
             checked = { icon = ' ' },
             custom = {
                 todo = { raw = '[-]', rendered = ' ', highlight = 'DiagnosticUnnecessary' },
-                incomplete = { raw = '[/]', rendered = ' ', highlight = 'DiagnosticWarn' },
+                incomplete = { raw = '[/]', rendered = ' ', highlight = '@markup.list.markdown' },
                 migrated = { raw = '[>]', rendered = ' ', highlight = 'DiagnosticInfo' },
                 pinned = { raw = '[*]', rendered = ' ', highlight = 'DiagnosticOk' },
                 must = { raw = '[M]', rendered = ' ', highlight = 'DiagnosticError' },

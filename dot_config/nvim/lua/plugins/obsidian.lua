@@ -61,7 +61,9 @@ return {
         keys = {
             { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
             { '<leader>on', new_note, desc = 'create new note' },
-            { '<leader>oo', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
+            { '<leader>oT', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
+            { '<leader>oot', ':ObsidianToday', desc = "open today's note" },
+            { '<leader>ooT', ':ObsidianTomorrow', desc = "open tomorrow's note" },
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
@@ -71,6 +73,7 @@ return {
             { '<leader>otp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
             { '<leader>otd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
             { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
+            { '<leader>otm', ':s/- \\[.\\]/- \\[>\\]/<cr>', desc = 'set status moved' },
             { '<leader>otM', ':s/- \\[.\\]/- \\[M\\]/<cr>', desc = 'set priority MUST' },
             { '<leader>otS', ':s/- \\[.\\]/- \\[S\\]/<cr>', desc = 'set priority SHOULD' },
             { '<leader>otC', ':s/- \\[.\\]/- \\[C\\]/<cr>', desc = 'set priority COULD' },
