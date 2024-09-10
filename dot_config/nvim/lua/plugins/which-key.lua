@@ -6,7 +6,7 @@ return {
                 {
                     mode = {'n'},
                     { '<leader>o', group = 'obsidian', icon = { icon = '', color = 'purple' } },
-                    { '<leader>os', group = 'delete', icon = { icon = '', color = 'red' } },
+                    { '<leader>od', group = 'delete', icon = { icon = '', color = 'red' } },
                     { '<leader>ot', group = 'todo', icon = { icon = '', color = 'purple' } },
                     { '<leader>t', group = 'toggles', icon= { icon = '', color = 'orange' } },
                     { '<leader>l', group = 'Lazy', icon= { icon = '󰒲', color = 'blue' } },
