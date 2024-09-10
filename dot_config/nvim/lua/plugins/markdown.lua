@@ -32,14 +32,16 @@ local markdown = {
             right_pad = 2
         },
         checkbox = {
-            unchecked = { icon = ' ' },
+            unchecked = { icon = ' ', highlight = 'DiagnosticUnnecessary' },
             checked = { icon = ' ' },
             custom = {
                 incomplete = { raw = '[/]', rendered = ' ', highlight = 'DiagnosticWarn' },
                 cancelled = { raw = '[c]', rendered = ' ', highlight = 'DiagnosticUnnecessary' },
                 migrated = { raw = '[>]', rendered = ' ', highlight = 'DiagnosticInfo' },
                 pinned = { raw = '[*]', rendered = ' ', highlight = 'DiagnosticOk' },
-                must = { raw = '[!]', rendered = ' ', highlight = 'DiagnosticError' },
+                must = { raw = '[M]', rendered = ' ', highlight = 'DiagnosticError' },
+                should = { raw = '[S]', rendered = ' ', highlight = 'DiagnosticWarn' },
+                could = { raw = '[C]', rendered = ' ', highlight = 'DiagnosticInfo' },
             }
         },
         callout = {
