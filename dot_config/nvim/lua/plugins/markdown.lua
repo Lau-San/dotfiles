@@ -36,7 +36,7 @@ local markdown = {
             checked = { icon = ' ' },
             custom = {
                 incomplete = { raw = '[/]', rendered = ' ', highlight = 'DiagnosticWarn' },
-                cancelled = { raw = '[-]', rendered = ' ', highlight = 'DiagnosticUnnecessary' },
+                cancelled = { raw = '[-]', rendered = ' ', highlight = 'DiagnosticUnnecessary' },
                 migrated = { raw = '[>]', rendered = ' ', highlight = 'DiagnosticInfo' },
                 pinned = { raw = '[*]', rendered = ' ', highlight = 'DiagnosticHint' },
             }
