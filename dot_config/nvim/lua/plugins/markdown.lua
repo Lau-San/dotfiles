@@ -121,18 +121,10 @@ local bullets = {
     'bullets-vim/bullets.vim'
 }
 
-local stay_centered = {
-    'arnamak/stay-centered.nvim',
-    opts = {
-        enabled = false
-    }
-}
-
 return {
     markdown,
     markdown_preview,
     outline,
     unpack(image),
     bullets,
-    stay_centered,
 }
