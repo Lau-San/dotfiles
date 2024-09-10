@@ -125,7 +125,7 @@ local toc = {
     'hedyhli/markdown-toc.nvim',
     ft = 'markdown',
     opts = {
-        top_list = {
+        toc_list = {
             markers = '-',
             cycle_markers = false
         }
