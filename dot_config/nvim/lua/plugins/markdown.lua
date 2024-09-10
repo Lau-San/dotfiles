@@ -141,4 +141,5 @@ return {
     outline,
     unpack(image),
     bullets,
+    toc,
 }
