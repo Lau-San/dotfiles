@@ -31,12 +31,12 @@ return {
             ui = {
                 enable = false,
                 checkboxes = {
-                    [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-                    ["/"] = { char = "", hl_group = "ObsidianTilde" },
-                    ["x"] = { char = "", hl_group = "ObsidianDone" },
-                    -- [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+                    [" "] = { char = " ", hl_group = "ObsidianTodo" },
+                    ["x"] = { char = " ", hl_group = "ObsidianDone" },
+                    ["/"] = { char = " ", hl_group = "ObsidianTilde" },
+                    ["-"] = { char = " ", hl_group = "ObsidianTilde" },
+                    [">"] = { char = " ", hl_group = "ObsidianRightArrow" },
                     -- ["*"] = { char = "", hl_group = "ObsidianRightArrow" },
-                    ["-"] = { char = "", hl_group = "ObsidianTilde" },
                     -- ["!"] = { char = "", hl_group = "ObsidianImportant" },
                 }
             },
@@ -60,18 +60,17 @@ return {
         },
         keys = {
             { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
-            { '<leader>on', ':ObsidianNew<cr>', desc = 'create new note' },
             { '<leader>on', new_note, desc = 'create new note' },
-            { '<leader>ot', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
+            { '<leader>oo', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
             { '<leader>odd', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
 
-            { '<leader>oct', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
-            { '<leader>ocp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
-            { '<leader>ocd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
-            { '<leader>occ', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
+            { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
+            { '<leader>otp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
+            { '<leader>otd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
+            { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
 
             -- Manipulate checkboxes
             -- { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }
