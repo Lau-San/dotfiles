@@ -121,6 +121,20 @@ local bullets = {
     'bullets-vim/bullets.vim'
 }
 
+local toc = {
+    'hedyhli/markdown-toc.nvim',
+    ft = 'markdown',
+    opts = {
+        top_list = {
+            markers = '-',
+            cycle_markers = false
+        }
+    },
+    keys = {
+        { '<leader>mt', ':Mtoc<cr>', desc = 'add/update toc' }
+    }
+}
+
 return {
     markdown,
     markdown_preview,
