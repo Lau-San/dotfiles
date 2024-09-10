@@ -70,7 +70,7 @@ return {
             { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
             { '<leader>otp', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status in progress' },
             { '<leader>otd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
-            { '<leader>otc', ':s/- \\[.\\]/- \\[c\\]/<cr>', desc = 'set status cancelled' },
+            { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
             { '<leader>otM', ':s/- \\[.\\]/- \\[M\\]/<cr>', desc = 'set priority MUST' },
             { '<leader>otS', ':s/- \\[.\\]/- \\[S\\]/<cr>', desc = 'set priority SHOULD' },
             { '<leader>otC', ':s/- \\[.\\]/- \\[C\\]/<cr>', desc = 'set priority COULD' },
