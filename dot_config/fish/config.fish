@@ -25,7 +25,7 @@ alias tti='taskwarrior-tui -r inbox'
 alias tta='taskwarrior-tui -r active'
 alias ttn='taskwarrior-tui -r next'
 
-# Pacman
+# Pacman/Yay/Paru
 
 alias pacs='pacman -Ss'
 alias pacq='pacman -Q'
@@ -33,11 +33,13 @@ alias paci='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 alias pacr='sudo pacman -R'
 
-# Yay
-
 alias yays='yay -Ss'
 alias yayi='yay -S'
 alias yayu='yay -Syu'
+
+alias parus='paru -Ss'
+alias parui='paru -S'
+alias paruu='paru -Syu'
 
 # Python
 
