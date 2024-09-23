@@ -5,7 +5,8 @@ local latex = {
             conceals = {
                 add = {
                     ['sqrt'] = '√',
-                    ['inf'] = ' '
+                    ['inf'] = ' ',
+                    ['pm'] = '󰦒'
                 }
             }
         })
