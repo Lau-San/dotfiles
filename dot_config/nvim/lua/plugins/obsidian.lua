@@ -15,7 +15,17 @@ return {
     {
         'epwalsh/obsidian.nvim',
         version = '*',
-        lazy = false,
+        cmd = {
+            'ObsidianOpen',
+            'ObsidianNew',
+            'ObsidianNewFromTemplate',
+            'ObsidianQuickSwitch',
+            'ObsidianTags',
+            'ObsidianToday',
+            'ObsidianTomorrow',
+            'ObsidianDailies',
+            'ObsidianSearch',
+        },
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             disable_frontmatter = true,

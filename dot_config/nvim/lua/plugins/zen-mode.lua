@@ -1,7 +1,9 @@
 local zen_mode = {
     'folke/zen-mode.nvim',
+    cmd = { 'ZenMode' },
     opts = {
         window = {
+            width = 80,
             options = {
                 relativenumber = false,
                 number = false,
