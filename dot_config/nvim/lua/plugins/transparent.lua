@@ -5,7 +5,8 @@ return {
             transparent = true,
             styles = {
                 sidebars = 'dark',
-                floats = 'normal'
+                floats = 'normal',
+                functions = { italic = true }
             }
         }
     }
