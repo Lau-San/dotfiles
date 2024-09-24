@@ -11,3 +11,7 @@ local leet = {
         lang = 'typescript'
     }
 }
+
+return {
+    leet
+}
