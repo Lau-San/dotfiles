@@ -1,6 +1,6 @@
 local leet = {
     'kawre/leetcode.nvim',
-    build = ':TSUpdate html',
+    -- build = ':TSUpdate html',
     dependencies = {
         'nvim-telescope/telescope.nvim',
         'nvim-lua/plenary.nvim',
