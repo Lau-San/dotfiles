@@ -144,7 +144,8 @@ return {
     markdown,
     markdown_preview,
     outline,
-    unpack(image),
+    image[1],
+    image[2],
     bullets,
     toc,
 }
