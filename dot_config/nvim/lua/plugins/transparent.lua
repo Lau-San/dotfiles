@@ -2,7 +2,7 @@ return {
     {
         'folke/tokyonight.nvim',
         opts = {
-            transparent = false,
+            transparent = true,
             styles = {
                 sidebars = 'dark',
                 floats = 'normal'
