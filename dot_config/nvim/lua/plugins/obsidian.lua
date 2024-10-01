@@ -16,6 +16,11 @@ local function open_in_vsplit()
     vim.cmd('ObsidianQuickSwitch')
 end
 
+local function set_todo(status)
+    vim.cmd('s/- \\[.\\]/- \\[' .. status .. '\\]/')
+    vim.cmd('noh')
+end
+
 return {
     {
         'epwalsh/obsidian.nvim',
@@ -110,7 +115,7 @@ return {
             { '<leader>otn', new_task, desc = 'add task to inbox' },
             { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
             { '<leader>oti', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status incomplete' },
-            { '<leader>otd', ':s/- \\[.\\]/- \\[x\\]/<cr>', desc = 'set status done' },
+            { '<leader>otd', function() set_todo('x') end, desc = 'set status done' },
             { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
             { '<leader>otm', ':s/- \\[.\\]/- \\[>\\]/<cr>', desc = 'set status moved' },
             { '<leader>otP', ':s/- \\[.\\]/- \\[*\\]/<cr>', desc = 'set pinned' },
