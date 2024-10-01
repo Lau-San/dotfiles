@@ -114,11 +114,11 @@ return {
 
             { '<leader>otn', new_task, desc = 'add task to inbox' },
             { '<leader>ott', function() set_todo(' ') end, desc = 'set status to do' },
-            { '<leader>oti', function() set_todo('/') end, desc = 'set status incomplete' },
+            { '<leader>oti', function() set_todo('\\/') end, desc = 'set status incomplete' },
             { '<leader>otd', function() set_todo('x') end, desc = 'set status done' },
             { '<leader>otc', function() set_todo('-') end, desc = 'set status cancelled' },
             { '<leader>otm', function() set_todo('>') end, desc = 'set status moved' },
-            { '<leader>otP', function() set_todo('*') end, desc = 'set pinned' },
+            { '<leader>otp', function() set_todo('*') end, desc = 'set pinned' },
             { '<leader>otM', function() set_todo('M') end, desc = 'set priority MUST' },
             { '<leader>otS', function() set_todo('S') end, desc = 'set priority SHOULD' },
             { '<leader>otC', function() set_todo('C') end, desc = 'set priority COULD' },
