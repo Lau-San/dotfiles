@@ -85,6 +85,7 @@ return {
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
             { '<leader>odd', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
+            { '<leader>op', ':ObsidianPasteImg<cr>', desc = 'paste image' },
 
             { '<leader>otn', new_task, desc = 'add task to inbox' },
             { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },

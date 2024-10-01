@@ -67,7 +67,7 @@ local markdown = {
 local markdown_preview = {
     'iamcco/markdown-preview.nvim',
     keys = {
-        { '<leader>mp', ':MarkdownPreview<cr>', desc = 'markdown preview' }
+        { '<leader>mp', ':MarkdownPreviewToggle<cr>', desc = 'markdown preview' }
     }
 }
 
@@ -83,40 +83,31 @@ local outline = {
 }
 
 local image = {
-    {
-        'vhyrro/luarocks.nvim',
-        priority = 1001,
-        opts = {
-            rocks = { 'magick' }
-        }
-    },
-    {
-        '3rd/image.nvim',
-        dependencies = { 'luarocks.nvim' },
-        opts = {
-            backend = 'kitty',
-            kitty_method = 'normal',
-            integrations = {
-                markdown = {
-                    enabled = true,
-                    filetypes = { 'markdown', 'vimwiki' },
-                    only_render_image_at_cursor = true,
-                    download_remote_images = true,
-                    clear_in_insert_mode = true
-                }
-            },
-            max_width = nil,
-            max_height = nil,
-            max_width_window_percentage = nil,
-            max_height_window_percentage = 50,
-            window_overlap_clear_enabled = true,
-            window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
-            editor_only_render_when_focused = false,
-            hijack_file_patterns = {
-                '*.png',
-                '*.jpg',
-                '*.jpeg',
+    '3rd/image.nvim',
+    dependencies = { 'kiyoon/magick.nvim' },
+    opts = {
+        backend = 'kitty',
+        kitty_method = 'normal',
+        integrations = {
+            markdown = {
+                enabled = true,
+                filetypes = { 'markdown', 'vimwiki' },
+                only_render_image_at_cursor = true,
+                download_remote_images = true,
+                clear_in_insert_mode = true
             }
+        },
+        max_width = nil,
+        max_height = nil,
+        max_width_window_percentage = nil,
+        max_height_window_percentage = 50,
+        window_overlap_clear_enabled = true,
+        window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
+        editor_only_render_when_focused = false,
+        hijack_file_patterns = {
+            '*.png',
+            '*.jpg',
+            '*.jpeg',
         }
     }
 }
@@ -144,8 +135,7 @@ return {
     markdown,
     markdown_preview,
     outline,
-    image[1],
-    image[2],
+    image,
     bullets,
     toc,
 }
