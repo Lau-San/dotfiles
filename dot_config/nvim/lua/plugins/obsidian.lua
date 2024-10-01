@@ -34,7 +34,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             disable_frontmatter = true,
-            open_notes_in = 'vsplit',
+            -- open_notes_in = 'vsplit',
             new_notes_location = 'notes_subdir',
 
             --- @param spec { id: string, dir: obsidian.Path, title: string|? }
