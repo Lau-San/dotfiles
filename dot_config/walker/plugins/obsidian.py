@@ -15,9 +15,9 @@ if user_input:
 actions = {
     '󱉼  Open vault': 'kitty oo',
     '  Review notes': 'kitty oor',
-    '  Open Yesterday\'s note': "kitty nvim +':ObsidianYesterday'",
-    '  Open Today\'s note': "kitty nvim +':ObsidianToday'",
-    '  Open Tomorrow\'s note': "kitty nvim +':ObsidianTomorrow'",
+    # '  Open Yesterday\'s note': "kitty nvim +':ObsidianYesterday'",
+    # '  Open Today\'s note': "kitty nvim +':ObsidianToday'",
+    # '  Open Tomorrow\'s note': "kitty nvim +':ObsidianTomorrow'",
 }
 
 for k, v in actions.items():
