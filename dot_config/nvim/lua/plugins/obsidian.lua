@@ -113,15 +113,15 @@ return {
             { '<leader>op', ':ObsidianPasteImg<cr>', desc = 'paste image' },
 
             { '<leader>otn', new_task, desc = 'add task to inbox' },
-            { '<leader>ott', ':s/- \\[.\\]/- \\[ \\]/<cr>', desc = 'set status to do' },
-            { '<leader>oti', ':s/- \\[.\\]/- \\[\\/\\]/<cr>', desc = 'set status incomplete' },
+            { '<leader>ott', function() set_todo(' ') end, desc = 'set status to do' },
+            { '<leader>oti', function() set_todo('/') end, desc = 'set status incomplete' },
             { '<leader>otd', function() set_todo('x') end, desc = 'set status done' },
-            { '<leader>otc', ':s/- \\[.\\]/- \\[-\\]/<cr>', desc = 'set status cancelled' },
-            { '<leader>otm', ':s/- \\[.\\]/- \\[>\\]/<cr>', desc = 'set status moved' },
-            { '<leader>otP', ':s/- \\[.\\]/- \\[*\\]/<cr>', desc = 'set pinned' },
-            { '<leader>otM', ':s/- \\[.\\]/- \\[M\\]/<cr>', desc = 'set priority MUST' },
-            { '<leader>otS', ':s/- \\[.\\]/- \\[S\\]/<cr>', desc = 'set priority SHOULD' },
-            { '<leader>otC', ':s/- \\[.\\]/- \\[C\\]/<cr>', desc = 'set priority COULD' },
+            { '<leader>otc', function() set_todo('-') end, desc = 'set status cancelled' },
+            { '<leader>otm', function() set_todo('>') end, desc = 'set status moved' },
+            { '<leader>otP', function() set_todo('*') end, desc = 'set pinned' },
+            { '<leader>otM', function() set_todo('M') end, desc = 'set priority MUST' },
+            { '<leader>otS', function() set_todo('S') end, desc = 'set priority SHOULD' },
+            { '<leader>otC', function() set_todo('C') end, desc = 'set priority COULD' },
 
             -- Manipulate checkboxes
             -- { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }
