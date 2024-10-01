@@ -78,6 +78,10 @@ LazyVim.toggle.map("<leader>tw", LazyVim.toggle("wrap", { name = "Wrap" }))
 LazyVim.toggle.map("<leader>tl", LazyVim.toggle.number)
 LazyVim.toggle.map("<leader>tL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
 LazyVim.toggle.map("<leader>td", LazyVim.toggle.diagnostics)
+LazyVim.toggle.map('<leader>tr', LazyVim.toggle.option('colorcolumn', {
+    name = 'Ruler',
+    values = {'', '80'}
+}))
 
 --------------
 -- Terminal --

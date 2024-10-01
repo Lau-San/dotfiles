@@ -11,6 +11,11 @@ local function new_task()
     vim.cmd('!echo "- [ ] ' .. task .. '" >> ~/Documents/personal/journal/' .. date .. '.md')
 end
 
+local function open_in_vsplit()
+    vim.cmd('exe "normal \\<C-W>v"')
+    vim.cmd('ObsidianQuickSwitch')
+end
+
 return {
     {
         'epwalsh/obsidian.nvim',
@@ -29,6 +34,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             disable_frontmatter = true,
+            open_notes_in = 'vsplit',
             new_notes_location = 'notes_subdir',
 
             --- @param spec { id: string, dir: obsidian.Path, title: string|? }
@@ -73,14 +79,28 @@ return {
                 alias_format = '%B %-d, %Y',
                 default_tags = {'journal'},
                 template = 'journal'
+            },
+            attachments = {
+                -- A function that determines the text to insert in the note when pasting an image.
+                -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
+                -- This is the default implementation.
+                ---@param client obsidian.Client
+                ---@param path obsidian.Path the absolute path to the image file
+                ---@return string
+                img_text_func = function(client, path)
+                    path = client:vault_root() / ('assets/imgs/' .. path.name)
+                    return string.format('![%s](%s)', path.name, path)
+                end
             }
         },
         keys = {
-            { '<leader>os', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
+            { '<leader>oo', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
+            { '<leader>oO', open_in_vsplit, desc = 'open a note' },
             { '<leader>on', new_note, desc = 'create new note' },
             { '<leader>oT', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
-            { '<leader>oot', ':ObsidianToday<cr>', desc = "open today's note" },
-            { '<leader>ooT', ':ObsidianTomorrow<cr>', desc = "open tomorrow's note" },
+            { '<leader>os', ':ObsidianSearch<cr>', desc = 'grep vault' },
+            -- { '<leader>oot', ':ObsidianToday<cr>', desc = "open today's note" },
+            -- { '<leader>ooT', ':ObsidianTomorrow<cr>', desc = "open tomorrow's note" },
             { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
             { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
             { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
