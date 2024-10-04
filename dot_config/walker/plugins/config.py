@@ -28,6 +28,7 @@ configs = {
 
     'Starship': '~/.config/starship.toml',
     'Fastfetch': '~/.config/fastfetch/config.jsonc',
+    'Tmux': '~/.config/tmux/tmux.conf',
     'Zellij': '~/.config/zellij',
 
     'Neovim': '~/.config/nvim/lua',
