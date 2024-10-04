@@ -1,3 +1,6 @@
+default_shell "fish"
+default_mode "locked"
+
 // ==== BINDINGS ==== //
 
 keybinds clear-defaults=true {
@@ -388,6 +391,6 @@ theme "tokyo-night"
 simplified_ui true
 ui {
     pane_frames {
-        rounded_corners true
+        // rounded_corners true
     }
 }
