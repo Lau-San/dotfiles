@@ -22,8 +22,6 @@ bind = SUPER        , B         , exec, $browser
 bind = SUPER        , Period    , exec, $systemMonitor
 bind = SUPER        , M         , exec, $musicPlayer
 
-# Utilities
-
 # Prompts/Utilities
 bind = SUPER        , P         , exec, $menu
 bind = SUPER        , R         , exec, walker -m runner
@@ -46,13 +44,23 @@ bind = SUPER CTRL   , K         , movewindow, u
 bind = SUPER CTRL   , H         , movewindow, l
 bind = SUPER CTRL   , L         , movewindow, r
 bind = SUPER CTRL   , F         , togglefloating,
-
 bind = SUPER CTRL   , C         , killactive,
 
+# Groups
+bind = SUPER CTRL   , G         , togglegroup,
+bind = SUPER CTRL   , X         , lockactivegroup,
+bind = SUPER SHIFT  , H         , moveintogroup, l
+bind = SUPER SHIFT  , L         , moveintogroup, r
+bind = SUPER SHIFT  , J         , moveintogroup, d
+bind = SUPER SHIFT  , K         , moveintogroup, u
+bind = SUPER SHIFT  , O         , moveoutofgroup,
+bind = SUPER        , Tab       , changegroupactive,
+
+# Switch to workspace left/right
 bind = SUPER        , U         , split-workspace, r-1
 bind = SUPER        , I         , split-workspace, r+1
 
-# Switch workspaces with mainMod + [0-9]
+# Switch to workspace #
 bind = SUPER        , 1         , split-workspace, 1
 bind = SUPER        , 2         , split-workspace, 2
 bind = SUPER        , 3         , split-workspace, 3
