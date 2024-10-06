@@ -85,6 +85,7 @@ local outline = {
 local image = {
     '3rd/image.nvim',
     dependencies = { 'kiyoon/magick.nvim' },
+    ft = 'markdown',
     opts = {
         backend = 'kitty',
         kitty_method = 'normal',
