@@ -114,7 +114,8 @@ local image = {
 }
 
 local bullets = {
-    'bullets-vim/bullets.vim'
+    'bullets-vim/bullets.vim',
+    ft = 'markdown',
 }
 
 local toc = {
