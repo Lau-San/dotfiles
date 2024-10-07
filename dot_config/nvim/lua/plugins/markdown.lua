@@ -1,5 +1,6 @@
 local markdown = {
     'MeanderingProgrammer/markdown.nvim',
+    ft = 'markdown',
     opts = {
         latex = { enabled = false },
         win_options = {
