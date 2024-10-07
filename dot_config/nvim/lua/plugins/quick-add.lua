@@ -4,5 +4,5 @@ return {
     { 'editorconfig/editorconfig-vim' },
     { 'wakatime/vim-wakatime', lazy = false },
     { 'jasonccox/vim-wayland-clipboard' },
-    { 'imsnif/kdl.vim' }
+    { 'imsnif/kdl.vim', ft = 'kdl' }
 }
