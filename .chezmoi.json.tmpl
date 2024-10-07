@@ -3,6 +3,10 @@
         "command": "kitty",
         "args": ["nvim"]
     },
+    "diff": {
+        "command": "nvim"
+        "args": ["-d", "{{ .Destination }}", "{{ .Target }}"]
+    },
     "git": {
         "autocommit": true,
         "autopush": true
