@@ -7,6 +7,16 @@ local icons = {
     }
 }
 
+local pairs = {
+    'echasnovski/mini.pairs',
+    opts = {
+        mappings = {
+            ['<'] = { action = 'open', pair = '<>', neigh_pattern = '[^\\].' },
+            ['>'] = { action = 'close', pair = '<>', neigh_pattern = '[^\\].' },
+        }
+    }
+}
+
 return {
     icons
 }
