@@ -71,17 +71,17 @@ map('n', '<leader>wx', '<C-W>c', { desc = 'Close window' })
 --------------------
 -- Toggle options --
 --------------------
-LazyVim.toggle.map("<leader>tf", LazyVim.toggle.format())
-LazyVim.toggle.map("<leader>tF", LazyVim.toggle.format(true))
-LazyVim.toggle.map("<leader>ts", LazyVim.toggle("spell", { name = "Spellcheck" }))
-LazyVim.toggle.map("<leader>tw", LazyVim.toggle("wrap", { name = "Wrap" }))
-LazyVim.toggle.map("<leader>tl", LazyVim.toggle.number)
-LazyVim.toggle.map("<leader>tL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
-LazyVim.toggle.map("<leader>td", LazyVim.toggle.diagnostics)
-LazyVim.toggle.map('<leader>tr', LazyVim.toggle.option('colorcolumn', {
-    name = 'Ruler',
-    values = {'', '80'}
-}))
+-- LazyVim.toggle.map("<leader>tf", LazyVim.toggle.format())
+-- LazyVim.toggle.map("<leader>tF", LazyVim.toggle.format(true))
+-- LazyVim.toggle.map("<leader>ts", LazyVim.toggle("spell", { name = "Spellcheck" }))
+-- LazyVim.toggle.map("<leader>tw", LazyVim.toggle("wrap", { name = "Wrap" }))
+-- LazyVim.toggle.map("<leader>tl", LazyVim.toggle.number)
+-- LazyVim.toggle.map("<leader>tL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
+-- LazyVim.toggle.map("<leader>td", LazyVim.toggle.diagnostics)
+-- LazyVim.toggle.map('<leader>tr', LazyVim.toggle.option('colorcolumn', {
+--     name = 'Ruler',
+--     values = {'', '80'}
+-- }))
 
 --------------
 -- Terminal --
