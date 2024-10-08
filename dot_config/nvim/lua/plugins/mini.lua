@@ -3,7 +3,7 @@ local icons = {
     opts = {
         extension = {
             tmpl = { glyph = '', hl = 'MiniIconsGreen' }
-        }
+        },
     }
 }
 
