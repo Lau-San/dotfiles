@@ -40,6 +40,7 @@ configs = {
     'VIT': '~/.vit/config.ini',
 }
 
+
 notif = {
     "title": "ls-config",
     "success": {
@@ -55,8 +56,8 @@ notif = {
 }
 
 
-def create_exec(file: str):
-    return f'''chezmoi edit --apply {file} &&
+def create_exec(path: str):
+    return f'''chezmoi edit --apply {path} &&
                 notify-send --app-name="{notif['title']}" \\
                     "{notif['success']['summary']}" \\
                     "{notif['success']['body']}" ||
