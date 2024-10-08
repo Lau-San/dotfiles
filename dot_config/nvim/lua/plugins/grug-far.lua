@@ -1,6 +1,14 @@
+local function search_replace_in_current_file()
+    require('grug-far').open({
+        prefills = {
+            paths = vim.fn.expand('%')
+        }
+    })
+end
+
 return {
     'MagicDuck/grug-far.nvim',
-    config = function()
-        require('grug-far').setup({})
-    end
+    keys = {
+        { '<leader>sr', search_replace_in_current_file, 'Search and Replace' }
+    }
 }
