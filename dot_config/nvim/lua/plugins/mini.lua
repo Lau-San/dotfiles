@@ -18,5 +18,6 @@ local pairs = {
 }
 
 return {
-    icons
+    icons,
+    pairs
 }
