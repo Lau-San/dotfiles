@@ -17,7 +17,17 @@ local pairs = {
     }
 }
 
+local files = {
+    'echasnovski/mini.files',
+    opts = {
+        options = {
+            permanent_delete = false
+        }
+    }
+}
+
 return {
     icons,
-    pairs
+    pairs,
+    files
 }
