@@ -2,7 +2,7 @@ local icons = {
     'echasnovski/mini.icons',
     opts = {
         file = {
-            ['.tmpl'] = { glyph = '', hl = 'MiniIconsGreen' }
+            ['*.tmpl'] = { glyph = '', hl = 'MiniIconsGreen' }
         }
     }
 }
