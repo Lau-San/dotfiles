@@ -21,7 +21,8 @@ local files = {
     'echasnovski/mini.files',
     opts = {
         options = {
-            permanent_delete = false
+            permanent_delete = false,
+            use_as_default_explorer = true
         }
     }
 }
