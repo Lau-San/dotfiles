@@ -1,6 +1,8 @@
 return {
     'arnamak/stay-centered.nvim',
     opts = {
-        enabled = true
+        skip_filetypes = {
+            'minifiles'
+        }
     }
 }
