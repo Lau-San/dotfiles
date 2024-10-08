@@ -47,5 +47,3 @@ require("lazy").setup({
     },
   },
 })
-
-require 'colorizer'.setup()
