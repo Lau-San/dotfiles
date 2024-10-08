@@ -2,7 +2,7 @@ local icons = {
     'echasnovski/mini.icons',
     opts = {
         filetype = {
-            lua = { glyph = '', hl = 'MiniIconsGreen' }
+            ['lua.chezmoitmpl'] = { glyph = '', hl = 'MiniIconsGreen' }
         }
     }
 }
