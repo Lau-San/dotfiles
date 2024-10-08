@@ -22,11 +22,6 @@ local zen_mode = {
     }
 }
 
-local twilight = {
-    'folke/twilight.nvim',
-}
-
 return {
-    zen_mode,
-    twilight
+    zen_mode
 }
