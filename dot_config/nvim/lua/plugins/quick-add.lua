@@ -1,5 +1,5 @@
 return {
-    { 'elkowar/yuck.vim' },
+    { 'elkowar/yuck.vim', ft = 'yuck' },
     { 'eraserhd/parinfer-rust', build = 'cargo build --release' },
     { 'editorconfig/editorconfig-vim' },
     { 'wakatime/vim-wakatime', lazy = false },
