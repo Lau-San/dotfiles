@@ -23,6 +23,10 @@ local files = {
         options = {
             use_as_default_explorer = true,
             permanent_delete = false,
+        },
+        mappings = {
+            go_in_plus = 'l',
+            go_in = 'L'
         }
     },
     keys = {
