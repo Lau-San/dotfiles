@@ -16,6 +16,8 @@ local function open_in_vsplit()
     vim.cmd('ObsidianQuickSwitch')
 end
 
+--- Change the status of the todo
+---@param status string
 local function set_todo(status)
     vim.cmd('s/- \\[.\\]/- \\[' .. status .. '\\]/')
     vim.cmd('noh')
