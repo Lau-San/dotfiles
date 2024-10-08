@@ -2,7 +2,7 @@ local icons = {
     'echasnovski/mini.icons',
     opts = {
         filetype = {
-            chezmoitmpl = { glyph = '', hl = 'MiniIconsGreen' }
+            ['.chezmoitmpl'] = { glyph = '', hl = 'MiniIconsGreen' }
         }
     }
 }
