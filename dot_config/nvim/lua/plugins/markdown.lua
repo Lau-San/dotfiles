@@ -72,17 +72,6 @@ local markdown_preview = {
     }
 }
 
-local outline = {
-    'hedyhli/outline.nvim',
-    cmd = { 'Outline', 'OutlineOpen' },
-    keys = {
-        { '<leader>mo', ':Outline<cr>', desc = 'toggle outline' }
-    },
-    config = function()
-        require('outline').setup()
-    end
-}
-
 local image = {
     '3rd/image.nvim',
     dependencies = { 'kiyoon/magick.nvim' },
@@ -137,7 +126,6 @@ local toc = {
 return {
     markdown,
     markdown_preview,
-    outline,
     image,
     bullets,
     toc,
