@@ -1,0 +1,70 @@
+{
+    "ui": {
+        "ignore_exclusive": false,
+        "anchors": {
+            "bottom": true,
+            "left": true,
+            "right": true,
+            "top": true
+        },
+        "window": {
+            "h_align": "fill",
+            "v_align": "fill",
+            "box": {
+                "orientation": "vertical",
+                "h_align": "start",
+                "v_align": "fill",
+                "spacing": 10,
+                "width": 600,
+                "margins": {
+                    "top": 0
+                },
+                "search": {
+                    "v_align": "start",
+                    "h_expand": false,
+                    "prompt": {
+                        "v_align": "center",
+                        "text": ""
+                    },
+                    "input": {
+                        "icons": false
+                    }
+                },
+                "scroll": {
+                    "overlay_scrolling": false,
+                    "v_align": "fill",
+                    "h_expand": true,
+                    "h_scrollbar_policy": "external",
+                    "v_scrollbar_policy": "never",
+                    "list": {
+                        "width": 600,
+                        "always_show": false,
+                        "item": {
+                            "spacing": 18,
+                            "activation_label": {
+                                "h_align": "fill",
+                                "h_expand": true,
+                                "justify": "right",
+                                "x_align": 1
+                            },
+                            "icon": {
+                                "theme": "Papirus"
+                            },
+                            "text": {
+                                "h_align": "fill",
+                                "h_expand": true,
+                                "revert": true,
+                                "label": {
+                                    "wrap": true
+                                },
+                                "sub": {
+                                    "hide": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
