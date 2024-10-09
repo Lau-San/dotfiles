@@ -23,11 +23,11 @@ bind = SUPER        , Period    , exec, $systemMonitor
 bind = SUPER        , M         , exec, $musicPlayer
 
 # Prompts/Utilities
-bind = SUPER        , P         , exec, $menu -m applications
+bind = SUPER        , P         , exec, walker --theme=simple -m applications
 bind = SUPER        , R         , exec, $menu -m runner
 bind = SUPER        , C         , exec, $menu -m config
 bind = SUPER        , T         , exec, $menuCentered -m inbox
-bind = SUPER        , O         , exec, $menuCentered -m obsidian
+bind = SUPER        , O         , exec, walker --theme=simple-centered -m obsidian
 bind = SUPER        , Comma     , exec, $menuCentered -m projects
 bind = SUPER        , Plus      , exec, $menuCentered -m calc
 bind = SUPER        , S         , exec, flameshot gui
