@@ -28,7 +28,8 @@ slider,
 
 /*** Menu Box ***/
 #box {
-    background: #1a1b26;
+    /*background: #1a1b26;*/
+    background: rgba(26, 27, 38, 0.9);
     margin: 10px;
     box-shadow:
         0 19px 38px rgba(0, 0, 0, 0.3),
@@ -39,6 +40,7 @@ slider,
 
 #search {
     background: #1a1b26;
+    background: transparent;
     padding: 10px;
     /*border-radius: 5px;*/
     border-bottom: 2px solid #65bcff;
@@ -47,6 +49,7 @@ slider,
 
 #list {
     background: #1a1b26;
+    background: transparent;
     /*border-radius: 5px;*/
     /*padding: 10px;*/
 }
