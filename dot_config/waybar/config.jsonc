@@ -18,7 +18,7 @@
         "cpu",
         "memory",
         "clock",
-        "custom/power"
+        "custom/power",
         // "network",
     ],
     "hyprland/workspaces": {
@@ -26,23 +26,23 @@
         "format-icons": {
             "active": "",
             "default": "",
-            "empty": ""
-        }
+            "empty": "",
+        },
     },
     "hyprland/window": {
         "separate-outputs": true,
-        "icon": true
+        "icon": true,
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
-            "deactivated": ""
-        }
+            "deactivated": "",
+        },
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -55,12 +55,12 @@
             "format": {
                 "months": "<span color='#4ED3BB'><b>{}</b></span>",
                 "weekdays": "<span color='#65BCFF'><b>{}</b></span>",
-                "today": "<span color='#FF966C'><b><u>{}</u></b></span>"
-            }
+                "today": "<span color='#FF966C'><b><u>{}</u></b></span>",
+            },
         },
         "actions": {
-            "on-click-right": "mode"
-        }
+            "on-click-right": "mode",
+        },
     },
     "cpu": {
         "interval": 1,
@@ -74,9 +74,9 @@
             "<span color='#ffffa5'>󰪡</span>", // yellow
             "<span color='#E0AF68'>󰪢</span>", // yellow
             "<span color='#FF966C'>󰪣</span>", // orange
-            "<span color='#C53B53'>󰪥</span>"  // red
+            "<span color='#C53B53'>󰪥</span>", // red
         ],
-        "max-length": 10
+        "max-length": 10,
     },
     // "memory": {
     //     "format": "{}% "
@@ -93,9 +93,9 @@
             "<span color='#ffffa5'>󰪡</span>",
             "<span color='#E0AF68'>󰪢</span>",
             "<span color='#FF966C'>󰪣</span>",
-            "<span color='#C53B53'>󰪥</span>"
+            "<span color='#C53B53'>󰪥</span>",
         ],
-        "max-length": 10
+        "max-length": 10,
     },
     // "cpu": {
     //     "interval": 1,
@@ -107,13 +107,13 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 15,
         },
         "format": "{icon}",
         "format-full": "{icon}",
         "format-charging": "",
         "format-plugged": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -122,32 +122,29 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
     },
     "group/group-volume": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 500,
-            "transition-left-to-right": false
+            "transition-left-to-right": false,
         },
-        "modules": [
-            "pulseaudio",
-            "pulseaudio/slider"
-        ]
+        "modules": ["pulseaudio", "pulseaudio/slider"],
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": " {icon}",
         "format-muted": " ",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": ["", "", ""],
         },
-        "on-click": "pavucontrol-qt"
+        "on-click": "pavucontrol-qt",
     },
     "pulseaudio/slider": {
         "min": 0,
         "max": 100,
-        "orientation": "horizontal"
+        "orientation": "horizontal",
     },
     "custom/media": {
         "format": "{icon} {text}",
@@ -155,10 +152,10 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "",
-            "default": "🎜"
+            "default": "🎜",
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
@@ -167,20 +164,20 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/resources/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
-            "shutdown": "shutdown",
+            "shutdown": "shutdown now",
             "reboot": "reboot",
             "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+            "hibernate": "systemctl hibernate",
+        },
     },
     "mpris": {
         "format": "<span font='Mononoki Nerd Font 14' color='#4ED3BB'>{status_icon}</span> {artist} - {title}",
         "status-icons": {
             "playing": " ",
             "paused": " ",
-            "stopped": " "
+            "stopped": " ",
         },
-        "ignored-players": ["firefox"]
+        "ignored-players": ["firefox"],
     },
     "cava": {
         // "cava_config": "~/.config/cava/config",
@@ -200,9 +197,9 @@
         "noise_reduction": 0.77,
         "input_delay": 2,
         "hide_on_silence": true,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "actions": {
-            "on-click-right": "mode"
-        }
-    }
+            "on-click-right": "mode",
+        },
+    },
 }
