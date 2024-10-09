@@ -6,6 +6,7 @@ configs = {
     'QTile': '~/.config/qtile',
 
     'Eww': '~/.config/eww',
+    'Waybar': '~/.config/waybar',
 
     'Picom': '~/.config/picom.conf',
     'Dunst': '~/.config/dunst',
