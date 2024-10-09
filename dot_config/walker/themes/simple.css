@@ -101,6 +101,8 @@ slider {
 }
 /* This is the prediction */
 #typeahead > *:last-child {
+    color: #7aa2f7;
+    opacity: 0.5;
 }
 
 #spinner {
