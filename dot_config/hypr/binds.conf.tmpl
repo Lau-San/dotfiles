@@ -23,16 +23,16 @@ bind = SUPER        , Period    , exec, $systemMonitor
 bind = SUPER        , M         , exec, $musicPlayer
 
 # Prompts/Utilities
-bind = SUPER        , P         , exec, walker --theme=simple -m applications
-bind = SUPER        , R         , exec, walker -m runner
-bind = SUPER        , C         , exec, walker -m config
-bind = SUPER        , T         , exec, walker -n --theme=tokyonight-centered -m inbox
-bind = SUPER        , O         , exec, walker -n --theme=tokyonight-centered -m obsidian
-bind = SUPER        , Comma     , exec, walker -n --theme=tokyonight-centered -m projects
-bind = SUPER        , Plus      , exec, walker -n --theme=tokyonight-centered -m calc
+bind = SUPER        , P         , exec, $menu -m applications
+bind = SUPER        , R         , exec, $menu -m runner
+bind = SUPER        , C         , exec, $menu -m config
+bind = SUPER        , T         , exec, $menuCentered -m inbox
+bind = SUPER        , O         , exec, $menuCentered -m obsidian
+bind = SUPER        , Comma     , exec, $menuCentered -m projects
+bind = SUPER        , Plus      , exec, $menuCentered -m calc
 bind = SUPER        , S         , exec, flameshot gui
 bind = SUPER ALT    , C         , exec, $hypr/scripts/colorpicker
-bind = SUPER ALT    , E         , exec, walker -n --theme=tokyonight-centered -m emojis
+bind = SUPER ALT    , E         , exec, $menuCentered -m emojis
 
 # Windows
 bind = SUPER        , J         , movefocus, d
