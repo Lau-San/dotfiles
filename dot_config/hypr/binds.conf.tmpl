@@ -9,7 +9,7 @@ binds {
 # Hyprland/Eww
 bind = SUPER CTRL   , Q         , exit,
 bind = SUPER CTRL   , R         , exec, hyprctl reload
-bind = SUPER CTRL   , E         , exec, killall eww; eww daemon && eww open bar1 && eww open bar2
+# bind = SUPER CTRL   , E         , exec, killall eww; eww daemon && eww open bar1 && eww open bar2
 bind = SUPER CTRL   , W         , exec, killall walker; walker --gapplication-service && $notif "Restarted Walker" "Walker service was restarted successfully"
 bind = SUPER CTRL   , P         , exec, sleep 1; hyprctl reload && $notif "Reloaded Hyprpm" "Hyprpm packages reloaded successfully"
 bind = SUPER        , G         , exec, $hypr/scripts/gamemode
@@ -23,11 +23,11 @@ bind = SUPER        , Period    , exec, $systemMonitor
 bind = SUPER        , M         , exec, $musicPlayer
 
 # Prompts/Utilities
-bind = SUPER        , P         , exec, walker --theme=simple -m applications
+bind = SUPER        , P         , exec, $menu -m applications
 bind = SUPER        , R         , exec, $menu -m runner
 bind = SUPER        , C         , exec, $menu -m config
 bind = SUPER        , T         , exec, $menuCentered -m inbox
-bind = SUPER        , O         , exec, walker --theme=simple-centered -m obsidian
+bind = SUPER        , O         , exec, $menuCentered -m obsidian
 bind = SUPER        , Comma     , exec, $menuCentered -m projects
 bind = SUPER        , Plus      , exec, $menuCentered -m calc
 bind = SUPER        , S         , exec, flameshot gui
