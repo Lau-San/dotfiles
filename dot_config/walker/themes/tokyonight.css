@@ -28,23 +28,30 @@ slider,
 
 /*** Menu Box ***/
 #box {
-    background: #24283b;
+    /*background: #1a1b26;*/
+    background: rgba(26, 27, 38, 0.9);
+    margin: 10px;
     box-shadow:
         0 19px 38px rgba(0, 0, 0, 0.3),
         0 15px 12px rgba(0, 0, 0, 0.22);
-    padding: 10px;
+    /*padding: 10px;*/
+    border: 2px solid #65bcff;
 }
 
 #search {
     background: #1a1b26;
+    background: transparent;
     padding: 10px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    border-bottom: 2px solid #65bcff;
+    margin: 0 10px;
 }
 
 #list {
     background: #1a1b26;
-    border-radius: 5px;
-    padding: 10px;
+    background: transparent;
+    /*border-radius: 5px;*/
+    /*padding: 10px;*/
 }
 
 scrollbar {
@@ -84,19 +91,25 @@ slider {
 #input > *:first-child,
 #typeahead > *:first-child {
     /*color: #7aa2f7;*/
-    margin-right: 10px;
+    /*margin-right: 10px;*/
+    /*color: green;*/
 }
 
-#input > *:last-child,
+/* This is the text you actually write */
+#input > *:last-child {
+    color: #7aa2f7;
+}
+/* This is the prediction */
 #typeahead > *:last-child {
     color: #7aa2f7;
+    opacity: 0.5;
 }
 
 #spinner {
 }
 
 #typeahead {
-    color: #89b4fa;
+    /*color: #89b4fa;*/
 }
 
 #input placeholder {
@@ -104,23 +117,25 @@ slider {
 }
 
 child {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     padding: 8px;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
+    padding-left: 12px;
+    border-left: 2px solid transparent;
+    transition:
+        background-color 0.3s ease-out,
+        border-width 0.3s ease-out,
+        border-color 0.3s ease-in-out;
 }
 
 child #label {
-    transition-property: color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
+    transition: color 0.3s ease-out;
 }
 
 child:selected,
 child:hover {
     background: #24283b;
     box-shadow: none;
+    border-left: 8px solid #65bcff;
 }
 
 child:selected #label,
