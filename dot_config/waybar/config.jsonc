@@ -48,6 +48,7 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<tt>{calendar}</tt>",
         "format": "{:%I:%m %p}",
+        "interval": 1,
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
