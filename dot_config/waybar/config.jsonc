@@ -136,8 +136,11 @@
         // "scroll-step": 1, // %, can be a float
         "format": " {icon}",
         "format-muted": " ",
+        // "format-icons": {
+        //     "default": ["", "", ""]
+        // },
         "format-icons": {
-            "default": ["", "", ""]
+            "default": [""]
         },
         "on-click": "pavucontrol-qt"
     },
