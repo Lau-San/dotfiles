@@ -102,7 +102,7 @@ return {
         },
         keys = {
             { '<leader>oo', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
-            { '<leader>oO', open_in_vsplit, desc = 'open a note' },
+            { '<leader>oO', open_in_vsplit, desc = 'open a note in a split' },
             { '<leader>on', new_note, desc = 'create new note' },
             { '<leader>oT', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
             { '<leader>oss', ':ObsidianSearch<cr>', desc = 'grep vault' },
