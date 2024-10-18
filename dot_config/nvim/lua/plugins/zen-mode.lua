@@ -18,7 +18,7 @@ local zen_mode = {
         }
     },
     keys = {
-        { '<leader>tz', ':ZenMode<cr>', desc = 'Toggle Zen Mode' }
+        { '<leader>uz', ':ZenMode<cr>', desc = 'Toggle Zen Mode' }
     }
 }
 
