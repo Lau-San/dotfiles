@@ -1,4 +1,4 @@
-return {
+local centered = {
     'arnamak/stay-centered.nvim',
     opts = {
         skip_filetypes = {
@@ -6,4 +6,8 @@ return {
             'dashboard'
         }
     }
+}
+
+return {
+    -- centered,
 }
