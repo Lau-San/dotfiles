@@ -9,5 +9,5 @@ local centered = {
 }
 
 return {
-    -- centered,
+    centered,
 }
