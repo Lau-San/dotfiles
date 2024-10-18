@@ -27,5 +27,6 @@ autocmd({ "FileType" }, {
         -- vim.opt_local.textwidth = 80
         vim.opt_local.spell = false
         vim.g.autoformat = false
+        vim.opt_local.wrap = false
      end
  })
