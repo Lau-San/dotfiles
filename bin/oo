@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+cd ~/Documents/personal || exit
+nvim

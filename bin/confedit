@@ -1,0 +1,31 @@
+#!/bin/env bash
+
+conf_path="$1"
+conf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+notif() {
+	notify-send --app-name=Dotfiles "$1" "$2"
+}
+
+success() {
+	notif "Configuration update" "$1"
+	echo "$1"
+}
+
+error() {
+	notif "Something went wrong" "$1"
+	echo "Something went wrong."
+	echo "$1"
+	exit
+}
+
+if [[ -d "$conf_path" ]]; then
+	cd "$conf_path" || error "The path $1 is not a directory"
+	nvim
+else
+	nvim "$conf_path"
+fi
+
+$conf add -u &&
+	$conf commit -m "Update $(date +"%Y-%m-%d %H:%M")" && $conf push &&
+	success "All your configuration changes have been pushed"

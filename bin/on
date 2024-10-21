@@ -1,0 +1,14 @@
+#!/bin/env bash
+
+if [[ -z "$1" ]]; then
+	msg="Looks like you forgot to specify a name for the file!"
+	echo "$msg"
+	notify-send -a "Obsidian Notion" "Couldn't create new note" "$msg"
+	exit 1
+fi
+
+file_name=$(echo "$1" | tr ' ' '-').md
+cd ~/Documents/personal || exit
+
+touch "inbox/${file_name}"
+nvim "inbox/${file_name}"

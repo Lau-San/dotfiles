@@ -1,0 +1,17 @@
+#!/bin/bash
+
+title="$*"
+
+data() {
+	cat <<EOF
+{
+    "title": "$title"
+}
+EOF
+}
+
+curl -ks --header "Content-Type: application/json" \
+	--request POST \
+	--data "$(data)" \
+	https://localhost:11111/api/items?key=a3xQMwhA44 >/dev/null &&
+	notify-send "New task added to inbox" "Yout new task \"${title}\" was created successfully"

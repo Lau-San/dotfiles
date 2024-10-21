@@ -1,0 +1,32 @@
+#!/bin/env bash
+
+VAULT_DIR="$HOME/Documents/personal"
+
+cd ~/Documents/personal || exit
+nvim inbox/*
+
+notif() {
+	notify-send -a "Obsidian Review" "$1" "$2"
+}
+
+find "$VAULT_DIR/zettelkasten" -type f -name "*.md" | while read -r file; do
+	echo "=> Processing $file"
+
+	type=$(awk '/type:/{print $2; exit}' "$file")
+
+	if [ ! -z "$type" ]; then
+		echo "--> Type: $type"
+
+		target_dir="$VAULT_DIR/notes/$type"
+		mkdir -p "$target_dir"
+
+		mv "$file" "$target_dir/"
+		echo "--> Moved $file to $target_dir"
+	else
+		echo "--> No type found for $file"
+		notif "Found file without tag" "Looks like you forgot to add a tag for $file"
+	fi
+done
+
+echo "Done!"
+notif "Finished notes review" "Enjoy a clean inbox and an organized vault :)"

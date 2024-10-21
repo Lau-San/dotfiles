@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+W_CLASS="ls-tasks"
+
+cd ~/Documents/personal || exit
+
+notif() {
+	notify-send -a "$W_CLASS" "$1" "$2"
+}
+
+task +PENDING _projects | while read -r project; do
+	kitty --class="$W_CLASS" vit project:"$project"
+done
+
+echo "Done!"
+notif "Great job!" "Reviewing your tasks daily helps you keep focus on your goals. Keep at it!"
