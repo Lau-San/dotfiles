@@ -43,7 +43,7 @@ configs = {
 
 
 def create_exec(path: str):
-    return f'confedit {path}'
+    return f'kitty confedit {path}'
 
 
 options = []
