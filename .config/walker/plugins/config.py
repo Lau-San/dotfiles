@@ -42,29 +42,8 @@ configs = {
 }
 
 
-notif = {
-    "title": "ls-config",
-    "success": {
-        'summary': 'New configuration applied',
-        'body': 'Your new configuration has been successfully applied ' +
-                'and synced with chezmoi.'
-    },
-    "error": {
-        'summary': "Couldn't apply new configuration",
-        'body': 'Something when wrong when trying to apply and/or sync ' +
-                'your new configuration with chezmoi.'
-    },
-}
-
-
 def create_exec(path: str):
-    return f'''chezmoi edit --apply {path} &&
-                notify-send --app-name="{notif['title']}" \\
-                    "{notif['success']['summary']}" \\
-                    "{notif['success']['body']}" ||
-                notify-send --app-name="{notif['title']}" --urgency=critical
-                    "{notif['error']['summary']}" \\
-                    "{notif['error']['body']}" \\'''
+    return f'confedit {path}'
 
 
 options = []
