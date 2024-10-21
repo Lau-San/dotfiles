@@ -1,0 +1,16 @@
+.music {
+    color: $foreground;
+
+    &.icon {
+        color: $blue;
+        // padding-right: 2px;
+    }
+
+    &.playing {
+        font-family: Dosis;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        // padding: 0 10px;
+    }
+}

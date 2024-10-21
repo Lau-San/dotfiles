@@ -1,0 +1,38 @@
+(include 'areas.yuck')
+
+(defwidget bar [monitor]
+    (centerbox  :orientation "h"
+                :halign "fill"
+                :vexpand false
+                :hexpand false
+                :class "bar"
+      (left :monitor monitor)
+      (center)
+      (right  :monitor monitor)))
+
+
+(defwindow bar1
+    :monitor 0
+    :geometry (geometry
+                :x 0
+                :y 0
+                :width "100%"
+                :height "38px"
+                :anchor "top center")
+    :stacking "fg"
+    :exclusive true
+    :focusable false
+  (bar  :monitor "0"))
+
+(defwindow bar2
+    :monitor 1
+    :geometry (geometry
+                :x 0
+                :y 0
+                :width "100%"
+                :height "38px"
+                :anchor "top center")
+    :stacking "fg"
+    :exclusive true
+    :focusable false
+  (bar  :monitor "1"))

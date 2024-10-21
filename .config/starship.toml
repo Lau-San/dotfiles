@@ -1,0 +1,155 @@
+scan_timeout = 50
+command_timeout = 3000
+add_newline = true
+
+format = """ $shell$directory($git_branch )\
+$python\
+$nodejs\
+$lua
+ $character
+"""
+
+[shell]
+disabled = false
+format = "[]($style)[$indicator ]($style inverted bg:green)"
+style = "bright-black"
+bash_indicator = ""
+fish_indicator = ""
+
+[character]
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+# vicmd_symbol = "[](blue)"
+
+[directory]
+format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
+style = "black"
+read_only = " "
+read_only_style = "red"
+home_symbol = " "
+repo_root_style = "blue"
+repo_root_format = "[](bg:$repo_root_style bright-black)[  $repo_root]($repo_root_style inverted)[](bg:$style $repo_root_style)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
+fish_style_pwd_dir_length = 2
+
+[git_branch]
+format = "[]($style)[$symbol$branch]($style inverted)[]($style)"
+style = "purple"
+symbol = " "
+
+[git_commit]
+format = " []($style bold) [$hash$tag]($style dimmed)"
+style = "blue"
+only_detached = false
+tag_disabled = false
+
+[git_status]
+format = "[](green bg:$style)[($all_status$ahead_behind) ]($style inverted)[]($style)"
+style = "black"
+modified = " [](bg:black fg:yellow)"
+renamed = " [](bg:black fg:blue)"
+deleted = " [](bg:black fg:red)"
+staged = " [](bg:black fg:green)"
+untracked = " [](bg:black fg:purple)"
+
+[python]
+# format = "([ $symbol]($style bold) [$version]($style)( [🞚](blue bold) [$virtualenv](blue))[ ]($style bold) )"
+format = "([]($style)[$symbol $version( $virtualenv)]($style inverted)[]($style) )"
+style = "blue"
+symbol = " "
+python_binary = ["python3", "python"]
+
+[nodejs]
+# format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
+format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
+style = "green"
+symbol = " "
+
+[package]
+format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
+style = "yellow bold"
+symbol = " "
+
+[dotnet]
+format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
+style = "blue"
+symbol = ".NET"
+version_format = "v${major}.${minor}"
+
+[lua]
+#format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
+format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
+style = "blue"
+symbol = ""
+
+[cmd_duration]
+disabled = true
+
+[c]
+format = "( [ $symbol]($style bold) [$version( - $name)]($style) []($style bold))"
+symbol = ""
+style = "purple"
+
+[cmake]
+format = "( [ $symbol]($style bold) [$version]($style) []($style bold))"
+style = "blue"
+
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "

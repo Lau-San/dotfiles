@@ -1,0 +1,396 @@
+default_shell "fish"
+default_mode "locked"
+
+// ==== BINDINGS ==== //
+
+keybinds clear-defaults=true {
+
+    // ---- GLOABAL ---- //
+    shared {
+        bind "Ctrl q" { Quit; }
+        bind "Alt u" { GoToPreviousTab; }
+        bind "Alt i" { GoToNextTab; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+    }
+    // Keybings available in all modes except LOCKED.
+    shared_except "locked" {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Alt n" { NewPane; SwitchToMode "Normal"; }
+    }
+
+    // ---- MODE SWITCHING ---- //
+    // Keys for switching to modes from ANY mode
+    shared_except "normal" "locked" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+    shared_except "pane" "locked" {
+        bind "Ctrl p" { SwitchToMode "Pane"; }
+    }
+    shared_except "resize" "locked" {
+        bind "Ctrl r" { SwitchToMode "Resize"; }
+    }
+    shared_except "scroll" "locked" {
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+    }
+    shared_except "session" "locked" {
+        bind "Ctrl o" { SwitchToMode "Session"; }
+    }
+    shared_except "tab" "locked" {
+        bind "Ctrl t" { SwitchToMode "Tab"; }
+    }
+    shared_except "move" "locked" {
+        bind "Ctrl h" { SwitchToMode "Move"; }
+    }
+
+    // ---- MODES ---- //
+    // Mode exclusive bindings
+    normal {
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "toggle lock"                   "ctrl + g"
+                "quit"                          "ctrl + q"
+                "pane mode"                     "ctrl + p"
+                "tab mode"                      "ctrl + t"
+                "resize mode"                   "ctrl + r"
+                "move mode"                     "ctrl + h"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+            }
+        }
+    }
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "toggle lock"                   "ctrl + g"
+                "quit"                          "ctrl + q"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+            }
+        }
+    }
+    resize {
+        bind "Ctrl r" { SwitchToMode "Normal"; }
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode"                   "ctrl + r"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "pane mode"                     "ctrl + p"
+                "tab mode"                      "ctrl + t"
+                "move mode"                     "ctrl + h"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+                "increase left"                 "h"
+                "increase right"                "l"
+                "increase up"                   "k"
+                "increase down"                 "j"
+                "decrease left"                 "H"
+                "decrease right"                "L"
+                "decrease up"                   "K"
+                "decrease down"                 "J"
+                "increase"                      "+"
+                "decrease"                      "-"
+            }
+        }
+    }
+    pane {
+        bind "Ctrl p" { SwitchToMode "Normal"; }
+        bind "h" { MoveFocus "Left"; }
+        bind "l" { MoveFocus "Right"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
+        bind "n" { NewPane; SwitchToMode "Normal"; }
+        bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "m" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "f" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode"                   "ctrl + p"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "tab mode"                      "ctrl + t"
+                "resize mode"                   "ctrl + r"
+                "move mode"                     "ctrl + h"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+                "focus left"                    "h"
+                "focus right"                   "l"
+                "focus up"                      "k"
+                "focus down"                    "j"
+                "new pane"                      "n"
+                "new pane down"                 "-"
+                "new pane right"                "|"
+                "rename pane"                   "r"
+                "close pane"                    "x"
+                "maximize pane"                 "m"
+                "show floating panes"           "w"
+                "float/embed pane"              "f"
+            }
+        }
+    }
+    move {
+        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "h" "Left" { MovePane "Left"; }
+        bind "l" "Right" { MovePane "Right"; }
+        bind "k" "Up" { MovePane "Up"; }
+        bind "j" "Down" { MovePane "Down"; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode"                   "ctrl + h"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "pane mode"                     "ctrl + p"
+                "tab mode"                      "ctrl + t"
+                "resize mode"                   "ctrl + r"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+                "move pane left"                "h"
+                "move pane right"               "l"
+                "move pane up"                  "k"
+                "move pane down"                "j"
+            }
+        }
+    }
+    tab {
+        bind "Ctrl t" { SwitchToMode "Normal"; }
+        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "l" "j" { GoToNextTab; }
+        bind "h" "k" { GoToPreviousTab; }
+        bind "n" { NewTab; SwitchToMode "Normal"; }
+        bind "x" { CloseTab; SwitchToMode "Normal"; }
+        bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
+        bind "b" { BreakPane; SwitchToMode "Normal"; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode"                   "ctrl + t"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "pane mode"                     "ctrl + p"
+                "resize mode"                   "ctrl + r"
+                "move mode"                     "ctrl + h"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "next tab"                      "j"
+                "next tab"                      "l"
+                "previous tab"                  "alt + u"
+                "previous tab"                  "k"
+                "previous tab"                  "h"
+                "new tab"                       "n"
+                "new tab from pane"             "b"
+                "close tab"                     "x"
+                "sync panes in tab"             "s"
+                "go to pane #1-9"               "#1-9"
+            }
+        }
+    }
+    scroll {
+        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "q" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "Ctrl d" { PageScrollDown; }
+        bind "Ctrl u" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode"                   "ctrl + s"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "pane mode"                     "ctrl + p"
+                "tab mode"                      "ctrl + t"
+                "resize mode"                   "ctrl + r"
+                "move mode"                     "ctrl + h"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+            }
+        }
+        // uncomment this and adjust key if using copy_on_select=false
+        // bind "Alt c" { Copy; }
+    }
+    entersearch {
+        bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+    search {
+        bind "s" { SwitchToMode "Normal"; }
+        bind "q" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "Ctrl d" { PageScrollDown; }
+        bind "Ctrl u" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "n" { Search "down"; }
+        bind "N" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+        bind "Ctrl b" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
+                floating true
+                "LOAD_ZELLIJ_BINDINGS" "false"
+                "quit"                          "ctrl + q"
+                "toggle lock"                   "ctrl + g"
+                "normal mode (keep position)"   "s"
+                "normal mode"                   "q"
+                "normal mode"                   "enter"
+                "normal mode"                   "esc"
+                "pane mode"                     "ctrl + p"
+                "tab mode"                      "ctrl + t"
+                "resize mode"                   "ctrl + r"
+                "move mode"                     "ctrl + h"
+                "scroll mode"                   "ctrl + s"
+                "session mode"                  "ctrl + o"
+                "new pane"                      "alt + n"
+                "focus up"                      "alt + k"
+                "focus down"                    "alt + j"
+                "focus left"                    "alt + h"
+                "focus right"                   "alt + l"
+                "next tab"                      "alt + i"
+                "previous tab"                  "alt + u"
+            }
+        }
+    }
+    renametab {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
+    }
+    renamepane {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
+    }
+    session {
+        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Ctrl o" { SwitchToMode "Scroll"; }
+        bind "d" { Detach; }
+        bind "w" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
+    }
+}
+
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen false
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+}
+
+theme "tokyo-night"
+
+simplified_ui true
+ui {
+    pane_frames {
+        // rounded_corners true
+    }
+}

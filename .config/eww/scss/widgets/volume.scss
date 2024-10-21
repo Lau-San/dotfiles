@@ -1,0 +1,16 @@
+$clr-vol: $magenta;
+
+.volume {
+    .icon {
+        color: $clr-vol;
+    }
+
+    scale {
+        padding-right: 10px;
+    }
+
+    scale trough highlight {
+        background: $clr-vol;
+        border-radius: $border-radius;
+    }
+}

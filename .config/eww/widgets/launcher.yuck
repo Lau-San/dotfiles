@@ -1,0 +1,8 @@
+(defwidget launcher []
+    (section :side "left"
+      (button :class "icon launcher"
+              :tooltip "Launcher"
+              :halign "center"
+              :valign: "center"
+              :onclick "walker -m applications"
+        "")))

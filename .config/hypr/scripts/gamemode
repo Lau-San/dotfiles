@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+notif() {
+	notify-send --app-name="Hyprland" "$1" "$2"
+}
+
+sleep 1
+
+HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+if [ "$HYPRGAMEMODE" = 1 ]; then
+	hyprctl --batch "\
+        keyword animations:enabled 0;\
+        keyword decoration:drop_shadow 0;\
+        keyword decoration:blur:enabled 0" || exit 1
+
+	notif 'Game Mode is enabed' 'All effects and animations have been disabled for a better video game performance.'
+
+	exit
+fi
+hyprctl reload
+notif 'Game Mode is disabled' 'All effects and animations have been enabled for a nicer look.' || exit 1

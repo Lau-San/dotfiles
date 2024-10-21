@@ -1,0 +1,21 @@
+(defwidget volume [monitor]
+  (section :side 'right'
+    (eventbox   :onhover "${eww} update reveal-volume${monitor + 1}=true"
+                :onhoverlost "${eww} update reveal-volume${monitor + 1}=false"
+      (box        :orientation "h"
+                  :class 'volume'
+                  :halign "end"
+                  :space-evenly false
+        (revealer   :transition "slideleft"
+                    :duration "550ms"
+                    :reveal {monitor == 0 ? reveal-volume1 : monitor == 1 ? reveal-volume2 : true}
+          (scale      :value current-volume
+                      :orientation "h"
+                      :flipped true
+                      :tooltip "Volume: ${current-volume}"
+                      :max 101
+                      :min 0
+                      :onchange "amixer -D pulse sset Master {}%"))
+        (button     :class "icon"
+                    :onclick "scripts/popup audio"
+          "")))))

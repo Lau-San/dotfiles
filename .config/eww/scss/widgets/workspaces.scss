@@ -1,0 +1,13 @@
+.workspace {
+    color: rgba($blue, 0.1);
+    font-weight: 500;
+
+    &.occupied {
+        color: $blue;
+    }
+
+    &.focused {
+        font-weight: 600;
+        color: $blue;
+    }
+}

@@ -1,0 +1,68 @@
+@use 'sass:color' as c;
+
+* {
+    all: unset;
+    font-size: 16px;
+}
+
+// Context Menus
+menu {
+    background-color: rgba($background, 0.9);
+    padding: 5px;
+    border-radius: $border-radius;
+    border: 2px solid $black;
+
+    &>menuitem {
+        padding: 5px 10px;
+        border-radius: $border-radius;
+
+        &:hover {
+            background: $black;
+        }
+
+        arrow {
+            min-height: 16px;
+            min-width: 16px;
+
+            &:dir(ltr) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+                margin-left: 10px;
+            }
+
+            &:dir(rtl) {
+                -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+// Tooltips
+tooltip {
+    background: $background;
+    border-radius: $border-radius;
+    opacity: 0.9;
+}
+
+// Scales
+scale trough {
+    all: unset;
+    background: $black;
+    border-radius: $border-radius;
+    min-width: 80px;
+    min-height: 10px;
+    // margin-left: 5px;
+}
+
+button {
+    label {
+        transition-property: color, text-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &:hover label {
+        color: #fff;
+        // text-shadow: 0 0 2px $cyan;
+    }
+}

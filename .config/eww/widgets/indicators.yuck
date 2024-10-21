@@ -1,0 +1,19 @@
+;; Gamemode
+(defwidget gamemode []
+    (button :class 'icon gamemode ${gamemode-status == "1" ? "disabled" : "enabled"}'
+            :tooltip "Gamemode"
+            :onclick "~/.config/hypr/scripts/gamemode"
+      ""))
+
+;; Capslock
+(defwidget capslock []
+    (button :class 'icon capslock ${capslock-status == "1" ? "enabled" : "disabled"}'
+            :tooltip "Capslock"
+            :valign: "center"
+            :vexpand "true"
+      ""))
+
+(defwidget indicators [monitor]
+    (section :side "right"
+      (gamemode)
+      (capslock)))

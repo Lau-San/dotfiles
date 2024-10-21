@@ -1,0 +1,129 @@
+# [Created by task 3.1.0 8/17/2024 22:49:52]
+data.location=/home/laura/.task
+news.version=3.1.0
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+#hooks.location=~/.config/task/hooks
+
+# === GENERAL ===
+
+column.padding=2
+confirmation=0
+indent.report=1
+complete.all.tags=1
+weekstart=Monday
+list.all.projects=0
+
+# Defaults
+default.command=ready
+
+# === PRIORITIES ===
+
+uda.priority.values=M,S,C,W,
+urgency.uda.priority.M.coefficient=6.0
+urgency.uda.priority.S.coefficient=3.9
+urgency.uda.priority.C.coefficient=1.8
+urgency.uda.priority.W.coefficient=-12.0
+
+# === UDAs ===
+
+uda.school.type=string
+uda.school.label=School
+uda.school.values=game-dev,math
+
+uda.topic.type=string
+uda.topic.label=Topic
+
+uda.resource.type=string
+uda.resource.label=Resource
+
+uda.section.type=string
+uda.resource.label=Section
+
+# === REPORTS ===
+
+# READY
+report.ready.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.ready.labels=ID,Started,D,Project,Tag,Description,Due,P,Urg
+report.ready.filter=+READY +PROJECT +PRIORITY
+report.ready.sort=urgency-
+
+# STUDIES
+#
+# NOTE: This seems to be breaking VIT even if I'm not opening this report. Could be the custom attributes.
+#
+# report.studies.columns=id,start.age,depends.indicator,tags,school,topic,resource,section,description,priority,urgency
+# report.studies.labels=ID,Started,D,Tag,School,Topic,Resource,Section,Description,P,Urg
+# report.studies.filter=+READY project:studies
+# report.schools.sort=school+/,topic+,resource+,section+,description+
+
+# ACTIVE
+report.active.columns=id,start.age,project,tags,description,due,priority
+report.active.labels=ID,Active,Project,Tags,Description,Due,P
+report.active.sort=due+,project+,description+
+
+# NEXT
+report.next.columns=id,start.age,depends.indicator,project,tags,description,due.relative,priority,urgency
+report.next.labels=ID,Active,D,Project,Tag,Description,Due,P,Urg
+report.next.filter=(+next -WAITING +PENDING) and (-CHILD or (+CHILD +DUETODAY))
+
+# INBOX
+report.inbox.columns=id,project,tags,description,due.relative,priority
+report.inbox.labels=ID,Project,Tag,Description,Due,P
+report.inbox.filter=(-PROJECT or -PRIORITY) and +PENDING
+report.inbox.description=New tasks that need to be processed
+
+# WAITING
+report.waiting.columns=id,entry.age,project,tags,description,due.relative,wait,wait.remaining,priority,urgency
+report.waiting.labels=ID,Age,Project,Tag,Description,Due,Wait,Remaining,P,Urg
+report.waiting.sort=due+,wait+
+
+# BLOCKED
+report.blocked.columns=id,entry.age,depends,project,tags,description,due,priority
+report.blocked.labels=ID,Age,Deps,Project,Tag,Description,Due,P
+report.blocked.sort=due+,wait+
+
+# === COLORS ===
+
+include no-color.theme
+rule.precedence.color=deleted,completed,active,keyword.,overdue,due.today,due,tag.,project.,scheduled,blocked,blocking,recurring,tagged,uda.
+
+# GENERAL
+color.alternate=on black
+color.active=bold black on magenta
+color.blocked=black on color8
+color.completed=green
+color.deleted=color8
+color.label=bold underline black on white
+color.label.sort=bold underline black on green
+color.header=bold black on yellow
+color.error=black on red
+color.footnote=black on white
+color.warning=bold black on yellow
+
+# DUE
+color.due.today=bold underline cyan
+color.overdue=black on red
+
+# TAGS
+color.tag.next=bold underline magenta
+
+# SUMMARY REPORT
+color.summary.background=on black
+color.summary.bar=black on blue
+
+# PRIORITIES
+color.uda.priority.M=red
+color.uda.priority.S=yellow
+color.uda.priority.C=blue
+
+# === TASKWARRIOR TUI ===
+
+# uda.taskwarrior-tui.task-report.show-info=false
+# uda.taskwarrior-tui.style.report.selection=black on cyan
+# uda.taskwarrior-tui.style.report.scrollbar.area=black
+# uda.taskwarrior-tui.style.report.scrollbar=white
+# uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=false

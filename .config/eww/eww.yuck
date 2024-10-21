@@ -1,0 +1,25 @@
+;; Eww configuration path
+
+(defwidget section [side ?btn]
+    (box  :class "section ${btn == true ? 'btn' : ''}"
+          :orientation "h"
+          :halign {side == "left" ? "start" : side == "right" ? "end" : "center"}
+          :valign "center"
+          :vexpand true
+          :spacing 10
+          :space-evenly false
+          :height 34
+      (children)))
+
+(defwidget section_button [side]
+    (button :class 'section btn'
+          :halign {side == "left" ? "start" : side == "right" ? "end" : "center"}
+          :valign "center"
+          :vexpand true
+          :spacing 5
+          :space-evenly false
+          :height 34
+      (children)))
+
+(include 'variables.yuck')
+(include 'bars.yuck')

@@ -1,0 +1,27 @@
+(defwidget power [monitor]
+    (section :side 'right'
+        (eventbox   :onhover "${eww} update reveal-power${monitor + 1}=true"
+                    :onhoverlost "${eww} update reveal-power${monitor + 1}=false"
+            (box      :class 'powermenu'
+                      :orientation 'h'
+                      :halign 'end'
+                      :space-evenly false
+                (revealer :transition 'slideleft'
+                          :duration '550ms'
+                          :reveal {monitor == 0 ? reveal-power1 : monitor == 1 ? reveal-power2 : true}
+                    (box    :orientation 'h'
+                            :space-evenly false
+                            :class 'content'
+                            :spacing 10
+                        (button :class 'reload icon'
+                                :tooltip 'Reload Hyprland'
+                                :onclick 'hyprctl reload' '')
+                        (button :class 'logout icon'
+                                :tooltip 'Logout'
+                                :onclick 'hyprctl dispatch exit' '')
+                        (button :class 'reboot icon'
+                                :tooltip 'Reboot'
+                                :onclick 'reboot' '')))
+                (button   :class 'shutdown icon'
+                          :tooltip 'Shutdown'
+                          :onclick 'shutdown now' '')))))

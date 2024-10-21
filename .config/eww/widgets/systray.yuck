@@ -1,0 +1,5 @@
+(defwidget systemtray []
+    (section :side "right"
+      (systray  :orientation "h"
+                :halign "end"
+                :spacing 5)))

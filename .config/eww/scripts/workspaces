@@ -1,0 +1,80 @@
+#! /bin/env bash
+
+monitor=$1
+
+declare -A workspaces
+
+workspaces[1]=1
+workspaces[2]=2
+workspaces[3]=3
+workspaces[4]=4
+workspaces[5]=5
+workspaces[6]=6
+workspaces[7]=7
+workspaces[8]=8
+workspaces[9]=9
+workspaces[10]=10
+
+if [[ $monitor -gt 0 ]]; then
+	for key in {1..10}; do
+		echo ${workspaces[$key]}
+		workspaces[$key]=$((${workspaces[$key]} + 10))
+	done
+fi
+
+count_windows() {
+	ws=$1
+	cnt=$(hyprctl workspaces | grep windows | bat -r "$ws" | awk '{print $2}')
+	echo "$cnt"
+}
+
+is_occupied() {
+	ws=$1
+	cnt=$(count_windows "$ws")
+	[[ $cnt -gt 0 ]] || return 1
+}
+
+is_focused() {
+	ws=$1
+	foc=$(hyprctl activeworkspace | bat -r 1 | awk '{print $3}')
+	[[ $foc -eq $ws ]] || return 1
+}
+
+create_ws_btn_widget() {
+	ws=$1
+
+	char=""
+	class="workspace"
+
+	if is_occupied "$ws"; then
+		class="$class occupied"
+	fi
+
+	if is_focused "$ws"; then
+		char=""
+		class="$class focused"
+	fi
+
+	echo "(button :class \"icon $class\" :halign \"center\" :valign \"center\" :onclick \"hyprctl dispatch workspace $ws\" \"${char}\")"
+}
+
+create_ws_btn_list() {
+	ws_btn_list=""
+	for key in {1..10}; do
+		ws_btn_list="$ws_btn_list $(create_ws_btn_widget "${workspaces[$key]}")"
+	done
+	echo "$ws_btn_list"
+}
+
+create_workspaces_widget() {
+	echo "(box :spacing 5 :orientation \"h\" :halign \"center\" :valign \"center\" :vexpand true :space-evenly true $(create_ws_btn_list))"
+}
+
+create_workspaces_widget "$monitor"
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do
+	case $line in
+	workspacev2* | openwindow* | closewindow* | movewindow* | activemon* | activewindowv2* | createworkspacev2* | destroyworkspacev2* | focusedmon)
+		create_workspaces_widget "$monitor"
+		;;
+	esac
+done

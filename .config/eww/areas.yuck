@@ -1,0 +1,36 @@
+(include 'widgets/launcher.yuck')
+(include 'widgets/workspaces.yuck')
+(include 'widgets/clock.yuck')
+(include 'widgets/calendar.yuck')
+(include 'widgets/volume.yuck')
+(include 'widgets/indicators.yuck')
+(include 'widgets/music.yuck')
+(include 'widgets/power.yuck')
+(include 'widgets/systray.yuck')
+
+(defwidget area [side]
+    (box  :orientation "h"
+          :halign {side == "left" ? "start" : side == "right" ? "end" : "center"}
+          :valign "center"
+          :vexpand true
+          :spacing 10
+          :space-evenly false
+      (children)))
+
+(defwidget left [monitor]
+    (area :side "left"
+      (launcher)
+      (workspaces :monitor monitor)))
+
+(defwidget center []
+    (area :side "center"
+      (music)))
+
+
+(defwidget right [monitor]
+    (area :side "right"
+      (literal :content {monitor == 0 ? "(systemtray)" : ""})
+      (indicators :monitor monitor)
+      (volume :monitor monitor)
+      (clock :monitor monitor)
+      (power :monitor monitor)))

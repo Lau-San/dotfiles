@@ -1,0 +1,34 @@
+(defvar eww "$HOME/.local/bin/eww")
+
+(deflisten monitor_workspaces1 "scripts/workspaces 0")
+(deflisten monitor_workspaces2 "scripts/workspaces 1")
+
+(defpoll time  :interval "1s" `date "+%I:%M %p"`)
+(defpoll date  :interval "1s" `date "+%a, %b %d"`)
+(defvar reveal-date1 false)
+(defvar reveal-date2 false)
+
+(defpoll calendar_day   :interval "1m" "date '+%d'")
+(defpoll calendar_month :interval "1m" "scripts/calendar")
+(defpoll calendar_year  :interval "1m" "date '+%Y'")
+
+(defvar reveal-volume1 false)
+(defvar reveal-volume2 false)
+(defpoll current-volume :interval "1s"
+                        :initial "100"
+  "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+
+(defpoll gamemode-status  :interval "200ms"
+                          :initial "1"
+  "hyprctl getoption animations:enabled | awk 'NR==1{print $2}'")
+
+(defpoll capslock-status  :interval "200ms"
+                          :initial "0"
+  "cat /sys/class/leds/input*::capslock/brightness")
+
+(defpoll title      :interval "1s" "scripts/music title")
+(defpoll artist     :interval "1s" "scripts/music artist")
+(defpoll playpause  :interval "1s" "scripts/music statusicon")
+
+(defvar reveal-power1 false)
+(defvar reveal-power2 false)

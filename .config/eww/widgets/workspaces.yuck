@@ -1,0 +1,3 @@
+(defwidget workspaces [monitor]
+    (section :side "left"
+      (literal :content {monitor == 0 ? monitor_workspaces1 : monitor == 1 ? monitor_workspaces2 : "WORKSPACES"})))

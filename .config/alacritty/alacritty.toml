@@ -1,0 +1,236 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x444b6a"
+blue = "0x7da6ff"
+cyan = "0x0db9d7"
+green = "0xb9f27c"
+magenta = "0xbb9af7"
+red = "0xff7a93"
+white = "0xacb0d0"
+yellow = "0xff9e64"
+
+[colors.normal]
+black = "0x32344a"
+blue = "0x7aa2f7"
+cyan = "0x449dab"
+green = "0x9ece6a"
+magenta = "0xad8ee6"
+red = "0xf7768e"
+white = "0x787c99"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x1a1b26"
+foreground = "0xa9b1d6"
+
+[cursor]
+blink_interval = 750
+blink_timeout = 5
+thickness = 0.2
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+builtin_box_drawing = true
+size = 10
+
+[font.bold]
+family = "Cascadia Code NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "Cascadia Code NF"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Mononoki Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Mononoki Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Up"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "Down"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "Up"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "Down"
+mods = "Control|Shift"
+
+# [schemes.dracula.bright]
+# black = "#6272a4"
+# blue = "#d6acff"
+# cyan = "#a4ffff"
+# green = "#69ff94"
+# magenta = "#ff92df"
+# red = "#ff6e6e"
+# white = "#ffffff"
+# yellow = "#ffffa5"
+#
+# [schemes.dracula.cursor]
+# cursor = "CellForeground"
+# text = "CellBackground"
+#
+# [schemes.dracula.hints.end]
+# background = "#282a36"
+# foreground = "#f1fa8c"
+#
+# [schemes.dracula.hints.start]
+# background = "#f1fa8c"
+# foreground = "#282a36"
+#
+# [schemes.dracula.line_indicator]
+# background = "None"
+# foreground = "None"
+#
+# [schemes.dracula.normal]
+# black = "#21222c"
+# blue = "#bd93f9"
+# cyan = "#8be9fd"
+# green = "#50fa7b"
+# magenta = "#ff79c6"
+# red = "#ff5555"
+# white = "#f8f8f2"
+# yellow = "#f1fa8c"
+#
+# [schemes.dracula.primary]
+# background = "#282a36"
+# bright_foreground = "#ffffff"
+# foreground = "#f8f8f2"
+#
+# [schemes.dracula.search.bar]
+# background = "#282a36"
+# foreground = "#f8f8f2"
+#
+# [schemes.dracula.search.focused_match]
+# background = "#ffb86c"
+# foreground = "#44475a"
+#
+# [schemes.dracula.search.matches]
+# background = "#50fa7b"
+# foreground = "#44475a"
+#
+# [schemes.dracula.selection]
+# background = "#44475a"
+# text = "CellForeground"
+#
+# [schemes.dracula.vi_mode_cursor]
+# cursor = "CellForeground"
+# text = "CellBackground"
+#
+# [schemes.one-dark.bright]
+# black = "0x5c6370"
+# blue = "0x61afef"
+# cyan = "0x56b6c2"
+# green = "0x98c379"
+# magenta = "0xc678dd"
+# red = "0xe06c75"
+# white = "0xffffff"
+# yellow = "0xd19a66"
+#
+# [schemes.one-dark.normal]
+# black = "0x1e2127"
+# blue = "0x61afef"
+# cyan = "0x56b6c2"
+# green = "0x98c379"
+# magenta = "0xc678dd"
+# red = "0xe06c75"
+# white = "0xabb2bf"
+# yellow = "0xd19a66"
+#
+# [schemes.one-dark.primary]
+# background = "0x1e2127"
+# foreground = "0xabb2bf"
+#
+# [schemes.tokyo-night.bright]
+# black = "0x444b6a"
+# blue = "0x7da6ff"
+# cyan = "0x0db9d7"
+# green = "0xb9f27c"
+# magenta = "0xbb9af7"
+# red = "0xff7a93"
+# white = "0xacb0d0"
+# yellow = "0xff9e64"
+#
+# [schemes.tokyo-night.normal]
+# black = "0x32344a"
+# blue = "0x7aa2f7"
+# cyan = "0x449dab"
+# green = "0x9ece6a"
+# magenta = "0xad8ee6"
+# red = "0xf7768e"
+# white = "0x787c99"
+# yellow = "0xe0af68"
+#
+# [schemes.tokyo-night.primary]
+# background = "0x1a1b26"
+# foreground = "0xa9b1d6"
+#
+# [schemes.tokyo-night-storm.bright]
+# black = "0x444b6a"
+# blue = "0x7da6ff"
+# cyan = "0x0db9d7"
+# green = "0xb9f27c"
+# magenta = "0xbb9af7"
+# red = "0xff7a93"
+# white = "0xacb0d0"
+# yellow = "0xff9e64"
+#
+# [schemes.tokyo-night-storm.normal]
+# black = "0x32344a"
+# blue = "0x7aa2f7"
+# cyan = "0x449dab"
+# green = "0x9ece6a"
+# magenta = "0xad8ee6"
+# red = "0xf7768e"
+# white = "0x9699a8"
+# yellow = "0xe0af68"
+#
+# [schemes.tokyo-night-storm.primary]
+# background = "0x24283b"
+# foreground = "0xa9b1d6"
+
+[window]
+dynamic_padding = true
+dynamic_title = true
+opacity = 0.6
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 4
+y = 4

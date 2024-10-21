@@ -1,0 +1,250 @@
+* {
+    font-family: JetBrains Mono;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+}
+
+window#waybar {
+    background: rgba(26, 27, 38, 0.8);
+}
+
+tooltip {
+    font-family: JetBrains Mono;
+    background: rgba(26, 27, 38, 0.9);
+    border-radius: 0;
+    border: 2px solid #bb9af7;
+}
+tooltip label {
+    padding: 10px;
+}
+
+box.module,
+label.module {
+    /*background: rgba(18, 19, 29, 0.6);*/
+    /*padding: 0.2em 0.8em;*/
+    padding: 0 0.6em;
+    transition:
+        color 0.2s ease-in-out,
+        text-shadow 0.3s ease-in-out,
+        background 0.2s ease-in-out;
+}
+
+/***************
+** WORKSPACES **
+****************/
+
+#workspaces {
+    background: transparent;
+    border: none;
+    padding: 0 0.5em 0 0.5em;
+}
+
+#workspaces button {
+    background: transparent;
+    padding: 0;
+    margin: 0 0.3em;
+}
+#workspaces button label {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: normal;
+    font-size: 16px;
+    color: #65bcff;
+    transition: color 0.2s ease-in-out;
+}
+#workspaces button.empty label {
+    color: #2f334d;
+}
+#workspaces button.active label {
+    font-weight: bold;
+    color: #65bcff;
+}
+#workspaces button:hover label {
+    color: white;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+/***********
+** WINDOW **
+************/
+
+#window {
+    padding: 0 0.6em;
+    background: linear-gradient(
+        to right,
+        #161725 50%,
+        rgba(18, 19, 29, 0) 100%
+    );
+    border-left: 4px solid #65bcff;
+    transition:
+        background 0.2s ease-in,
+        border-width 0.2s ease-in,
+        border-color 1s ease-in;
+}
+window#waybar.empty #window {
+    background: none;
+    border: none;
+}
+
+/*********
+** TRAY **
+**********/
+
+#tray {
+    background: linear-gradient(to left, #161725 0%, rgba(18, 19, 29, 0) 100%);
+    border-right: 4px solid #65bcff;
+    padding-right: 0.8em;
+    margin-right: 0.5em;
+}
+
+/*******************
+** IDLE INHIBITOR **
+********************/
+
+#idle_inhibitor {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: bold;
+    color: #2f334d;
+}
+#idle_inhibitor.activated {
+    color: #ff966c;
+}
+#idle_inhibitor:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 150, 108, 0.5);
+}
+#idle_inhibitor.activated:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 150, 108, 0.5);
+}
+
+/***************
+** PULSEAUDIO **
+****************/
+
+#pulseaudio {
+    font-family: 'Font Awesome 6 Free';
+    padding: 0 0.5em 0 0.2em;
+    color: #bb9af7;
+}
+#pulseaudio:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(187, 154, 247, 0.5);
+}
+
+/*** SLIDER ***/
+
+#pulseaudio-slider {
+    padding: 0 0.5em 0 0.1em;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background: none;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 6px;
+    min-width: 60px;
+    border-radius: 99px;
+    background: #2f334d;
+}
+#pulseaudio-slider highlight {
+    background: #bb9af7;
+    border-radius: 99px;
+    transition:
+        box-shadow 0.3s ease-in-out,
+        background 0.2s ease-in-out;
+}
+#pulseaudio-slider slider:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+#pulseaudio-slider:hover highlight {
+    background: white;
+    box-shadow: 0 0 5px rgba(187, 154, 247, 0.5);
+}
+#pulseaudio-slider:hover slider,
+#pulseaudio-slider:hover trough {
+    box-shadow: none;
+}
+
+/************
+** BATTERY **
+*************/
+
+#battery {
+    font-family: 'Font Awesome 6 Free';
+    color: #b1d281;
+}
+
+/************
+** CPU/MEM **
+*************/
+
+#cpu,
+#memory {
+    font-family: 'Mononoki Nerd Font';
+    font-size: 18px;
+    padding: 0;
+    padding-bottom: 0.3em;
+}
+
+/**********
+** POWER **
+***********/
+
+#custom-power {
+    font-family: 'Font Awesome 6 Free';
+    color: #f7768e;
+}
+#custom-power:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(247, 118, 142, 0.5);
+}
+
+menu {
+    background: rgba(26, 27, 38, 0.8);
+    padding: 2px 0;
+    border-radius: 0;
+    border: 2px solid #65bcff;
+}
+menuitem {
+    font-family: JetBrains Mono;
+    font-size: 18px;
+    border-left: 2px solid #65bcff;
+    border-right: 2px solid #65bcff;
+    border-radius: 0;
+    margin: 0;
+    padding: 0.4em 0;
+    transition: background 0.5s ease-in-out;
+    box-shadow: none;
+}
+menuitem:hover {
+    background: #222436;
+    color: #65bcff;
+}
+menuitem label {
+    margin: 0;
+    padding: 0;
+}
+
+/******************
+** MPRIS (MUSIC) **
+*******************/
+
+#mpris:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(78, 211, 187, 0.5);
+}
+
+#cava {
+    color: #4ed3bb;
+    padding: 0;
+}

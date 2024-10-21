@@ -1,0 +1,25 @@
+;; Other formats:
+;;    - +%a, %b %d | %I:%M %p
+(defwidget clock [monitor]
+    (section :side "right"
+      (eventbox     :onhover "${eww} update reveal-date${monitor + 1}=true"
+                    :onhoverlost "${eww} update reveal-date${monitor + 1}=false"
+        (box        :class 'clock'
+                    :orientation "h"
+                    :halign "end"
+                    :space-evenly false
+          (revealer :transition "slideleft"
+                    :duration "550ms"
+                    :reveal {monitor == 0 ? reveal-date1 : monitor == 1 ? reveal-date2 : true}
+            (button :class "date"
+                    :orientation "h"
+                    :halign "center"
+                    :valign "fill"
+                    :onclick "scripts/popup calendar ${monitor}"
+             "${date} | "))
+          (button   :class "time"
+                    :orientation "h"
+                    :halign "center"
+                    :valign "fill"
+                    :onclick "scripts/popup calendar ${monitor}"
+            time)))))
