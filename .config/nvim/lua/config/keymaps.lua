@@ -99,10 +99,10 @@ map("n", "<leader>TT", function() LazyVim.terminal() end, { desc = "Terminal (cw
 -- Tmux --
 ----------
 
-map("n", "<C-j>", "<cmd> ZellijNavigateDown<CR>")
-map("n", "<C-k>", "<cmd> ZellijNavigateUp<CR>")
-map("n", "<C-h>", "<cmd> ZellijNavigateLeft<CR>")
-map("n", "<C-l>", "<cmd> ZellijNavigateRight<CR>")
+map("n", "<C-j>", "<cmd>ZellijNavigateDown<CR>")
+map("n", "<C-k>", "<cmd>ZellijNavigateUp<CR>")
+map("n", "<C-h>", "<cmd>ZellijNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd>ZellijNavigateRight<CR>")
 
 -------------
 -- Folding --
