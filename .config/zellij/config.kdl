@@ -10,10 +10,43 @@ keybinds clear-defaults=true {
         bind "Ctrl q" { Quit; }
         bind "Alt u" { GoToPreviousTab; }
         bind "Alt i" { GoToNextTab; }
-        bind "Alt h" { MoveFocus "Left"; }
-        bind "Alt l" { MoveFocus "Right"; }
-        bind "Alt j" { MoveFocus "Down"; }
-        bind "Alt k" { MoveFocus "Up"; }
+
+        bind "Ctrl h" {
+            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "left"
+                move_mod "ctrl"
+            }
+        }
+
+        bind "Ctrl j" {
+            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down"
+                move_mod "ctrl"
+            }
+        }
+
+        bind "Ctrl k" {
+            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up"
+                move_mod "ctrl"
+            }
+        }
+
+        bind "Ctrl l" {
+            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "l"
+                move_mod "ctrl"
+            }
+        }
+
+        // bind "Alt h" { MoveFocus "Left"; }
+        // bind "Alt l" { MoveFocus "Right"; }
+        // bind "Alt j" { MoveFocus "Down"; }
+        // bind "Alt k" { MoveFocus "Up"; }
     }
     // Keybings available in all modes except LOCKED.
     shared_except "locked" {
@@ -42,7 +75,7 @@ keybinds clear-defaults=true {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        bind "Ctrl m" { SwitchToMode "Move"; }
     }
 
     // ---- MODES ---- //
@@ -185,7 +218,7 @@ keybinds clear-defaults=true {
         }
     }
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "Ctrl m" { SwitchToMode "Normal"; }
         bind "h" "Left" { MovePane "Left"; }
         bind "l" "Right" { MovePane "Right"; }
         bind "k" "Up" { MovePane "Up"; }
