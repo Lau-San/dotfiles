@@ -12,7 +12,7 @@ keybinds clear-defaults=true {
         bind "Alt i" { GoToNextTab; }
 
         bind "Ctrl h" {
-            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
                 name "move_focus";
                 payload "left"
                 move_mod "ctrl"
@@ -20,7 +20,7 @@ keybinds clear-defaults=true {
         }
 
         bind "Ctrl j" {
-            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
                 name "move_focus";
                 payload "down"
                 move_mod "ctrl"
@@ -28,7 +28,7 @@ keybinds clear-defaults=true {
         }
 
         bind "Ctrl k" {
-            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
                 name "move_focus";
                 payload "up"
                 move_mod "ctrl"
@@ -36,7 +36,7 @@ keybinds clear-defaults=true {
         }
 
         bind "Ctrl l" {
-            MessagePlugin "https://https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
                 name "move_focus";
                 payload "l"
                 move_mod "ctrl"
