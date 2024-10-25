@@ -73,8 +73,8 @@ layout {
         children
     }
 
-    tab name="code" split_direction="vertical" focus=true {
-        pane command="nvim" size="60%" name="Code"
+    tab name="Code" split_direction="vertical" focus=true {
+        pane command="nvim" size="60%" name="Nvim"
         pane stacked=true {
             pane command="npm" {
                 name "Main server"
