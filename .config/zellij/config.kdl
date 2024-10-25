@@ -70,50 +70,15 @@ keybinds clear-defaults=true {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl m" { SwitchToMode "Move"; }
+        bind "Ctrl n" { SwitchToMode "Move"; }
     }
 
     // ---- MODES ---- //
     // Mode exclusive bindings
     normal {
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "toggle lock"                   "ctrl + g"
-                "quit"                          "ctrl + q"
-                "pane mode"                     "ctrl + p"
-                "tab mode"                      "ctrl + t"
-                "resize mode"                   "ctrl + r"
-                "move mode"                     "ctrl + h"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-            }
-        }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "toggle lock"                   "ctrl + g"
-                "quit"                          "ctrl + q"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-            }
-        }
     }
     resize {
         bind "Ctrl r" { SwitchToMode "Normal"; }
@@ -127,39 +92,6 @@ keybinds clear-defaults=true {
         bind "L" { Resize "Decrease Right"; }
         bind "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode"                   "ctrl + r"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "pane mode"                     "ctrl + p"
-                "tab mode"                      "ctrl + t"
-                "move mode"                     "ctrl + h"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-                "increase left"                 "h"
-                "increase right"                "l"
-                "increase up"                   "k"
-                "increase down"                 "j"
-                "decrease left"                 "H"
-                "decrease right"                "L"
-                "decrease up"                   "K"
-                "decrease down"                 "J"
-                "increase"                      "+"
-                "decrease"                      "-"
-            }
-        }
     }
     pane {
         bind "Ctrl p" { SwitchToMode "Normal"; }
@@ -176,75 +108,13 @@ keybinds clear-defaults=true {
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "f" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode"                   "ctrl + p"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "tab mode"                      "ctrl + t"
-                "resize mode"                   "ctrl + r"
-                "move mode"                     "ctrl + h"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-                "focus left"                    "h"
-                "focus right"                   "l"
-                "focus up"                      "k"
-                "focus down"                    "j"
-                "new pane"                      "n"
-                "new pane down"                 "-"
-                "new pane right"                "|"
-                "rename pane"                   "r"
-                "close pane"                    "x"
-                "maximize pane"                 "m"
-                "show floating panes"           "w"
-                "float/embed pane"              "f"
-            }
-        }
     }
     move {
-        bind "Ctrl m" { SwitchToMode "Normal"; }
+        bind "Ctrl n" { SwitchToMode "Normal"; }
         bind "h" "Left" { MovePane "Left"; }
         bind "l" "Right" { MovePane "Right"; }
         bind "k" "Up" { MovePane "Up"; }
         bind "j" "Down" { MovePane "Down"; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode"                   "ctrl + h"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "pane mode"                     "ctrl + p"
-                "tab mode"                      "ctrl + t"
-                "resize mode"                   "ctrl + r"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-                "move pane left"                "h"
-                "move pane right"               "l"
-                "move pane up"                  "k"
-                "move pane down"                "j"
-            }
-        }
     }
     tab {
         bind "Ctrl t" { SwitchToMode "Normal"; }
@@ -264,38 +134,6 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode"                   "ctrl + t"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "pane mode"                     "ctrl + p"
-                "resize mode"                   "ctrl + r"
-                "move mode"                     "ctrl + h"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "next tab"                      "j"
-                "next tab"                      "l"
-                "previous tab"                  "alt + u"
-                "previous tab"                  "k"
-                "previous tab"                  "h"
-                "new tab"                       "n"
-                "new tab from pane"             "b"
-                "close tab"                     "x"
-                "sync panes in tab"             "s"
-                "go to pane #1-9"               "#1-9"
-            }
-        }
     }
     scroll {
         bind "Ctrl s" { SwitchToMode "Normal"; }
@@ -308,29 +146,6 @@ keybinds clear-defaults=true {
         bind "Ctrl u" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode"                   "ctrl + s"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "pane mode"                     "ctrl + p"
-                "tab mode"                      "ctrl + t"
-                "resize mode"                   "ctrl + r"
-                "move mode"                     "ctrl + h"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-            }
-        }
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
@@ -352,31 +167,6 @@ keybinds clear-defaults=true {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "w" { SearchToggleOption "Wrap"; }
         bind "o" { SearchToggleOption "WholeWord"; }
-        bind "Ctrl b" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/bin/zellij_forgot.wasm" {
-                floating true
-                "LOAD_ZELLIJ_BINDINGS" "false"
-                "quit"                          "ctrl + q"
-                "toggle lock"                   "ctrl + g"
-                "normal mode (keep position)"   "s"
-                "normal mode"                   "q"
-                "normal mode"                   "enter"
-                "normal mode"                   "esc"
-                "pane mode"                     "ctrl + p"
-                "tab mode"                      "ctrl + t"
-                "resize mode"                   "ctrl + r"
-                "move mode"                     "ctrl + h"
-                "scroll mode"                   "ctrl + s"
-                "session mode"                  "ctrl + o"
-                "new pane"                      "alt + n"
-                "focus up"                      "alt + k"
-                "focus down"                    "alt + j"
-                "focus left"                    "alt + h"
-                "focus right"                   "alt + l"
-                "next tab"                      "alt + i"
-                "previous tab"                  "alt + u"
-            }
-        }
     }
     renametab {
         bind "Ctrl c" { SwitchToMode "Normal"; }
