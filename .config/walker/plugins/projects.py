@@ -49,5 +49,6 @@ print(json.dumps(generate_entries(
     },
     zellij_layouts={
         'LauSan Portfolio': 'lausan',
+        'TermiTask': 'termitask',
     }
 )))
