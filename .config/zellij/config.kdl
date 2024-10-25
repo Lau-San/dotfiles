@@ -42,11 +42,6 @@ keybinds clear-defaults=true {
                 move_mod "ctrl"
             }
         }
-
-        // bind "Alt h" { MoveFocus "Left"; }
-        // bind "Alt l" { MoveFocus "Right"; }
-        // bind "Alt j" { MoveFocus "Down"; }
-        // bind "Alt k" { MoveFocus "Up"; }
     }
     // Keybings available in all modes except LOCKED.
     shared_except "locked" {
@@ -419,7 +414,7 @@ plugins {
     }
 }
 
-theme "tokyo-night"
+theme "tokyo-night-dark"
 
 simplified_ui true
 ui {

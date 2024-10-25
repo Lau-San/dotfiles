@@ -1,46 +1,59 @@
 layout {
     default_tab_template {
-        pane size=2 borderless=true {
+        pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/bin/zjstatus.wasm" {
-                format_left   " {mode} {tabs}"
+                // COLORS
+                color_bg        "#181926"
+                color_black     "#12131D"
+                color_gray      "#2F334D"
+                color_white     "#C6D1F3"
+                color_bluegray  "#636DA6"
+                color_magenta   "#BA99F7"
+                color_blue      "#89B4FA"
+                color_jade      "#4CCBB7"
+                color_cyan      "#89DDFF"
+                color_green     "#A1D072"
+                color_yellow    "#E0AF68"
+                color_orange    "#EC935E"
+                color_red       "#F7768E"
+
+                hide_frame_for_single_pane "true"
+
+                format_left   "{mode}{tabs}"
                 format_center ""
-                format_right  "#[bg=#89b4fa,fg=#1e2030,bold]  #[bg=#363a4f,fg=#89b4fa,bold] {session} "
-                format_space  ""
+                format_right  "#[fg=$blue,bg=$black]    {session} #[bg=$blue] "
+                format_space  "#[bg=$bg]"
                 format_hide_on_overlength "true"
                 format_precedence "crl"
 
                 border_enabled  "false"
                 border_char     "─"
-                border_format   "#[fg=#6C7086]{char}"
-                border_position "top"
+                border_format   "#[fg=#2F334D]"
+                border_position "bottom"
 
-                mode_normal        "#[bg=#a6da95,fg=#181926,bold] NORMAL "
-                mode_locked        "#[bg=#6e738d,fg=#181926,bold] LOCKED  "
-                mode_resize        "#[bg=#f38ba8,fg=#181926,bold] RESIZE "
-                mode_pane          "#[bg=#89b4fa,fg=#181926,bold] PANE "
-                mode_tab           "#[bg=#b4befe,fg=#181926,bold] TAB "
-                mode_scroll        "#[bg=#f9e2af,fg=#181926,bold] SCROLL "
-                mode_enter_search  "#[bg=#8aadf4,fg=#181926,bold] ENT-SEARCH "
-                mode_search        "#[bg=#8aadf4,fg=#181926,bold] SEARCHARCH "
-                mode_rename_tab    "#[bg=#b4befe,fg=#181926,bold] RENAME-TAB "
-                mode_rename_pane   "#[bg=#89b4fa,fg=#181926,bold] RENAME-PANE "
-                mode_session       "#[bg=#74c7ec,fg=#181926,bold] SESSION "
-                mode_move          "#[bg=#f5c2e7,fg=#181926,bold] MOVE "
-                mode_prompt        "#[bg=#8aadf4,fg=#181926,bold] PROMPT "
-                mode_tmux          "#[bg=#f5a97f,fg=#181926,bold] TMUX "
+                mode_normal        "#[fg=$black,bg=$jade,bold] NORMAL "
+                mode_locked        "#[fg=$bluegray,bg=$gray,bold]  LOCKED "
+                mode_pane          "#[fg=$black,bg=$blue,bold] PANE "
+                mode_rename_pane   "#[fg=$black,bg=$magenta,bold] RENAME-PANE "
+                mode_move          "#[fg=$black,bg=$magenta,bold] MOVE "
+                mode_resize        "#[fg=$black,bg=$red,bold] RESIZE "
+                mode_tab           "#[fg=$black,bg=$yellow,bold] TAB "
+                mode_rename_tab    "#[fg=$black,bg=$orange,bold] RENAME-TAB "
+                mode_prompt        "#[fg=$black,bg=$green,bold] PROMPT "
+                mode_session       "#[fg=$black,bg=$cyan,bold] SESSION "
+                mode_scroll        "#[fg=$black,bg=$bluegray,bold] SCROLL "
+                mode_enter_search  "#[fg=$black,bg=$white,bold] ENT-SEARCH "
+                mode_search        "#[fg=$black,bg=$white,bold] SEARCHARCH "
 
-                // formatting for inactive tabs
-                tab_normal              "#[bg=#89b4fa,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#89b4fa,bold] {name}{floating_indicator} "
-                tab_normal_fullscreen   "#[bg=#89b4fa,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#89b4fa,bold] {name}{fullscreen_indicator} "
-                tab_normal_sync         "#[bg=#89b4fa,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#89b4fa,bold] {name}{sync_indicator} "
-
-                // formatting for the current active tab
-                tab_active              "#[bg=#fab387,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#fab387,bold] {name}{floating_indicator} "
-                tab_active_fullscreen   "#[bg=#fab387,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#fab387,bold] {name}{fullscreen_indicator} "
-                tab_active_sync         "#[bg=#fab387,fg=#1e2030,bold] {index} #[bg=#363a4f,fg=#fab387,bold] {name}{sync_indicator} "
+                tab_normal              "#[bg=$black,fg=#636DA6]  {index} {name} {floating_indicator}  "
+                tab_normal_fullscreen   "#[bg=$black,fg=#636DA6]  {index} {name} {fullscreen_indicator}  "
+                tab_normal_sync         "#[bg=$black,fg=#636DA6]  {index} {name} {sync_indicator}  "
+                tab_active              "#[bg=$black,fg=#4CCBB7,bold,italic,underscore]  {index} {name} {floating_indicator}  "
+                tab_active_fullscreen   "#[bg=$black,fg=#4CCBB7,bold,italic,underscore]  {index} {name} {fullscreen_indicator}  "
+                tab_active_sync         "#[bg=$black,fg=#4CCBB7,bold,italic,underscore]  {index} {name} {sync_indicator}  "
 
                 // separator between the tabs
-                tab_separator           " "
+                tab_separator           ""
 
                 // indicators
                 tab_sync_indicator       " "
