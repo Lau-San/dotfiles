@@ -2,42 +2,66 @@ scan_timeout = 50
 command_timeout = 3000
 add_newline = true
 
-format = """ $directory($git_branch$git_status )\
+## COLOR HINTS
+## ================================
+## Name             ANSI    Hex
+## ---------------- ------- -------
+## black            0       #15161e
+## red              1       #f7768e
+## green            2       #9ece6a
+## yellow           3       #e0af68
+## blue             4       #7aa2f7
+## purple           5       #bb9af7
+## cyan             6       #7dcfff
+## white            7       #a9b1d6
+## bright-black     8       #414868
+## bright-red       9       #f7768e
+## bright-green     10      #9ece6a
+## bright-yellow    11      #e0af68
+## bright-blue      12      #7aa2f7
+## bright-purple    13      #bb9af7
+## bright-cyan      14      #7dcfff
+## bright-white     15      #c0caf5
+##                  16      #ff9e64
+##                  17      #4CCBB7
+## ================================
+
+format = """ $directory($git_branch$git_status)\
 $python\
 $nodejs\
-$lua
+$lua\
+$os
  $shell  $character
 """
 
 [shell]
 disabled = false
 format = "[$indicator]($style)"
-style = "#4CCBB7"
+style = "blue"
 bash_indicator = ""
 fish_indicator = ""
 
 [character]
-success_symbol = "[](#4CCBB7)"
+success_symbol = "[](17)"
 error_symbol = "[](red)"
 # vicmd_symbol = "[](blue)"
 
 [directory]
 # format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
 # style = "black"
-format = "[](fg:#222436)[$path ]($style)[](fg:#222436)"
-style = "bg:#222436 fg:#4CCBB7"
+format = "[](fg:234)[$path ]($style)[](fg:234)($read_only)"
+style = "bg:234 fg:17"
 read_only = " "
 read_only_style = "red"
 home_symbol = " "
-repo_root_format = """[](fg:#4CCBB7)[ $repo_root ]($repo_root_style)[](bg:#222436 fg:#4CCBB7)\
-[ $path ]($style)[](fg:#222436)"""
-# repo_root_style = "bg:#4CCBB7 fg:black bold"
-repo_root_style = "bg:6 fg:black bold"
+repo_root_format = """[](fg:17)[ $repo_root ]($repo_root_style)[](bg:234 fg:17)\
+([ $path ]($style))[](fg:234)"""
+repo_root_style = "bg:17 fg:0 bold"
 fish_style_pwd_dir_length = 2
 
 [git_branch]
-format = "[]($style)[ $symbol$branch ]($style inverted)[]($style)"
-style = "1"
+format = "[](fg:blue)[ $symbol$branch ]($style)[](fg:blue bg:black)"
+style = "bg:blue fg:black"
 symbol = " "
 
 [git_commit]
@@ -47,26 +71,38 @@ only_detached = false
 tag_disabled = false
 
 [git_status]
-format = "[](green bg:$style)[($all_status$ahead_behind) ]($style inverted)[]($style)"
-style = "black"
-modified = " [](bg:black fg:yellow)"
-renamed = " [](bg:black fg:blue)"
-deleted = " [](bg:black fg:red)"
-staged = " [](bg:black fg:green)"
-untracked = " [](bg:black fg:purple)"
+format = "[( ($ahead_behind )$all_status )]($style)[](fg:black)"
+style = "bg:black"
+modified = "[ ](bg:black fg:yellow)"
+renamed = "[ ](bg:black fg:blue)"
+deleted = "[ ](bg:black fg:red)"
+staged = "[ ](bg:black fg:green)"
+untracked = "[](bg:black fg:red)"
+conflicted = "[ ](bg:black fg:red)"
+ahead = "[](bg:black fg:17) "
+behind = "[](bg:black fg:red) "
 
 [python]
-# format = "([ $symbol]($style bold) [$version]($style)( [🞚](blue bold) [$virtualenv](blue))[ ]($style bold) )"
-format = "([]($style)[$symbol $version( $virtualenv)]($style inverted)[]($style) )"
-style = "blue"
-symbol = " "
+format = "([](fg:yellow)[ $symbol$version( $virtualenv) ]($style)[](fg:yellow))"
+style = "bg:yellow fg:black"
+symbol = " "
 python_binary = ["python3", "python"]
 
 [nodejs]
 # format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
-format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
-style = "green"
-symbol = " "
+# format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
+format = "([](fg:green)[ $symbol$version ]($style)[](fg:green))"
+style = "bg:green fg:black"
+symbol = "󰎙 "
+
+[os]
+# format = "[$symbol]($style)"
+format = "[](fg:black)[ $symbol]($style)[](fg:black)"
+style = "bg:black fg:purple"
+disabled = false
+
+[os.symbols]
+EndeavourOS = " "
 
 [package]
 format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
