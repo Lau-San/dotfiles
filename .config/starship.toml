@@ -30,32 +30,33 @@ format = """ $directory($git_branch$git_status)\
 $python\
 $nodejs\
 $lua\
-$os
- $shell  $character
+$shell
+ $character
 """
 
 [shell]
 disabled = false
-format = "[$indicator]($style)"
-style = "blue"
-bash_indicator = ""
-fish_indicator = ""
+format = "[](fg:purple)[ $indicator]($style)[](fg:purple)"
+style = "bg:purple fg:black"
+bash_indicator = " "
+fish_indicator = " "
 
 [character]
-success_symbol = "[](17)"
+success_symbol = "[](green)"
 error_symbol = "[](red)"
 # vicmd_symbol = "[](blue)"
 
 [directory]
 # format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
 # style = "black"
-format = "[](fg:234)[$path ]($style)[](fg:234)($read_only)"
-style = "bg:234 fg:17"
+format = """([](fg:red)[ $read_only ]($read_only_style)[](fg:red))\
+[](fg:17)[ $path ]($style)[](fg:black)"""
+style = "bg:black fg:17"
 read_only = " "
-read_only_style = "red"
+read_only_style = "bg:red fg:black"
 home_symbol = " "
-repo_root_format = """[](fg:17)[ $repo_root ]($repo_root_style)[](bg:234 fg:17)\
-([ $path ]($style))[](fg:234)"""
+repo_root_format = """[](fg:17)[  $repo_root ]($repo_root_style)[](bg:black fg:17)\
+([ $path ]($style))[](fg:black)"""
 repo_root_style = "bg:17 fg:0 bold"
 fish_style_pwd_dir_length = 2
 
