@@ -170,7 +170,7 @@ set -g theme_color_scheme dracula
 set -g fish_prompt_pwd_dir_length 4
 set -g theme_project_dir_length 4
 set -g theme_newline_cursor yes
-set -g theme_newline_prompt ' ❯ '
+# set -g theme_newline_prompt ' ❯ '
 
 # === COLORS ===
 

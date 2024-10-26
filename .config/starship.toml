@@ -2,38 +2,42 @@ scan_timeout = 50
 command_timeout = 3000
 add_newline = true
 
-format = """ $shell$directory($git_branch )\
+format = """ $directory($git_branch$git_status )\
 $python\
 $nodejs\
 $lua
- $character
+ $shell  $character
 """
 
 [shell]
 disabled = false
-format = "[]($style)[$indicator ]($style inverted bg:green)"
-style = "bright-black"
+format = "[$indicator]($style)"
+style = "#4CCBB7"
 bash_indicator = ""
 fish_indicator = ""
 
 [character]
-success_symbol = "[](green)"
+success_symbol = "[](#4CCBB7)"
 error_symbol = "[](red)"
 # vicmd_symbol = "[](blue)"
 
 [directory]
-format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
-style = "black"
+# format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
+# style = "black"
+format = "[](fg:#222436)[$path ]($style)[](fg:#222436)"
+style = "bg:#222436 fg:#4CCBB7"
 read_only = " "
 read_only_style = "red"
-home_symbol = " "
-repo_root_style = "blue"
-repo_root_format = "[](bg:$repo_root_style bright-black)[  $repo_root]($repo_root_style inverted)[](bg:$style $repo_root_style)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
+home_symbol = " "
+repo_root_format = """[](fg:#4CCBB7)[ $repo_root ]($repo_root_style)[](bg:#222436 fg:#4CCBB7)\
+[ $path ]($style)[](fg:#222436)"""
+# repo_root_style = "bg:#4CCBB7 fg:black bold"
+repo_root_style = "bg:6 fg:black bold"
 fish_style_pwd_dir_length = 2
 
 [git_branch]
-format = "[]($style)[$symbol$branch]($style inverted)[]($style)"
-style = "purple"
+format = "[]($style)[ $symbol$branch ]($style inverted)[]($style)"
+style = "1"
 symbol = " "
 
 [git_commit]
