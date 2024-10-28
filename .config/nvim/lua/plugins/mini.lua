@@ -49,6 +49,6 @@ local files = {
 
 return {
     icons,
-    pairs,
+    -- pairs,
     files
 }
