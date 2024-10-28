@@ -6,6 +6,7 @@ return {
             styles = {
                 sidebars = 'dark',
                 floats = 'dark',
+                keywords = { italic = false },
                 functions = { italic = true }
             }
         }
