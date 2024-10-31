@@ -1,0 +1,39 @@
+#!/bin/env bash
+
+RECORDING_DIR=$HOME/Videos/screen-recordings
+
+notif() {
+	echo "$2"
+	notify-send --app-name="wf-recorder" "$1" "$2"
+}
+
+wf_recorder_check() {
+	if pgrep -x "wf-recorder" >/dev/null; then
+		pkill -INT -x wf-recorder
+		notif "Stopped recording" \
+			"Stopped recording the screen. Your new recording is in $RECORDING_DIR"
+		exit 0
+	fi
+}
+
+wf_recorder_check
+
+file="$RECORDING_DIR/$(date +%Y-%M-%d_%H-%m-%S).mp4"
+notif_desc="You are now recording the screen. Press SUPER + S > R to stop."
+
+case "$1" in
+"region")
+	region="$(slurp)"
+	notif "Recording screen region" "$notif_desc"
+	wf-recorder -g "$region" -f "$file"
+	;;
+"eDP-1")
+	notif "Recording eDP-1" "$notif_desc"
+	wf-recorder -o eDP-1 -f "$file"
+	;;
+"HDMI-A-1")
+	notif "Recording HDMI-A-1" "$notif_desc"
+	wf-recorder -o HDMI-A-1 -f "$file"
+	;;
+*) ;;
+esac
