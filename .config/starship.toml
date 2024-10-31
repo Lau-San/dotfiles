@@ -42,9 +42,9 @@ bash_indicator = " "
 fish_indicator = " "
 
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](red)"
-# vicmd_symbol = "[](blue)"
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+vicmd_symbol = "[](blue)"
 
 [directory]
 # format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
