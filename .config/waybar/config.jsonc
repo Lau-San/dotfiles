@@ -5,6 +5,7 @@
     "height": 32,
     // "width": 1280,
     "spacing": 2,
+    "margin": "10 10 0 10",
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
@@ -199,10 +200,8 @@
         "waves": false,
         "noise_reduction": 0.77,
         "input_delay": 2,
+        "sleep_timer": 10,
         "hide_on_silence": true,
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "actions": {
-            "on-click-right": "mode"
-        }
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     }
 }
