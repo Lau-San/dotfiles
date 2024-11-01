@@ -1,5 +1,6 @@
 * {
-    font-family: JetBrains Mono;
+    font-family: "Victor Mono Medium";
+    font-feature-settings: "ss01";
     font-weight: bold;
     font-size: 14px;
     padding: 0;
@@ -11,9 +12,9 @@ window#waybar {
 }
 
 tooltip {
-    font-family: JetBrains Mono;
+    /*font-family: JetBrains Mono;*/
     background: rgba(26, 27, 38, 0.9);
-    border-radius: 0;
+    border-radius: 5;
     border: 2px solid #bb9af7;
 }
 tooltip label {
@@ -246,6 +247,7 @@ menuitem label {
 }
 
 #cava {
+    font-family: JetBrains Mono;
     color: #4ed3bb;
     padding: 0;
 }

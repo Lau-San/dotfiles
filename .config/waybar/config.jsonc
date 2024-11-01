@@ -55,9 +55,10 @@
             "mode-mon-col": 3,
             "on-click-right": "mode",
             "format": {
-                "months": "<span color='#4ED3BB'><b>{}</b></span>",
-                "weekdays": "<span color='#65BCFF'><b>{}</b></span>",
-                "today": "<span background='#4ED3BB' color='#12131D'><b>{}</b></span>"
+                "months": "<span font='Victor Mono 14' color='#4ED3BB'><b>{}</b></span>",
+                "weekdays": "<span font='Victor Mono 14' color='#65BCFF'><b>{}</b></span>",
+                "days": "<span font='Victor Mono 14'><b>{}</b></span>",
+                "today": "<span background='#BB9AF7' color='#BB9AF7' bgalpha='20%'><b>{}</b></span>"
             }
         },
         "actions": {
