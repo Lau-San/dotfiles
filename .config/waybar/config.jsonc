@@ -56,7 +56,7 @@
             "format": {
                 "months": "<span color='#4ED3BB'><b>{}</b></span>",
                 "weekdays": "<span color='#65BCFF'><b>{}</b></span>",
-                "today": "<span color='#FF966C'><b><u>{}</u></b></span>"
+                "today": "<span background='#4ED3BB' color='#12131D'><b>{}</b></span>"
             }
         },
         "actions": {
