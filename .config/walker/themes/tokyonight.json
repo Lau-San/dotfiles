@@ -13,7 +13,7 @@
             "box": {
                 "orientation": "vertical",
                 "h_align": "start",
-                "v_align": "fill",
+                "v_align": "start",
                 "spacing": 10,
                 "width": 600,
                 "margins": {
