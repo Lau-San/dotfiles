@@ -36,6 +36,7 @@ slider,
         0 15px 12px rgba(0, 0, 0, 0.22);
     /*padding: 10px;*/
     border: 2px solid #65bcff;
+    border-radius: 5px;
 }
 
 #search {

@@ -37,6 +37,7 @@ slider,
     /*padding: 10px;*/
     border: 2px solid #65bcff;
     margin: 40px;
+    border-radius: 5px;
 }
 
 #search {
