@@ -1,6 +1,8 @@
 * {
-    font-family: "Victor Mono Medium";
-    font-feature-settings: "ss01";
+    font-family: 'Victor Mono Medium';
+    text-shadow: none;
+    box-shadow: none;
+    font-feature-settings: 'ss01';
     font-weight: bold;
     font-size: 14px;
     padding: 0;
@@ -13,7 +15,7 @@ window#waybar {
 
 tooltip {
     /*font-family: JetBrains Mono;*/
-    background: rgba(26, 27, 38, 0.9);
+    background: rgba(26, 27, 38, 0.8);
     border-radius: 5;
     border: 2px solid #bb9af7;
 }
