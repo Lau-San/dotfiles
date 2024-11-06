@@ -1,4 +1,4 @@
-return {
+local aerial = {
     'stevearc/aerial.nvim',
     opts = {
         layout = {
@@ -8,4 +8,8 @@ return {
         },
         autojump = true
     }
+}
+
+return {
+    -- aerial
 }
