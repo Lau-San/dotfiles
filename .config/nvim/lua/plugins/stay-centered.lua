@@ -3,7 +3,8 @@ local centered = {
     opts = {
         skip_filetypes = {
             'minifiles',
-            'dashboard'
+            'dashboard',
+            'alpha'
         }
     }
 }
