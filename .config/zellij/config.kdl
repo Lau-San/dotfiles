@@ -1,5 +1,5 @@
 default_shell "fish"
-default_mode "locked"
+default_mode "normal"
 
 // ==== BINDINGS ==== //
 
