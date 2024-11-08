@@ -1,5 +1,18 @@
+@define-color white     #B8C3E3;
+@define-color black     #12131D;
+@define-color gray      #222436;
+@define-color lightgray #2F334D;
+@define-color red       #F7768E;
+@define-color orange    #FC946B;
+@define-color yellow    #FFFFA5;
+@define-color green     #C3E88D;
+@define-color cyan      #4ED3BB;
+@define-color blue      #7499EC;
+@define-color purple    #BB9AF7;
+
 * {
     font-family: 'Victor Mono Medium';
+    color: @white;
     text-shadow: none;
     box-shadow: none;
     font-feature-settings: 'ss01';
@@ -9,8 +22,9 @@
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0.8);
+    background: rgba(26, 27, 38, 0.3);
     border-radius: 5px;
+    /*border-bottom: 4px solid rgb(26, 27, 38);*/
 }
 
 tooltip {
@@ -27,11 +41,69 @@ box.module,
 label.module {
     /*background: rgba(18, 19, 29, 0.6);*/
     /*padding: 0.2em 0.8em;*/
-    padding: 0 0.6em;
+    /*padding: 0 0.6em;*/
     transition:
         color 0.2s ease-in-out,
         text-shadow 0.3s ease-in-out,
         background 0.2s ease-in-out;
+}
+
+menu {
+    background: rgba(26, 27, 38, 0.8);
+    padding: 8px 0;
+    border-radius: 5px;
+    border: 2px solid @blue;
+}
+menuitem {
+    font-family: JetBrains Mono;
+    font-size: 18px;
+    border-left: 2px solid @blue;
+    border-right: 2px solid @blue;
+    border-radius: 0;
+    margin: 0;
+    padding: 0.3em 0;
+    transition:
+        background 0.3s ease-in-out,
+        border 0.2s ease-in-out;
+    box-shadow: none;
+}
+menuitem:hover {
+    background: #222436;
+    border-left: 6px solid @blue;
+}
+menuitem label {
+    margin: 0;
+    padding: 0;
+    transition: color 0.3s ease-in-out;
+}
+menuitem:hover label {
+    color: @blue;
+}
+
+#workspaces button label,
+#idle_inhibitor,
+#pulseaudio,
+#custom-power,
+#custom-reboot,
+#custom-logout,
+#custom-hypr-reload {
+    font-family: 'Font Awesome 6 Free';
+}
+
+#power,
+#monitor,
+#control,
+#workspaces,
+#clock,
+#tray,
+#window,
+#cava,
+#mpris {
+    background: rgba(18, 19, 29, 0.6);
+    /*border-bottom: 4px solid @blue;*/
+    border-radius: 5px;
+    padding: 0 0.6em 0 0.6em;
+    margin: 4px 0;
 }
 
 /***************
@@ -39,9 +111,10 @@ label.module {
 ****************/
 
 #workspaces {
-    background: transparent;
-    border: none;
-    padding: 0 0.5em 0 0.5em;
+    /*background: transparent;*/
+    /*border: none;*/
+    /*padding: 0 0.5em 0 0.5em;*/
+    margin-left: 4px;
 }
 
 #workspaces button {
@@ -50,7 +123,6 @@ label.module {
     margin: 0 0.3em;
 }
 #workspaces button label {
-    font-family: 'Font Awesome 6 Free';
     font-weight: normal;
     font-size: 16px;
     color: #65bcff;
@@ -75,19 +147,19 @@ label.module {
 ** WINDOW **
 ************/
 
-#window {
-    padding: 0 0.6em;
-    background: linear-gradient(
-        to right,
-        #161725 50%,
-        rgba(18, 19, 29, 0) 100%
-    );
-    border-left: 4px solid #65bcff;
-    transition:
-        background 0.2s ease-in,
-        border-width 0.2s ease-in,
-        border-color 1s ease-in;
-}
+/*#window {*/
+/*    padding: 0 0.6em;*/
+/*    background: linear-gradient(*/
+/*        to right,*/
+/*        #161725 50%,*/
+/*        rgba(18, 19, 29, 0) 100%*/
+/*    );*/
+/*    border-left: 4px solid #65bcff;*/
+/*    transition:*/
+/*        background 0.2s ease-in,*/
+/*        border-width 0.2s ease-in,*/
+/*        border-color 1s ease-in;*/
+/*}*/
 window#waybar.empty #window {
     background: none;
     border: none;
@@ -97,19 +169,18 @@ window#waybar.empty #window {
 ** TRAY **
 **********/
 
-#tray {
-    background: linear-gradient(to left, #161725 0%, rgba(18, 19, 29, 0) 100%);
-    border-right: 4px solid #65bcff;
-    padding-right: 0.8em;
-    margin-right: 0.5em;
-}
+/*#tray {*/
+/*    background: linear-gradient(to left, #161725 0%, rgba(18, 19, 29, 0) 100%);*/
+/*    border-right: 4px solid #65bcff;*/
+/*    padding-right: 0.8em;*/
+/*    margin-right: 0.5em;*/
+/*}*/
 
 /*******************
 ** IDLE INHIBITOR **
 ********************/
 
 #idle_inhibitor {
-    font-family: 'Font Awesome 6 Free';
     font-weight: bold;
     color: #2f334d;
 }
@@ -130,8 +201,7 @@ window#waybar.empty #window {
 ****************/
 
 #pulseaudio {
-    font-family: 'Font Awesome 6 Free';
-    padding: 0 0.5em 0 0.2em;
+    /*padding: 0 0.5em 0 0.2em;*/
     color: #bb9af7;
 }
 #pulseaudio:hover {
@@ -189,8 +259,12 @@ window#waybar.empty #window {
 }
 
 /************
-** CPU/MEM **
+** MONITOR **
 *************/
+
+#cpu {
+    margin-right: 0.3em;
+}
 
 #cpu,
 #memory {
@@ -203,40 +277,23 @@ window#waybar.empty #window {
 /**********
 ** POWER **
 ***********/
+#power {
+    margin-right: 4px;
+}
+#power .module {
+    padding: 0;
+    margin: 0;
+    margin: 0 0 0 .5em;
+}
+#power .module:hover {
+    color: white;
+}
 
 #custom-power {
-    font-family: 'Font Awesome 6 Free';
     color: #f7768e;
 }
 #custom-power:hover {
-    color: white;
     text-shadow: 0 0 5px rgba(247, 118, 142, 0.5);
-}
-
-menu {
-    background: rgba(26, 27, 38, 0.8);
-    padding: 2px 0;
-    border-radius: 0;
-    border: 2px solid #65bcff;
-}
-menuitem {
-    font-family: JetBrains Mono;
-    font-size: 18px;
-    border-left: 2px solid #65bcff;
-    border-right: 2px solid #65bcff;
-    border-radius: 0;
-    margin: 0;
-    padding: 0.4em 0;
-    transition: background 0.5s ease-in-out;
-    box-shadow: none;
-}
-menuitem:hover {
-    background: #222436;
-    color: #65bcff;
-}
-menuitem label {
-    margin: 0;
-    padding: 0;
 }
 
 /******************
@@ -251,5 +308,6 @@ menuitem label {
 #cava {
     font-family: JetBrains Mono;
     color: #4ed3bb;
-    padding: 0;
+    /*padding: 0;*/
 }
+
