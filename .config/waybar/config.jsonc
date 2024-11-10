@@ -25,6 +25,8 @@
         "group/power"
     ],
 
+    // GROUPS
+
     "group/control": {
         "orientation": "inherit",
         "modules": [
@@ -47,9 +49,9 @@
         },
         "modules": [
             "custom/power",
-            "custom/reboot",
+            "custom/hypr-reload",
             "custom/logout",
-            "custom/hypr-reload"
+            "custom/reboot"
         ]
     },
     "group/music": {
@@ -59,6 +61,8 @@
             "cava"
         ]
     },
+
+    // MODULES
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -205,19 +209,23 @@
     },
     "custom/power": {
         "format": "⏻ ",
-        "tooltip": false
+        "tooltip-format": "Shutdown",
+        "on-click": "shutdown now"
     },
     "custom/reboot": {
         "format": " ",
-        "tooltip": false
+        "tooltip-format": "Reboot",
+        "on-click": "systemctl reboot"
     },
     "custom/logout": {
         "format": " ",
-        "tooltip": false
+        "tooltip-format": "Logout",
+        "on-click": "hyprctl dispatch exit"
     },
     "custom/hypr-reload": {
         "format": " ",
-        "tooltip": false
+        "tooltip-format": "Reload Hyprland",
+        "on-click": "hyprctl reload"
     },
     "mpris": {
         "format-playing": "<span font='Mononoki Nerd Font 14' color='#4ED3BB'>{status_icon}</span> {artist} - {title}",
