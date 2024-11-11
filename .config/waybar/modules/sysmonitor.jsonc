@@ -1,0 +1,42 @@
+{
+    "group/sysmonitor": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon}",
+        "rotate": 270,
+        "format-icons": [
+            "<span color='#65BCFF'>󰝦</span>",
+            "<span color='#4ED3BB'>󰪞</span>",
+            "<span color='#C3E88D'>󰪟</span>",
+            "<span color='#ffffa5'>󰪠</span>",
+            "<span color='#ffffa5'>󰪡</span>",
+            "<span color='#E0AF68'>󰪢</span>",
+            "<span color='#FF966C'>󰪣</span>",
+            "<span color='#C53B53'>󰪥</span>"
+        ],
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 1,
+        "rotate": 270,
+        "format": "{icon}",
+        "format-icons": [
+            "<span color='#65BCFF'>󰝦</span>",
+            "<span color='#4ED3BB'>󰪞</span>",
+            "<span color='#C3E88D'>󰪟</span>",
+            "<span color='#ffffa5'>󰪠</span>",
+            "<span color='#ffffa5'>󰪡</span>",
+            "<span color='#E0AF68'>󰪢</span>",
+            "<span color='#FF966C'>󰪣</span>",
+            "<span color='#C53B53'>󰪥</span>"
+        ],
+        "max-length": 10
+    }
+}

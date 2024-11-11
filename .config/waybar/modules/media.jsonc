@@ -1,0 +1,42 @@
+{
+    "group/music": {
+        "orientation": "inherit",
+        "modules": [
+            "mpris",
+            "cava"
+        ]
+    },
+
+    "mpris": {
+        "format-playing": "<span font='Mononoki Nerd Font 14' color='#4ED3BB'>{status_icon}</span> {artist} - {title}",
+        "format-paused": "<span font='Mononoki Nerd Font 14' color='#4ED3BB'>{status_icon}</span> {artist} - {title}",
+        "format-stopped": "<span font='Mononoki Nerd Font 14' color='#4ED3BB'>{status_icon}</span> Nothing playing",
+        "status-icons": {
+            "playing": " ",
+            "paused": " ",
+            "stopped": " "
+        },
+        "ignored-players": ["firefox"]
+    },
+    "cava": {
+        // "cava_config": "~/.config/cava/config",
+        "framerate": 60,
+        "autosens": 1,
+        // "sensitivity": 10,
+        "bars": 10,
+        // "lower_cutoff_freq": 50,
+        // "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "sleep_timer": 10,
+        "hide_on_silence": true,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    }
+}

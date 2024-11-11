@@ -1,0 +1,36 @@
+{
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/hypr-reload",
+            "custom/logout",
+            "custom/reboot"
+        ]
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip-format": "Shutdown",
+        "on-click": "shutdown now"
+    },
+    "custom/reboot": {
+        "format": " ",
+        "tooltip-format": "Reboot",
+        "on-click": "systemctl reboot"
+    },
+    "custom/logout": {
+        "format": " ",
+        "tooltip-format": "Logout",
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/hypr-reload": {
+        "format": " ",
+        "tooltip-format": "Reload Hyprland",
+        "on-click": "hyprctl reload"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "group/control": {
+        "orientation": "inherit",
+        "modules": [
+            "idle_inhibitor",
+            "group/volume"
+        ]
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "group/volume": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": ["pulseaudio", "pulseaudio/slider"]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": " {icon}",
+        "format-muted": " ",
+        // "format-icons": {
+        //     "default": ["", "", ""]
+        // },
+        "format-icons": {
+            "default": [""]
+        },
+        "on-click": "pavucontrol-qt"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    }
+}
