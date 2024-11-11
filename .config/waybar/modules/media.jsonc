@@ -16,6 +16,7 @@
             "paused": " ",
             "stopped": " "
         },
+        "title-len": 24,
         "ignored-players": ["firefox"]
     },
     "cava": {

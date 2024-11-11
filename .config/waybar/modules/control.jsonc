@@ -2,9 +2,22 @@
     "group/control": {
         "orientation": "inherit",
         "modules": [
+            "custom/gamemode",
             "idle_inhibitor",
             "group/volume"
         ]
+    },
+
+    // NOTE: This has nothing to do with FeralInteractive/gamemode
+    //       it simply toggles hyprland animations for better
+    //       game performance.
+    "custom/gamemode": {
+        "exec": "~/.config/waybar/bin/gamemode",
+        "return-type": "json",
+        "exec-on-event": false,
+        "signal": 1,
+        "format": "{}",
+        "on-click": "~/.config/hypr/scripts/gamemode"
     },
 
     "idle_inhibitor": {

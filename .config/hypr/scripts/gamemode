@@ -14,8 +14,10 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword decoration:blur:enabled 0" || exit 1
 
 	notif 'Game Mode is enabed' 'All effects and animations have been disabled for a better video game performance.'
+    pkill -SIGRTMIN+1 waybar
 
 	exit
 fi
 hyprctl reload
+pkill -SIGRTMIN+1 waybar
 notif 'Game Mode is disabled' 'All effects and animations have been enabled for a nicer look.' || exit 1

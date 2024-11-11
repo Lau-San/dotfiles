@@ -83,9 +83,11 @@ menuitem:hover label {
 #workspaces button label,
 #idle_inhibitor,
 #pulseaudio,
+#custom-gamemode,
 #custom-power,
 #custom-reboot,
 #custom-logout,
+#custom-lock,
 #custom-hypr-reload {
     font-family: 'Font Awesome 6 Free';
 }
@@ -102,7 +104,7 @@ menuitem:hover label {
     background: rgba(18, 19, 29, 0.6);
     /*border-bottom: 4px solid @blue;*/
     border-radius: 5px;
-    padding: 0 0.6em 0 0.6em;
+    padding: 0 .8em 0 .8em;
     margin: 4px 0;
 }
 
@@ -192,9 +194,21 @@ window#waybar.empty #window {
     color: white;
     text-shadow: 0 0 5px rgba(255, 150, 108, 0.5);
 }
-#idle_inhibitor.activated:hover {
+
+/*************
+** GAMEMODE **
+**************/
+
+#custom-gamemode {
+    color: #2f334d;
+    margin-right: 0.5em;
+}
+#custom-gamemode.activated {
+    color: @cyan;
+}
+#custom-gamemode:hover {
     color: white;
-    text-shadow: 0 0 5px rgba(255, 150, 108, 0.5);
+    text-shadow: 0 0 5px rgba(78, 211, 187, 0.5);
 }
 
 /***************
@@ -283,12 +297,13 @@ window#waybar.empty #window {
     margin-right: 4px;
 }
 #power .module {
-    padding: 0;
-    margin: 0;
-    margin: 0 0 0 .5em;
+    /*margin: 0 .3em 0 .3em;*/
 }
 #power .module:hover {
     color: white;
+}
+#power .drawer-child .module {
+    margin-right: .5em;
 }
 
 /* POWER */
@@ -308,6 +323,10 @@ window#waybar.empty #window {
 /* LOGOUT */
 #custom-logout {
     color: @yellow;
+}
+/* LOCK */
+#custom-lock {
+    color: @purple;
 }
 #custom-power:hover {
     text-shadow: 0 0 5px rgba(247, 118, 142, 0.5);

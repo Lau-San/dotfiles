@@ -7,6 +7,7 @@
         },
         "modules": [
             "custom/power",
+            "custom/lock",
             "custom/hypr-reload",
             "custom/logout",
             "custom/reboot"
@@ -14,22 +15,27 @@
     },
 
     "custom/power": {
-        "format": "⏻ ",
+        "format": "⏻",
         "tooltip-format": "Shutdown",
         "on-click": "shutdown now"
     },
     "custom/reboot": {
-        "format": " ",
+        "format": "",
         "tooltip-format": "Reboot",
         "on-click": "systemctl reboot"
     },
+    "custom/lock": {
+        "format": "",
+        "tooltip-format": "Lock screen",
+        "on-click": "hyprlock"
+    },
     "custom/logout": {
-        "format": " ",
+        "format": "",
         "tooltip-format": "Logout",
         "on-click": "hyprctl dispatch exit"
     },
     "custom/hypr-reload": {
-        "format": " ",
+        "format": "",
         "tooltip-format": "Reload Hyprland",
         "on-click": "hyprctl reload"
     }
