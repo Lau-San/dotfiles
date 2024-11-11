@@ -30,6 +30,7 @@ format = """ $directory($git_branch$git_status)\
 $python\
 $nodejs\
 $lua\
+$java\
 $shell
  $character
 """
@@ -90,20 +91,9 @@ symbol = " "
 python_binary = ["python3", "python"]
 
 [nodejs]
-# format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
-# format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
 format = "([](fg:green)[ $symbol$version ]($style)[](fg:green))"
 style = "bg:green fg:black"
 symbol = "󰎙 "
-
-[os]
-# format = "[$symbol]($style)"
-format = "[](fg:black)[ $symbol]($style)[](fg:black)"
-style = "bg:black fg:purple"
-disabled = false
-
-[os.symbols]
-EndeavourOS = " "
 
 [package]
 format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
@@ -118,22 +108,20 @@ version_format = "v${major}.${minor}"
 
 [lua]
 #format = "([ $symbol]($style bold) [$version]($style) []($style bold) )"
-format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
-style = "blue"
-symbol = ""
+# format = "([]($style)[$symbol $version]($style inverted)[]($style) )"
+format = "([](fg:blue)[ $symbol$version ]($style)[](fg:blue))"
+style = "bg:blue fg:black"
+symbol = " "
+
+[java]
+format = "([](fg:white)[ $symbol$version ]($style)[](fg:white))"
+style = "bg:white fg:black"
+symbol = " "
 
 [cmd_duration]
 disabled = true
 
-[c]
-format = "( [ $symbol]($style bold) [$version( - $name)]($style) []($style bold))"
-symbol = ""
-style = "purple"
-
-[cmake]
-format = "( [ $symbol]($style bold) [$version]($style) []($style bold))"
-style = "blue"
-
+# Not configured
 
 [aws]
 symbol = "  "
@@ -158,9 +146,6 @@ symbol = " "
 
 [hg_branch]
 symbol = " "
-
-[java]
-symbol = " "
 
 [julia]
 symbol = " "
