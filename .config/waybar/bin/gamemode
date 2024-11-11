@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+animations=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+
+if [ $animations -eq 1 ]; then
+    gamemode="disabled"
+else
+    gamemode="enabled"
+fi
+
+echo "{
+    \"text\": \"\",
+    \"alt\": \"\",
+    \"tooltip\": \"Gamemode: $gamemode\",
+    \"class\": \"$([ $animations -eq 0 ] && echo "activated")\",
+    \"percentage\": \"$gamemode\"
+}" | jq --unbuffered --compact-output
