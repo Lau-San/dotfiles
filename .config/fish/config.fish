@@ -124,6 +124,10 @@ function yy
     rm -f -- "$tmp"
 end
 
+function confsync
+    conf commit -m "Update $(date +"%Y-%m-%d %H:%M")" && conf push
+end
+
 # === BINDS ===
 
 set -g fish_sequence_key_delay_ms 200
