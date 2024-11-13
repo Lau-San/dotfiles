@@ -45,7 +45,7 @@ fish_indicator = " "
 [character]
 success_symbol = "[](green)"
 error_symbol = "[](red)"
-vicmd_symbol = "[](blue)"
+vicmd_symbol = "[](yellow)"
 
 [directory]
 # format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
