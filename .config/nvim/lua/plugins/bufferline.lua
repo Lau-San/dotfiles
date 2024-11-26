@@ -1,6 +1,7 @@
 local colors = require('tokyonight.colors').setup()
 return {
     'akinsho/bufferline.nvim',
+    enabled = false,
     opts = {
         options = {
             always_show_bufferline = true,
