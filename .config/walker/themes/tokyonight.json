@@ -33,9 +33,10 @@
                 "scroll": {
                     "overlay_scrolling": false,
                     "v_align": "fill",
-                    "v_expand": true,
-                    "h_expand": false,
-                    "h_scrollbar_policy": "external",
+                    "h_align": "fill",
+                    "v_expand": false,
+                    "h_expand": true,
+                    "h_scrollbar_policy": "never",
                     "v_scrollbar_policy": "never",
                     "list": {
                         "width": 600,

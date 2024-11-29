@@ -23,7 +23,9 @@
             "weight": 5,
             "name": "applications",
             "placeholder": "Applications",
-            "actions": true,
+            "actions": {
+                "enabled": false
+            },
             "prioritize_new": true,
             "context_aware": true,
             "refresh": true,
