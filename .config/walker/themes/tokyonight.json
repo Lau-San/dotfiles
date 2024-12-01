@@ -32,7 +32,7 @@
                 },
                 "scroll": {
                     "overlay_scrolling": false,
-                    "v_align": "fill",
+                    "v_align": "start",
                     "h_align": "fill",
                     "v_expand": false,
                     "h_expand": true,
@@ -43,9 +43,10 @@
                         "always_show": false,
                         "item": {
                             "spacing": 18,
+                            "wrap": false,
                             "activation_label": {
                                 "h_align": "fill",
-                                "h_expand": true,
+                                "h_expand": false,
                                 "justify": "right",
                                 "x_align": 1
                             },
@@ -57,7 +58,7 @@
                                 "h_expand": true,
                                 "revert": true,
                                 "label": {
-                                    "wrap": true
+                                    "wrap": false
                                 },
                                 "sub": {
                                     "hide": true

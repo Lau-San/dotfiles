@@ -64,11 +64,6 @@ slider {
     min-width: 2px;
     background: #7f849c;
     opacity: 0.5;
-    /*
-        NOTE: This is a temporary workaround to hide the scrollbar 
-              Should be temporary
-     */
-    background: transparent;
 }
 
 #prompt {
@@ -101,11 +96,9 @@ slider {
     /*color: green;*/
 }
 
-/* This is the text you actually write */
 #input > *:last-child {
     color: #7aa2f7;
 }
-/* This is the prediction */
 #typeahead > *:last-child {
     color: #7aa2f7;
     opacity: 0.5;

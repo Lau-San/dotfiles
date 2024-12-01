@@ -1,16 +1,17 @@
 {
     "theme": "tokyonight",
     "as_window": false,
-    "force_keyboard_focus": true,
+    "force_keyboard_focus": false,
     "ignore_mouse": true,
     "list": {
         "cycle": true,
         "max_entries": 50,
         "show_initial_entries": true,
-        "single_click": true
+        "single_click": true,
+        "keyboard_scroll_style": "vim"
     },
     "search": {
-        "force_keyboard_focus": true,
+        "force_keyboard_focus": false,
         "placeholder": "Search...",
         "delay": 0
     },
