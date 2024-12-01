@@ -61,7 +61,7 @@ scrollbar {
 }
 
 slider {
-    min-width: 2px;
+    min-width: 0;
     background: #7f849c;
     opacity: 0.5;
 }

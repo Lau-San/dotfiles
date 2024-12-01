@@ -37,7 +37,7 @@
                     "v_expand": false,
                     "h_expand": true,
                     "h_scrollbar_policy": "never",
-                    "v_scrollbar_policy": "never",
+                    "v_scrollbar_policy": "automatic",
                     "list": {
                         "width": 600,
                         "always_show": false,
