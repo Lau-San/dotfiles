@@ -52,7 +52,7 @@ del('n', '<leader>bD')
 del('n', '<leader>`')
 del('n', '<leader>fb')
 
-map('n', '<leader>bb', ':Telescope buffers<cr>', { desc = 'Find buffer' })
+map('n', '<leader>bb', ':FzfLua buffers<cr>', { desc = 'Find buffer' })
 map("n", "<leader>bx", function() Snacks.bufdelete() end, { desc = "Close Buffer" })
 map("n", "<leader>bX", "<cmd>:bd<cr>", { desc = "Close Buffer and window" })
 
