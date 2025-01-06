@@ -188,4 +188,4 @@ end, { desc = 'fold headings level 4 or above' })
 ------------
 
 del('n', '<leader>K')
-map('n', '<leader>r', ':FzfLua resume<CR>', { desc = 'resume fzf' })
+map('n', '<leader>r', ':FzfLua resume<CR>', { desc = 'resume fzf', icon = '' })
