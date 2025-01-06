@@ -1,4 +1,4 @@
-return {
+local indent_blankline = {
     {
         'lukas-reineke/indent-blankline.nvim',
         opts = {
@@ -9,4 +9,7 @@ return {
             }
         }
     }
+}
+return {
+    -- indent_blankline
 }
