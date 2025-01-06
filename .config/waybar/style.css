@@ -80,6 +80,7 @@ menuitem:hover label {
     color: @blue;
 }
 
+/* Set Font Awesome font for icon widgets */
 #workspaces button label,
 #idle_inhibitor,
 #pulseaudio,
@@ -96,6 +97,7 @@ menuitem:hover label {
 #sysmonitor,
 #control,
 #workspaces,
+#submap,
 #clock,
 #tray,
 #window,
@@ -146,8 +148,26 @@ menuitem:hover label {
 }
 
 /***********
-** WINDOW **
+** SUBMAP **
 ************/
+
+#submap {
+    animation: submap 1s ease-in-out infinite alternate;
+}
+@keyframes submap {
+    from {
+        /*color: @white;*/
+        color: white;
+        text-shadow: 0 0 5px rgba(255, 150, 108, 0.5);
+    }
+    to {
+        color: @orange;
+    }
+}
+
+/***********
+ ** WINDOW **
+ ************/
 
 /*#window {*/
 /*    padding: 0 0.6em;*/
@@ -168,8 +188,8 @@ window#waybar.empty #window {
 }
 
 /*********
-** TRAY **
-**********/
+ ** TRAY **
+ **********/
 
 /*#tray {*/
 /*    background: linear-gradient(to left, #161725 0%, rgba(18, 19, 29, 0) 100%);*/
@@ -179,8 +199,8 @@ window#waybar.empty #window {
 /*}*/
 
 /*******************
-** IDLE INHIBITOR **
-********************/
+ ** IDLE INHIBITOR **
+ ********************/
 
 #idle_inhibitor {
     font-weight: bold;
@@ -196,8 +216,8 @@ window#waybar.empty #window {
 }
 
 /*************
-** GAMEMODE **
-**************/
+ ** GAMEMODE **
+ **************/
 
 #custom-gamemode {
     color: #2f334d;
@@ -212,8 +232,8 @@ window#waybar.empty #window {
 }
 
 /***************
-** PULSEAUDIO **
-****************/
+ ** PULSEAUDIO **
+ ****************/
 
 #pulseaudio {
     /*padding: 0 0.5em 0 0.2em;*/
@@ -249,8 +269,8 @@ window#waybar.empty #window {
     background: #bb9af7;
     border-radius: 99px;
     transition:
-        box-shadow 0.3s ease-in-out,
-        background 0.2s ease-in-out;
+    box-shadow 0.3s ease-in-out,
+    background 0.2s ease-in-out;
 }
 #pulseaudio-slider slider:hover {
     box-shadow: inherit;
@@ -266,8 +286,8 @@ window#waybar.empty #window {
 }
 
 /************
-** BATTERY **
-*************/
+ ** BATTERY **
+ *************/
 
 #battery {
     font-family: 'Font Awesome 6 Free';
@@ -275,8 +295,8 @@ window#waybar.empty #window {
 }
 
 /************
-** MONITOR **
-*************/
+ ** MONITOR **
+ *************/
 
 #cpu {
     margin-right: 0.3em;
@@ -291,8 +311,8 @@ window#waybar.empty #window {
 }
 
 /***************
-** POWER MENU **
-****************/
+ ** POWER MENU **
+ ****************/
 #power {
     margin-right: 4px;
 }
@@ -337,8 +357,8 @@ window#waybar.empty #window {
 }
 
 /******************
-** MPRIS (MUSIC) **
-*******************/
+ ** MPRIS (MUSIC) **
+ *******************/
 
 #mpris:hover {
     color: white;

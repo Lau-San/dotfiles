@@ -16,11 +16,13 @@
         "~/.config/waybar/modules/tray.jsonc",
         "~/.config/waybar/modules/control.jsonc",
         "~/.config/waybar/modules/sysmonitor.jsonc",
-        "~/.config/waybar/modules/power.jsonc"
+        "~/.config/waybar/modules/power.jsonc",
+        "~/.config/waybar/modules/submap.jsonc"
     ],
 
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/submap",
         "hyprland/window"
     ],
     "modules-center": [
