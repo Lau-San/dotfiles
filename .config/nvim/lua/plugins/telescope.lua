@@ -1,4 +1,4 @@
-return {
+local telescope = {
     'nvim-telescope/telescope.nvim',
     opts = {
         defaults = {
@@ -14,4 +14,7 @@ return {
             }
         }
     }
+}
+return {
+    -- telescope
 }
