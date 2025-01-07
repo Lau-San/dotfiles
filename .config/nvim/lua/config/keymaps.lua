@@ -90,10 +90,8 @@ map('n', '<leader>wx', '<C-W>c', { desc = 'Close window' })
 del('n', '<leader>ft')
 del('n', '<leader>fT')
 
-local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
-
-map("n", "<leader>Tt", lazyterm, { desc = "Terminal (Root Dir" })
-map("n", "<leader>TT", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>TT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>Tt", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
 
 ----------
 -- Tmux --
