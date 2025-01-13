@@ -48,7 +48,8 @@ print(json.dumps(generate_entries(
         'Github Profile README': '~/Projects/github-profile/README.md'
     },
     zellij_layouts={
-        'LauSan Portfolio': 'lausan',
+        'Portfolio': 'lausan',
         'TermiTask': 'termitask',
+        'Bitburner': 'bitburner'
     }
 )))
