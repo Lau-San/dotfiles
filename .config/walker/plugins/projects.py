@@ -13,9 +13,9 @@ def zj_attach(session: str) -> str:
 
 def zj_new(session_name: str, layout: bool = False) -> str:
     '''Generate a command that creates a new session with the given name'''
-    cmd = f'kitty zellij --session "{session_name}"'
+    cmd = f'kitty zellij -s "{session_name}"'
     if layout:
-        cmd += f' --layout {session_name}'
+        cmd += f' -n {session_name}'
     return cmd
 
 
