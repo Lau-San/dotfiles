@@ -1,16 +1,6 @@
 import json
 
 
-def zj_find(session: str) -> str:
-    '''Generate a command that finds whether the given Zelli session exists'''
-    return f'zellij ls | grep {session}'
-
-
-def zj_attach(session: str) -> str:
-    '''Generate command that attaches an existing Zellij session'''
-    return f'kitty zellij attach {session}'
-
-
 def zj_new(session_name: str, layout: bool = False) -> str:
     '''Generate a command that creates a new session with the given name'''
     cmd = f'kitty zellij -s "{session_name}"'
@@ -19,12 +9,17 @@ def zj_new(session_name: str, layout: bool = False) -> str:
     return cmd
 
 
-def zj_new_godot(godot_project: str) ->:
-    '''Generate a command that creates a new session with the godot layout'''
-    cmd = f'kitty -d ~/Projects/development/games/godot/{godot_project}'
+def zj_new_godot(project: str) -> str:
+    '''
+    Generate a command that moves to a godot project folder and creates a new
+    session with the godot layout
+    '''
+    cmd = f'kitty -d ~/Projects/development/games/godot/{project}'
+    cmd += f' zellij -s {project} -n godot'
+    return cmd
 
 
-def generate_entries(simple: dict, zellij_layouts: dict, godot_projects: dict) -> list:
+def generate_entries(simple: dict, zellij_layouts: dict, godot: dict) -> list:
     entries = []
 
     # Generate entries for simple projects that only require one
@@ -47,11 +42,11 @@ def generate_entries(simple: dict, zellij_layouts: dict, godot_projects: dict) -
 
     # Generate entries for Godot projects. This move into a
     # Godot project folder and runs Zellij with the godot layout
-    for k, v in godot_projects.items():
+    for k, v in godot.items():
         entries.append({
             'label': f'  {k}',
             'searchable': k.lower(),
-            'exec': f'zellij d godot; cd ~/Projects/development/games/godot/{}; {}'
+            'exec': f'zellij d godot; {zj_new_godot(v)}'
         })
 
     return entries
@@ -65,5 +60,8 @@ print(json.dumps(generate_entries(
         'Portfolio': 'lausan',
         'TermiTask': 'termitask',
         'Bitburner': 'bitburner'
+    },
+    godot={
+        'Sokoban Clone': 'sokoban-clone'
     }
 )))
