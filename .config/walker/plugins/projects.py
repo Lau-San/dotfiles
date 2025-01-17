@@ -19,7 +19,7 @@ def zj_new(session_name: str, layout: bool = False) -> str:
     return cmd
 
 
-def generate_entries(simple: dict, zellij_layouts: dict) -> list:
+def generate_entries(simple: dict, zellij_layouts: dict, godot_projects: dict) -> list:
     entries = []
 
     # Generate entries for simple projects that only require one
@@ -39,6 +39,9 @@ def generate_entries(simple: dict, zellij_layouts: dict) -> list:
             'searchable': k.lower(),
             'exec': f'zellij d {v}; {zj_new(v, True)}'
         })
+
+    # Generate entries for Godot projects. This move into a
+    # Godot project folder and runs Zellij with the godot layout
 
     return entries
 
