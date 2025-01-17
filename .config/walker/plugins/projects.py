@@ -19,6 +19,11 @@ def zj_new(session_name: str, layout: bool = False) -> str:
     return cmd
 
 
+def zj_new_godot(godot_project: str) ->:
+    '''Generate a command that creates a new session with the godot layout'''
+    cmd = f'kitty -d ~/Projects/development/games/godot/{godot_project}'
+
+
 def generate_entries(simple: dict, zellij_layouts: dict, godot_projects: dict) -> list:
     entries = []
 
@@ -42,6 +47,12 @@ def generate_entries(simple: dict, zellij_layouts: dict, godot_projects: dict) -
 
     # Generate entries for Godot projects. This move into a
     # Godot project folder and runs Zellij with the godot layout
+    for k, v in godot_projects.items():
+        entries.append({
+            'label': f'  {k}',
+            'searchable': k.lower(),
+            'exec': f'zellij d godot; cd ~/Projects/development/games/godot/{}; {}'
+        })
 
     return entries
 
