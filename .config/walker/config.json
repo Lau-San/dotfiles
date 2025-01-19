@@ -141,18 +141,6 @@
             "name": "projects",
             "src": "python /home/laura/.config/walker/plugins/projects.py",
             "placeholder": "Search projects"
-        },
-        {
-            "name": "tasks",
-            "src": "python /home/laura/.config/walker/plugins/tasks.py %TERM%",
-            "placeholder": "Create and see your tasks",
-            "keep_sort": false
-        },
-        {
-            "name": "inbox",
-            "src": "python /home/laura/.config/walker/plugins/inbox.py %TERM%",
-            "placeholder": "Name your new task",
-            "keep_sort": false
         }
     ]
 }
