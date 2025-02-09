@@ -11,12 +11,12 @@ killall krunner
 
 # Notifications
 killall notification-daemon
-run dunst
+# run dunst
 
 # This is to fix my secondary monitor's screen resolution since my Xorg
 # config files don't seem to apply properly when using AwesomeWM and NVidia
 # for some reason. There may be another way, but this works for me.
-run "$HOME/.screensize.sh"
+# run "$HOME/.screensize.sh"
 
 # Remap CapsLock key to Ctrl to make Ctrl+ keybindings more comfortable.
 # If you expected the usual CapsLock behaviour, just comment this line,
@@ -36,8 +36,8 @@ xsetwacom --set "Wacom Intuos Pro M Pen stylus" MapToOutput 1920x1080+0+0
 picom &
 
 run nm-applet
-run flameshot
-run megasync
+# run flameshot
+# run megasync
 
 # run ticktick
 # run thunderbird
