@@ -59,7 +59,8 @@ print(json.dumps(generate_entries(
     zellij_layouts={
         'Portfolio': 'lausan',
         'TermiTask': 'termitask',
-        'Bitburner': 'bitburner'
+        'Bitburner': 'bitburner',
+        'Learn C++': 'learncpp'
     },
     godot={
         'Sokoban Clone': 'sokoban-clone'
