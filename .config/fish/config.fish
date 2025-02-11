@@ -45,6 +45,11 @@ alias paruu='paru -Syu'
 
 alias py='python'
 
+# C++
+
+alias g++db='g++ -ggdb'
+alias g++rl='g++ -O2 -DNDEBUG'
+
 # Git
 
 alias gs='git status'
