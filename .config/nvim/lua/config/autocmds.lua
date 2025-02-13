@@ -14,7 +14,7 @@ autocmd({ "FileType" }, {
 
 -- Disable autoformat for lua files
 autocmd({ "FileType" }, {
-  pattern = { "lua" },
+  pattern = { "lua", "cpp" },
   callback = function()
     vim.b.autoformat = false
   end,
