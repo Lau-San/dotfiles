@@ -60,7 +60,8 @@ print(json.dumps(generate_entries(
         'Portfolio': 'lausan',
         'TermiTask': 'termitask',
         'Bitburner': 'bitburner',
-        'Learn C++': 'learncpp'
+        'Learn C++': 'learncpp',
+        'Ao3 Tokyonight': 'ao3theme'
     },
     godot={
         'Sokoban Clone': 'sokoban-clone'
