@@ -58,6 +58,7 @@ print(json.dumps(generate_entries(
     },
     zellij_layouts={
         'Portfolio': 'lausan',
+        'Suncode': 'suncode',
         'TermiTask': 'termitask',
         'Bitburner': 'bitburner',
         'Learn C++': 'learncpp',
