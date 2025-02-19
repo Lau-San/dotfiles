@@ -37,7 +37,7 @@ def generate_entries(simple: dict, zellij_layouts: dict, godot: dict) -> list:
         entries.append({
             'label': f'  {k}',
             'searchable': k.lower(),
-            'exec': f'zellij d {v}; {zj_new(v, True)}'
+            'exec': f'zellij d {v} && notify-send yeah; {zj_new(v, True)}'
         })
 
     # Generate entries for Godot projects. This move into a
