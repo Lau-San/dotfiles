@@ -60,13 +60,10 @@ alias gl='git log --oneline'
 alias gb='git checkout -b'
 alias df='git diff'
 
-# Chezmoi
-
-alias chezedit='chezmoi edit --apply -v'
-
 # Dotfiles
 
 alias conf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias conflg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # === COLOR UTILS ===
 
