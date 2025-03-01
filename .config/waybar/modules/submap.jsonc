@@ -1,0 +1,6 @@
+{
+    "hyprland/submap": {
+        "format": "<span font_family=\"Font Awesome 6 Free\"> </span> {}",
+        "tooltip": false
+    }
+}

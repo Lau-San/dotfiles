@@ -26,18 +26,18 @@ count_selected = { fg = "#1e1e2e", bg = "#89b4fa" }
 
 # Border
 border_symbol = "│"
-border_style = { fg = "#7f849c" }
+border_style = { fg = "#616BA3" }
 
 # Highlighting
-syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
+# syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
 
 [status]
-separator_open = ""
+separator_open = "█"
 separator_close = ""
 separator_style = { fg = "#45475a", bg = "#45475a" }
 
 # Mode
-mode_normal = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
+mode_normal = { fg = "#1E2030", bg = "#89b4fa", bold = true }
 mode_select = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
 mode_unset = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
 
