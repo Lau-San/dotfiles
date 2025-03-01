@@ -2,7 +2,7 @@
     "theme": "tokyonight",
     "as_window": false,
     "force_keyboard_focus": false,
-    "ignore_mouse": true,
+    "ignore_mouse": false,
     "list": {
         "cycle": true,
         "max_entries": 50,

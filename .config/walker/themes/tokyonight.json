@@ -14,27 +14,28 @@
                 "orientation": "vertical",
                 "h_align": "start",
                 "v_align": "start",
-                "spacing": 10,
+                "spacing": 0,
                 "width": 600,
                 "margins": {
                     "top": 0
                 },
                 "search": {
-                    "v_align": "start",
+                    "v_align": "center",
                     "h_expand": false,
                     "prompt": {
                         "v_align": "center",
                         "text": ""
                     },
                     "input": {
+                        "v_align": "center",
                         "icons": false
                     }
                 },
                 "scroll": {
                     "overlay_scrolling": false,
-                    "v_align": "start",
+                    "v_align": "fill",
                     "h_align": "fill",
-                    "v_expand": false,
+                    "v_expand": true,
                     "h_expand": true,
                     "h_scrollbar_policy": "never",
                     "v_scrollbar_policy": "automatic",

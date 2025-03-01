@@ -29,29 +29,30 @@ slider,
 /*** Menu Box ***/
 #box {
     /*background: #1a1b26;*/
-    background: rgba(18, 19, 29, 0.6);
+    background: rgba(26, 27, 38, 0.5);
     border-radius: 5px;
     margin: 10px;
+    padding: 10px;
     box-shadow:
-        0 19px 38px rgba(0, 0, 0, 0.3),
-        0 15px 12px rgba(0, 0, 0, 0.22);
+        0 6px 15px 5px rgba(0, 0, 0, 0.3),
+        0 12px 25px 10px rgba(0, 0, 0, 0.12);
     /*padding: 10px;*/
-    border: 2px solid #65bcff;
+    /*border: 2px solid #65bcff;*/
 }
 
 #search {
-    background: #1a1b26;
-    background: transparent;
+    background: rgba(18, 19, 29, 0.6);
+    /*background: transparent;*/
     padding: 10px;
-    /*border-radius: 5px;*/
-    border-bottom: 2px solid #65bcff;
-    margin: 0 10px;
+    border-radius: 5px;
+    /*border-bottom: 2px solid #65bcff;*/
 }
 
 #list {
-    background: #1a1b26;
-    background: transparent;
-    /*border-radius: 5px;*/
+    background: rgba(18, 19, 29, 0.6);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 0;
     /*padding: 10px;*/
 }
 
@@ -59,7 +60,6 @@ scrollbar {
     background: none;
     /*padding-left: 8px;*/
 }
-
 slider {
     min-width: 0;
     background: #7f849c;
@@ -68,9 +68,11 @@ slider {
 
 #prompt {
     font-family: Mononoki Nerd Font;
-    font-size: 20px;
-    color: #7aa2f7;
-    padding-left: 5px;
+    font-size: 24px;
+    background: #7aa2f7;
+    color: rgb(18, 19, 29);
+    padding: 2px 10px;
+    border-radius: 5px;
 }
 
 #password,
@@ -79,14 +81,13 @@ slider {
     background: #363a4f;
     background: none;
     box-shadow: none;
-    padding-left: 12px;
-    padding-right: 12px;
+    margin: 0 10px;
     font-size: 20px;
     font-weight: 600;
 }
 
 #input {
-    background: none;
+    /*background: red;*/
 }
 
 #input > *:first-child,
@@ -98,10 +99,11 @@ slider {
 
 #input > *:last-child {
     color: #7aa2f7;
+    /*opacity: .3;*/
 }
 #typeahead > *:last-child {
     color: #7aa2f7;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
 }
 
 #spinner {
@@ -112,14 +114,15 @@ slider {
 }
 
 #input placeholder {
-    opacity: 0.5;
+    color: #89b4fa;
+    opacity: 0.2;
 }
 
 child {
     /*border-radius: 5px;*/
     padding: 8px;
-    padding-left: 12px;
-    border-left: 2px solid transparent;
+    padding-left: 18px;
+    border-left: 0 solid transparent;
     transition:
         background-color 0.3s ease-out,
         border-width 0.3s ease-out,
@@ -132,9 +135,9 @@ child #label {
 
 child:selected,
 child:hover {
-    background: #24283b;
+    background: hsla(221, 55%, 20%, .3);
     box-shadow: none;
-    border-left: 8px solid #65bcff;
+    border-left: 8px solid #7aa2f7;
 }
 
 child:selected #label,
@@ -169,6 +172,10 @@ child:hover #label {
     font-weight: bold;
     color: #89b4fa;
     opacity: 1;
+}
+
+#listplaceholder {
+    padding: 10px 0;
 }
 
 .activation #text,
