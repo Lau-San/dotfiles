@@ -41,7 +41,6 @@ __pycache__
 .config/borg
 .config/cef_user_data
 .config/cava/shaders
-.config/chezmoi
 .config/cmus/playlists
 .config/cmus/lib.pl
 .config/dconf
