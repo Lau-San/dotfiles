@@ -9,7 +9,12 @@ local leet = {
     },
     opts = {
         arg = 'leetcode.nvim',
-        lang = 'python3'
+        lang = 'python3',
+        injector = {
+            ['python3'] = {
+                before = 'from typing import List'
+            }
+        }
     }
 }
 
