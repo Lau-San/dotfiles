@@ -12,7 +12,8 @@ local leet = {
         lang = 'python3',
         injector = {
             ['python3'] = {
-                before = 'from typing import List'
+                before = true,
+                after = true
             }
         }
     }
