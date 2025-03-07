@@ -55,7 +55,8 @@ def generate_entries(simple: dict, zellij_layouts: dict, godot: dict) -> list:
 print(json.dumps(generate_entries(
     simple={
         # Map project to single file
-        'Github Profile README': '~/Projects/github-profile/README.md'
+        'Github Profile README': '~/Projects/github-profile/README.md',
+        'LeetCode': "+':Leet'"
     },
     zellij_layouts={
         # Map Project to Zellij layout
