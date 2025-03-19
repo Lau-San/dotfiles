@@ -5,11 +5,11 @@ local function new_note()
     vim.cmd('normal! dd')
 end
 
-local function new_task()
-    local task = vim.fn.input { prompt = 'New task: ' }
-    local date = os.date('%Y-%m-%d')
-    vim.cmd('!echo "- [ ] ' .. task .. '" >> ~/Documents/personal/journal/' .. date .. '.md')
-end
+-- local function new_task()
+--     local task = vim.fn.input { prompt = 'New task: ' }
+--     local date = os.date('%Y-%m-%d')
+--     vim.cmd('!echo "- [ ] ' .. task .. '" >> ~/Documents/personal/journal/' .. date .. '.md')
+-- end
 
 local function open_in_vsplit()
     vim.cmd('exe "normal \\<C-W>v"')
@@ -104,27 +104,25 @@ return {
             { '<leader>oo', ':ObsidianQuickSwitch<cr>', desc = 'open a note' },
             { '<leader>oO', open_in_vsplit, desc = 'open a note in a split' },
             { '<leader>on', new_note, desc = 'create new note' },
-            { '<leader>oT', ':ObsidianTemplate note<cr>', desc = 'apply default template' },
+            { '<leader>oT', ':ObsidianTemplate note<cr>', desc = 'apply default template', ft = 'markdown' },
             { '<leader>oss', ':ObsidianSearch<cr>', desc = 'grep vault' },
             { '<leader>ost', ':ObsidianTags<cr>', desc = 'search tags' },
-            -- { '<leader>oot', ':ObsidianToday<cr>', desc = "open today's note" },
-            -- { '<leader>ooT', ':ObsidianTomorrow<cr>', desc = "open tomorrow's note" },
-            { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note' },
-            { '<leader>of', ':s/-/ /g<cr>', desc = 'format title' },
-            { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten' },
-            { '<leader>odd', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note' },
-            { '<leader>op', ':ObsidianPasteImg<cr>', desc = 'paste image' },
+            { '<leader>or', ':ObsidianRename<cr>', desc = 'rename note', ft = 'markdown' },
+            -- { '<leader>of', ':s/-/ /g<cr>', desc = 'format title', ft = 'markdown' },
+            { '<leader>ok', ':!mv "%:p" ~/Documents/personal/zettelkasten<cr>:bd<cr>', desc = 'add note to zettelkasten', ft = 'markdown' },
+            { '<leader>odd', ":!rm -rf '%:p'<cr>:bd<cr>", desc = 'delete current note', ft = 'markdown' },
+            { '<leader>op', ':ObsidianPasteImg<cr>', desc = 'paste image', ft = 'markdown' },
 
-            { '<leader>otn', new_task, desc = 'add task to inbox' },
-            { '<leader>ott', function() set_todo(' ') end, desc = 'set status to do' },
-            { '<leader>oti', function() set_todo('\\/') end, desc = 'set status incomplete' },
-            { '<leader>otd', function() set_todo('x') end, desc = 'set status done' },
-            { '<leader>otc', function() set_todo('-') end, desc = 'set status cancelled' },
-            { '<leader>otm', function() set_todo('>') end, desc = 'set status moved' },
-            { '<leader>otp', function() set_todo('*') end, desc = 'set pinned' },
-            { '<leader>otM', function() set_todo('M') end, desc = 'set priority MUST' },
-            { '<leader>otS', function() set_todo('S') end, desc = 'set priority SHOULD' },
-            { '<leader>otC', function() set_todo('C') end, desc = 'set priority COULD' },
+            -- { '<leader>otn', new_task, desc = 'add task to inbox' },
+            { '<leader>ott', function() set_todo(' ') end, desc = 'set status to do', ft = 'markdown' },
+            { '<leader>oti', function() set_todo('\\/') end, desc = 'set status incomplete', ft = 'markdown' },
+            { '<leader>otd', function() set_todo('x') end, desc = 'set status done', ft = 'markdown' },
+            { '<leader>otc', function() set_todo('-') end, desc = 'set status cancelled', ft = 'markdown' },
+            { '<leader>otm', function() set_todo('>') end, desc = 'set status moved', ft = 'markdown' },
+            { '<leader>otp', function() set_todo('*') end, desc = 'set pinned', ft = 'markdown' },
+            { '<leader>otM', function() set_todo('M') end, desc = 'set priority MUST', ft = 'markdown' },
+            { '<leader>otS', function() set_todo('S') end, desc = 'set priority SHOULD', ft = 'markdown' },
+            { '<leader>otC', function() set_todo('C') end, desc = 'set priority COULD', ft = 'markdown' },
 
             -- Manipulate checkboxes
             -- { '<leader>ott', function() require'obsidian'.util.toggle_checkbox({' '}) end }

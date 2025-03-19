@@ -1,10 +1,14 @@
 local venv_selector = {
     "linux-cultist/venv-selector.nvim",
-    branch = "regexp", -- Use this branch for the new version
+    branch = 'regexp',
+    dependencies = {
+        'neovim/nvim-lspconfig',
+        'nvim-lua/plenary.nvim'
+        -- 'nvim-telescope/telescope.nvim',
+    },
     cmd = "VenvSelect",
-    enabled = function()
-        return LazyVim.has("telescope.nvim")
-    end,
+    -- event = 'VeryLazy',
+    ft = "python",
     opts = {
         settings = {
             options = {
@@ -12,11 +16,18 @@ local venv_selector = {
             },
         },
     },
-    --  Call config for python files and load the cached venv automatically
-    ft = "python",
-    keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+    config = function()
+        require('venv-selector').setup()
+    end,
+    keys = { { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+}
+
+local jinja = {
+    'Glench/Vim-Jinja2-Syntax',
+    ft = 'jinja.html'
 }
 
 return {
-    venv_selector
+    venv_selector,
+    jinja
 }

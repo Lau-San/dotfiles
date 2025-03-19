@@ -1,23 +1,9 @@
 return {
-    {
-        'folke/todo-comments.nvim',
-        opts = {
-            search = {
-                commands = 'rg',
-                args = {
-                    '--color=never',
-                    '--no-heading',
-                    '--with-filename',
-                    '--line-number',
-                    '--column',
-                    '--glob=!node_modules'
-                }
-            },
-            hightlight = {
-                exclude = {
-                    [[.*node_modules\/.*\.js]]
-                }
-            }
-        }
+    'folke/todo-comments.nvim',
+    event = require('util').lazy_file_events,
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {},
+    keys = {
+        { '<leader>t', '<cmd>TodoQuickFix keywords=TODO,FIX,FIXME<cr>', desc = 'Todo/Fix/Fixme' }
     }
 }

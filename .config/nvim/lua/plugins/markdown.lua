@@ -47,7 +47,8 @@ local markdown = {
         },
         callout = {
             note = { raw = '[!NOTE]', rendered = '󰋽 Note', highlight = 'RenderMarkdownInfo' },
-            tip = { raw = '[!TIP]', rendered = '󰌶 Tip', highlight = 'RenderMarkdownSuccess' },
+            definition = { raw = '[!DEF]', rendered = '󰧑 Definition', highlight = 'RenderMarkdownInfo' },
+            tip = { raw = '[!TIP]', rendered = '󰌶 Tip', highlight = 'RenderMarkdownHint' },
             important = { raw = '[!IMPORTANT]', rendered = '󰅾 Important', highlight = 'RenderMarkdownHint' },
             warning = { raw = '[!WARNING]', rendered = '󰀪 Warning', highlight = 'RenderMarkdownError' },
             attention = { raw = '[!ATTENTION]', rendered = '󰀪 Attention', highlight = 'RenderMarkdownWarn' },
@@ -65,12 +66,12 @@ local markdown = {
     }
 }
 
-local markdown_preview = {
-    'iamcco/markdown-preview.nvim',
-    keys = {
-        { '<leader>mp', ':MarkdownPreviewToggle<cr>', desc = 'markdown preview' }
-    }
-}
+-- local markdown_preview = {
+--     'iamcco/markdown-preview.nvim',
+--     keys = {
+--         { '<leader>mp', ':MarkdownPreviewToggle<cr>', desc = 'markdown preview' }
+--     }
+-- }
 
 local image = {
     '3rd/image.nvim',
@@ -119,13 +120,13 @@ local toc = {
         }
     },
     keys = {
-        { '<leader>mt', ':Mtoc<cr>', desc = 'add/update toc' }
+        { '<leader>mt', ':Mtoc<cr>', desc = 'add/update toc', ft = 'markdown' }
     }
 }
 
 return {
     markdown,
-    markdown_preview,
+    -- markdown_preview,
     image,
     bullets,
     toc,
