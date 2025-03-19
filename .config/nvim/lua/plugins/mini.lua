@@ -1,6 +1,28 @@
 local modules = {
     { 'ai' },
-    { 'pairs' },
+    { 'pairs', {
+        opts = {},
+        config = function(_, opts)
+            local pairs = require('mini.pairs')
+            pairs.steup(opts)
+
+            local open = pairs.open
+            pairs.open = function(pair, neigh_pattern)
+                if vim.fn.getcmdline() ~= '' then
+                    return open(pair, neigh_pattern)
+                end
+                local o, c = pair:sub(1, 1), pair:sub(2, 2)
+                local line = vim.api.nvim_get_current_line()
+                local cursor = vim.api.nvim_win_get_cursor(0)
+                local next = line:sub(cursor[2] + 1, cursor[2] + 1)
+                local before = line:sub(1, cursor[2])
+                if o == '`' and vim.bo.filetype == 'markdown' and before:match('^%s*``') then
+                    return '\n```' .. vim.api.nvim_replace_termcodes('<up>', true, true, true)
+                end
+                return open(pair, neigh_pattern)
+            end
+        end
+    }},
     { 'surround', {
         opts = {
             mappings = {
@@ -25,8 +47,7 @@ local modules = {
             mappings = vim.tbl_filter(function(m) return m[1] and #m[1] > 0 end, mappings)
             return vim.list_extend(mappings, keys)
         end
-    },
-    },
+    }},
     { 'indentscope', {
         opts = {
             symbol = '▏'
