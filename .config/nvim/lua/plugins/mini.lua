@@ -36,7 +36,7 @@ local modules = {
 
 local mini = vim.tbl_map(function(v)
     local name = v[1]
-    local specs = v[2]
+    local specs = v[2] or {}
     return {
         'echasnovski/mini.' .. name,
         version = '*',
