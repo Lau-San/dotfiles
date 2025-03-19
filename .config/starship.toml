@@ -48,8 +48,6 @@ error_symbol = "[](red)"
 vicmd_symbol = "[](purple)"
 
 [directory]
-# format = "[](bg:$style bright-black)[ $path]($style inverted bg:blue)([ $read_only]($read_only_style bg:$style))[]($style) "
-# style = "black"
 format = """([](fg:red)[ $read_only ]($read_only_style)[](fg:red))\
 [](fg:17)[ $path ]($style)[](fg:black)"""
 style = "bg:black fg:17"
