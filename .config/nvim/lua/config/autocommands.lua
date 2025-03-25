@@ -65,7 +65,10 @@ autocmd('FileType', {
     group = augroup('close-with-q'),
     pattern = {
         'help',
-        'qf'
+        'qf',
+        'checkhealth',
+        'grug-far',
+        'lspinfo',
     },
     callback = function(event)
         vim.bo[event.buf].buflisted = false
