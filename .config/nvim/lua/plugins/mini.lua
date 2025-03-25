@@ -4,7 +4,7 @@ local modules = {
         opts = {},
         config = function(_, opts)
             local pairs = require('mini.pairs')
-            pairs.steup(opts)
+            pairs.setup(opts)
 
             local open = pairs.open
             pairs.open = function(pair, neigh_pattern)
@@ -62,6 +62,7 @@ local mini = vim.tbl_map(function(v)
         'echasnovski/mini.' .. name,
         version = '*',
         event = vim.tbl_extend('force', require('util').lazy_file_events, specs.events or {}),
+        dependencies = specs.dependencies or {},
         opts = specs.opts or {},
         config = specs.config or function(_, opts) require('mini.' .. name).setup(opts) end,
         keys = specs.keys or {}

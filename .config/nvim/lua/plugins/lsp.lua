@@ -1,3 +1,5 @@
+local lsp_utils = require('util.lsp')
+
 local lspconfig = {
     'neovim/nvim-lspconfig',
     event = require('util').lazy_file_events,
@@ -18,6 +20,7 @@ local lspconfig = {
     },
     opts = {
         diagnostics = {
+            severity_sort = true,
             virtual_text = {
                 spacing = 4,
                 source = 'if_many',
@@ -32,6 +35,14 @@ local lspconfig = {
                 }
             }
         },
+        capabilities = {
+            workspace = {
+                fileOperations = {
+                    didRename = true,
+                    willRename = true
+                }
+            }
+        },
         servers = {
             -- Add server configurations here
             pylsp = true,
@@ -40,17 +51,15 @@ local lspconfig = {
                 name = 'godot',
                 cmd = vim.lsp.rpc.connect('127.0.0.1', 6005)
             },
-            emmet_language_server = {
-                filetypes = {
-                    'jinja.html'
-                }
-            }
+            cssls = true
         }
     },
     keys = {
         { '<leader>cl', '<cmd>LspInfo<cr>', desc = 'Lsp Info' }
     },
     config = function(_, opts)
+        lsp_utils.setup()
+
         -- Setup diagnostics
 
         for severity, icon in pairs(opts.diagnostics.signs.text) do
@@ -63,11 +72,13 @@ local lspconfig = {
 
         -- Setup servers
 
+        local blink = require('blink.cmp')
         local servers = opts.servers
         local capabilities = vim.tbl_deep_extend(
             'force',
             {},
             vim.lsp.protocol.make_client_capabilities(),
+            blink.get_lsp_capabilities(),
             opts.capabilities or {}
         )
 
@@ -79,14 +90,34 @@ local lspconfig = {
             require('lspconfig')[server].setup(server_opts)
         end
 
+        -- Get serevers available through mason-lspconfig
+        local mlsp = require('mason-lspconfig')
+        local all_mlsp_servers = vim.tbl_keys(require('mason-lspconfig.mappings.server').lspconfig_to_package)
+
+        local ensure_installed = {}
         for server, server_opts in pairs(servers) do
             if server_opts then
                 server_opts = server_opts == true and {} or server_opts
                 if server_opts.enabled ~= false then
-                    setup(server)
+                    if server_opts.mason == false or not vim.tbl_contains(all_mlsp_servers, server) then
+                        setup(server)
+                    else
+                        ensure_installed[#ensure_installed+1] = server
+                    end
                 end
             end
         end
+
+        local util = require('util')
+        mlsp.setup({
+            ensure_installed = vim.tbl_deep_extend(
+                'force',
+                ensure_installed,
+                util.get_plugin_opts('mason-lspconfig.nvim').ensure_installed or {}
+            ),
+            handlers = { setup },
+            automatic_installation = true
+        })
     end
 }
 
