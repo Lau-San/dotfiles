@@ -164,10 +164,11 @@ bind common D win-remove
 bind common E win-add-Q
 bind common F push filter 
 bind common G win-bottom
+bind common H seek -5
 bind common I echo {}
 bind common J player-next
 bind common K player-prev
-bind common L push live-filter 
+bind common L seek +5
 bind common M toggle play_library
 bind common N search-prev
 bind common P win-mv-before
@@ -194,12 +195,12 @@ bind common end win-bottom
 bind common enter win-activate
 bind common f toggle follow
 bind common g win-top
-bind common h seek -5
+bind common h win-next
 bind common home win-top
 bind common i win-sel-cur
 bind common j win-down
 bind common k win-up
-bind common l seek +5
+bind common l win-next
 bind common left seek -5
 bind common m toggle aaa_mode
 bind common mlb_click_bar player-pause
