@@ -3,7 +3,7 @@ set altformat_current= %F
 set altformat_playlist= %f%= %d %{?X!=0?%3X ?    }
 set altformat_title=%f
 set altformat_trackwin= %f%= %d 
-set auto_expand_albums_follow=true
+set auto_expand_albums_follow=false
 set auto_expand_albums_search=true
 set auto_expand_albums_selcur=true
 set auto_hide_playlists_panel=false
