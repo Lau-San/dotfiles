@@ -103,7 +103,7 @@ auto_commit() {
     commit_msg="$1"
 
     step "Staging changes..."
-    $git_cmd add -u > "$LOGFILE"
+    $git_cmd add -u > "$LOGFILE" 2>&1
     if [[ $? -eq 0 ]]; then
         step_done
     else
@@ -112,7 +112,7 @@ auto_commit() {
     fi
 
     step "Commiting changes..."
-    $git_cmd commit -m "$commit_msg" > "$LOGFILE"
+    $git_cmd commit -m "$commit_msg" > "$LOGFILE" 2>&1
     if [[ $? -eq 0 ]]; then
         step_done
     else
@@ -121,7 +121,7 @@ auto_commit() {
     fi
 
     step "Pushing changes..."
-    $git_cmd push > "$LOGFILE"
+    $git_cmd push > "$LOGFILE" 2>&1
     if [[ $? -eq 0 ]]; then
         step_done
     else
