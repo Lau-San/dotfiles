@@ -1,7 +1,12 @@
 #!/bin/env bash
 
 conf_path="$1"
-conf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+git_dir="$HOME/.dotfiles"
+work_tree="$HOME"
+
+git_cmd="git --git-dir=$git_dir --work-tree=$work_tree"
+lazygit_cmd="lazygit --git-dir=$git_dir --work-tree=$work_tree"
 
 notif() {
 	notify-send --app-name=Dotfiles "$1" "$2"
@@ -26,6 +31,32 @@ else
 	nvim "$conf_path"
 fi
 
-$conf add -u &&
-	$conf commit -m "Update $(date +"%Y-%m-%d %H:%M")" && $conf push &&
-	success "All your configuration changes have been pushed"
+while true; do
+    echo "How do you want to proceed?"
+    echo "[a] Automatically stage, commit and push ALL changes"
+    echo "[m] Manually manage repo with Lazygit"
+    echo "[q] Leave changes unstaged and exit"
+    echo -en "\nSelect what you want to do: "
+    read -r res
+
+    case "${res,,}" in
+        a)
+            $git_cmd add -u &&
+                $git_cmd commit -m "Update $(date +"%Y-%m-%d %H:%M")" && $git_cmd push &&
+                success "All your configuration changes have been automatically pushed"
+            break
+            ;;
+        m)
+            $lazygit_cmd
+            break
+            ;;
+        q)
+            break
+            ;;
+        *)
+            echo "Please select a valid option"
+            continue
+    esac
+done
+
+

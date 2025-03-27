@@ -16,7 +16,6 @@ configs = {
 
     'Rofi': '~/.config/rofi',
     'Walker': '~/.config/walker',
-    'Anyrun': '~/.config/anyrun',
     'Sysmenu': '~/.config/sys64/menu',
 
     'Alacritty': '~/.config/alacritty/alacritty.toml',
@@ -37,8 +36,6 @@ configs = {
     'Btop': '~/.config/btop/btop.conf',
     'MPV': '~/.config/mpv/mpv.conf',
     'Yazi': '~/.config/yazi',
-    'Taskwarrior': '~/.taskrc',
-    'VIT': '~/.vit/config.ini',
 }
 
 
