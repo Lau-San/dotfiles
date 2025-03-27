@@ -32,10 +32,10 @@ step() {
     msg_nonewline "$cyan-> $stdoutmsg$default" "-> $stdoutmsg"
 }
 step_done(){
-    echo -e "${green} DONE"
+    echo -e "${green} DONE${default}"
 }
 step_failed(){
-    echo -e "${red} FAILED"
+    echo -e "${red} FAILED${default}"
 }
 info() {
     stdoutmsg="$1"
@@ -120,7 +120,7 @@ auto_commit() {
         notify_error_lg "Couldn't commit changes"
     fi
 
-    info_n "Pushing changes..."
+    step "Pushing changes..."
     $git_cmd push > "$LOGFILE"
     if [[ $? -eq 0 ]]; then
         step_done
