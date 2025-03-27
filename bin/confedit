@@ -32,7 +32,7 @@ step() {
     msg_nonewline "$cyan-> $stdoutmsg$default" "-> $stdoutmsg"
 }
 step_done(){
-    echo -e "${green} FAILED"
+    echo -e "${green} DONE"
 }
 step_failed(){
     echo -e "${red} FAILED"
