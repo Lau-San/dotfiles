@@ -5,7 +5,10 @@
 	],
 	"disabled_editors": [],
 	"disabled_features": [
-		"3d"
+		"3d",
+		"asset_lib",
+		"history_dock",
+		"game"
 	],
 	"disabled_properties": [],
 	"type": "feature_profile"

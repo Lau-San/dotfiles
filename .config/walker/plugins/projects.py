@@ -71,6 +71,7 @@ print(json.dumps(generate_entries(
     godot={
         # Map Project to Godot project folder
         # in ~/Projects/development/games/godot/
-        'Sokoban Clone': 'sokoban-clone'
+        'Sokoban Clone': 'sokoban-clone',
+        'Rocket Battler': 'rocket-battler'
     }
 )))
