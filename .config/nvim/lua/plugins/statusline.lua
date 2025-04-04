@@ -47,7 +47,7 @@ local lualine = {
                 }
             },
             lualine_y = { { 'branch', icon = ' ' } },
-            lualine_z = { { 'location', color = { gui='bold' }, padding = { left = 0, right = 1 } } },
+            lualine_z = { { 'location', color = { gui='bold' } } },
         }
     }
 }

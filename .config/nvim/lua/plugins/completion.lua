@@ -15,7 +15,8 @@ local blink = {
                 }
             },
             documentation = {
-                auto_show = true
+                auto_show = true,
+                auto_show_delay_ms = 200
             },
         },
         appearance = {
@@ -23,7 +24,12 @@ local blink = {
         },
         snippets = { preset = 'luasnip' },
         sources = {
-            default = { 'lsp', 'path', 'snippets' }
+            default = { 'lsp', 'path' },
+            per_filetype = {
+                css = { 'lsp', 'path', 'snippets' },
+                scss = { 'lsp', 'path', 'snippets' },
+                sass = { 'lsp', 'path', 'snippets' },
+            }
         },
         cmdline = {
             enabled = true

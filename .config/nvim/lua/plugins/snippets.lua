@@ -2,6 +2,9 @@ local luasnip = {
     "L3MON4D3/LuaSnip",
     lazy = true,
     build = 'make install_jsregexp',
+    -- I don't use snippets, so defer this plugin for these filetypes alone
+    -- because suggestions for these languages need them
+    ft = { 'css', 'scss', 'sass' },
     dependencies = {
         {
             "rafamadriz/friendly-snippets",
@@ -29,5 +32,5 @@ local friendly_snippets = {
 
 return {
     luasnip,
-    friendly_snippets
+    -- friendly_snippets
 }
