@@ -62,6 +62,7 @@ local mini = vim.tbl_map(function(v)
     return {
         'echasnovski/mini.' .. name,
         version = '*',
+        enabled = specs.enabled or true,
         event = vim.tbl_extend('force', require('util').lazy_file_events, specs.events or {}),
         dependencies = specs.dependencies or {},
         opts = specs.opts or {},
