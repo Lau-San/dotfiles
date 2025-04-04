@@ -9,10 +9,12 @@ network/connection/engine_version_update_mode = 1
 interface/editor/code_font_contextual_ligatures = 0
 interface/editor/single_window_mode = true
 interface/editor/show_update_spinner = false
-interface/theme/preset = "Gray"
-interface/theme/base_color = Color(0.24, 0.24, 0.24, 1)
+interface/theme/spacing_preset = "Compact"
+interface/theme/base_color = Color(0.21, 0.24, 0.29, 1)
 interface/theme/accent_color = Color(0.44, 0.73, 0.98, 1)
 interface/theme/contrast = 0.3
+interface/theme/base_spacing = 0
+interface/theme/additional_spacing = 4
 filesystem/external_programs/raster_image_editor = "/home/laura/.repos/aseprite/build/bin/aseprite"
 filesystem/directories/default_project_path = "/home/laura/Projects/development/games/godot"
 text_editor/appearance/caret/type = 1
@@ -20,7 +22,6 @@ text_editor/behavior/files/open_dominant_script_on_scene_change = true
 text_editor/external/exec_path = "/usr/bin/nvim"
 text_editor/external/exec_flags = "--server /tmp/godot.pipe --remote-send \"<esc>:n {file}<CR>:call cursor({line},{col})<CR>\""
 text_editor/completion/idle_parse_delay = 2.0
-text_editor/completion/add_type_hints = false
 text_editor/completion/use_single_quotes = true
 editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
 editors/3d/navigation/emulate_numpad = false
@@ -52,10 +53,13 @@ editors/grid_map/editor_side = 1
 network/language_server/show_native_symbols_in_editor = true
 export/android/java_sdk_path = ""
 _export_template_download_directory = ""
-_script_setup_templates_dictionary = {}
+_script_setup_templates_dictionary = {
+"CanvasLayer": "0NodeDefault",
+"Node2D": "0NodeDefault"
+}
 _script_setup_use_script_templates = false
 _editor_settings_advanced_mode = true
-_project_settings_advanced_mode = false
+_project_settings_advanced_mode = true
 shortcuts = [{
 "name": "spatial_editor/viewport_zoom_modifier_1",
 "shortcuts": [SubResource("InputEventKey_lfww5")]

@@ -6,7 +6,6 @@
 	"disabled_editors": [],
 	"disabled_features": [
 		"3d",
-		"history_dock",
 		"game"
 	],
 	"disabled_properties": [],

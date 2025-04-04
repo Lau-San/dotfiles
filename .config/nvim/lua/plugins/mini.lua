@@ -49,6 +49,7 @@ local modules = {
         end
     }},
     { 'indentscope', {
+        enabled = false,
         opts = {
             symbol = '▏'
         }
