@@ -18,6 +18,7 @@ interface/theme/additional_spacing = 4
 filesystem/external_programs/raster_image_editor = "/home/laura/.repos/aseprite/build/bin/aseprite"
 filesystem/directories/default_project_path = "/home/laura/Projects/development/games/godot"
 text_editor/appearance/caret/type = 1
+text_editor/behavior/indent/type = 1
 text_editor/behavior/files/open_dominant_script_on_scene_change = true
 text_editor/external/exec_path = "/usr/bin/nvim"
 text_editor/external/exec_flags = "--server /tmp/godot.pipe --remote-send \"<esc>:n {file}<CR>:call cursor({line},{col})<CR>\""

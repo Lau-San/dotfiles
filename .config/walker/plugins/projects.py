@@ -46,7 +46,7 @@ def generate_entries(simple: dict, zellij_layouts: dict, godot: dict) -> list:
         entries.append({
             'label': f'  {k}',
             'searchable': k.lower(),
-            'exec': f'zellij d godot; {zj_new_godot(v)}'
+            'exec': f'zellij d {v}; {zj_new_godot(v)}'
         })
 
     return entries
