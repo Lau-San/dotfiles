@@ -1,6 +1,6 @@
 local mini_files = {
     'echasnovski/mini.files',
-    dependencies = { 'echasnovski/mini.icons' },
+    -- dependencies = { 'echasnovski/mini.icons' },
     version = '*',
     opts = {
         options = {
