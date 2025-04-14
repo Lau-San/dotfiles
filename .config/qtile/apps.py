@@ -1,3 +1,3 @@
-terminal = 'alacritty'
-browser = 'brave'
-file_manager = 'nemo'
+terminal = 'kitty'
+browser = 'zen-browser'
+file_manager = 'kitty yazi'
