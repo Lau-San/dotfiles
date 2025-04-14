@@ -8,9 +8,7 @@ local mini_files = {
             permanent_delete = false
         },
         windows = {
-            preview = true,
             width_focus = 30,
-            width_preview = 30
         },
         mappings = {
             go_in_plus = 'l',
