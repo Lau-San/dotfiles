@@ -1,6 +1,7 @@
 local blink = {
     'saghen/blink.cmp',
-    build = 'cargo +nightly build --release',
+    -- build = 'cargo +nightly build --release',
+    version = '1.*',
     event = 'InsertEnter',
     opts = {
         completion = {
