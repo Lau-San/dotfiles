@@ -1,6 +1,7 @@
 local mini_files = {
     'echasnovski/mini.files',
     dependencies = { 'echasnovski/mini.icons' },
+    version = '*',
     opts = {
         options = {
             use_as_default_explorer = true,
