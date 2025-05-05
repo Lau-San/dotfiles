@@ -63,7 +63,8 @@ local treesitter_textobjects = {
 }
 
 local autotag = {
-    'windwp/nvim-ts-autotag'
+    'windwp/nvim-ts-autotag',
+    ft = { 'typescript', 'html', 'typescriptreact', 'javascript', 'markdown', 'javascriptreact' }
 }
 
 return {
