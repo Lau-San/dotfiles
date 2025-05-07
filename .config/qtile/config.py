@@ -1,8 +1,6 @@
 import os
 import subprocess
-from libqtile import layout, widget, bar, qtile, hook
-from libqtile.config import Key, Group, Screen, Drag, Match
-from libqtile.lazy import lazy
+from libqtile import hook
 
 from keys import keys, mouse
 from my_layouts import layouts
@@ -31,7 +29,7 @@ def window_to_prev_screen(qtile):
 
 
 
-floating_layout=layouts[2]
+floating_layout = layouts[2]
 dgroups_key_binder = None
 dgroups_app_rules = []
 follow_mouse_focus = False
@@ -45,12 +43,12 @@ wl_input_rules = None
 wmname = 'LG3D'
 
 
-@ hook.subscribe.startup
+@hook.subscribe.startup
 def startup():
     set_wallpaper()
 
 
-@ hook.subscribe.startup_once
+@hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autorun.sh'])
