@@ -32,7 +32,7 @@ def window_to_prev_screen(qtile):
 floating_layout = layouts[2]
 dgroups_key_binder = None
 dgroups_app_rules = []
-follow_mouse_focus = False
+follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = True
 auto_fulscreen = True
