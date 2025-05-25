@@ -1,5 +1,5 @@
 layout {
-    cwd "~/Projects/development/games/pyxel/pyxel-game-test"
+    cwd "~/Projects/development/games/pyxel/game-of-life"
     default_tab_template {
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/bin/zjstatus.wasm" {
