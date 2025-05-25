@@ -66,7 +66,8 @@ print(json.dumps(generate_entries(
         'Bitburner': 'bitburner',
         'Learn C++': 'learncpp',
         'Ao3 Tokyonight': 'ao3theme',
-        'Project Euler': 'project-euler'
+        'Project Euler': 'project-euler',
+        "Conway's Game of Life": 'game-of-life'
     },
     godot={
         # Map Project to Godot project folder
